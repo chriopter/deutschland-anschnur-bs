@@ -4,50 +4,55 @@
 
 # Deutschland Anschnur BS
 
-Ein lokalisiertes Bogenleinux-Derivat mit `muschel`, einer erlaubnisbasierten Kleinmuschel. Neueste DIN-Anlage: [Herunterladen](https://github.com/chriopter/deutschland-anschnur-bs/releases/latest/download/deutschland-anschnur-bs-aktuell.iso).
+Deutschland Anschnur BS ist eine tabellengetriebene Muschel zur Verdeutschung von Befehlen auf bestehenden Einix-/Leinux-Systemen.
 
 Einige angelsächsische Restbegriffe verbleiben aufgrund technischer Zuständigkeitsbindung bis zur späteren Verdeutschungsverfügung im Bestand.
 
-## Befehle
+## Aufbau
 
-### Aktualisieren
+```text
+muschel                  ausführbare Befehlsannahmestelle
+befehle.d/*.jsonl        Befehlsakten, eine Zeile je Amtsbefehl
+anschnur-pruefen         prüft die Befehlsakten
+```
 
-Ein eingerichtetes Deutschland Anschnur BS wird über `hapsmann erneuern` aktualisiert; die zugehörigen Anschnur-Pakete werden in der [Deutschland-Anschnur-Paketablage](https://chriopter.github.io/deutschland-anschnur-bs/x86_64/) gepflegt.
+Die Muschel enthält die Ausführungsordnung. Die Befehlsakten enthalten die Übersetzungen.
 
-### Muschel
+## Benutzung
+
+```bash
+./muschel
+```
+
+Oder als Einzelvorgang:
+
+```bash
+./muschel verzeichnis liste .
+```
+
+## Befehlsakten
+
+Beispiel:
+
+```json
+{"befehl":["verzeichnis","liste"],"typ":"exec","programm":"/usr/bin/ls","argumente":["-la"],"rest":"anhaengen","beschreibung":"zeigt einen Verzeichnisbestand"}
+```
+
+Zulässige Vorgangsarten:
+
+| Art | Wirkung |
+| --- | --- |
+| `exec` | führt ein festes Programm mit festen und zugelassenen weiteren Angaben aus |
+| `builtin` | nutzt eine eingebaute Muschelfunktion, etwa `hilfe`, `verlassen` oder Ortswechsel |
+| `alias` | verweist auf einen anderen deutschen Amtsbefehl |
+
+## Grundbestand
 
 | Befehl | Dienstliche Wirkung |
 | --- | --- |
-| `hilfe` | erteilt eine knappe Befehlsauskunft |
-| `hapsmann ...` | bearbeitet Paketangelegenheiten |
-| `verzeichnis ...` | bearbeitet Orts- und Verzeichnisangelegenheiten |
-| `datei ...` | liest und bezeichnet Dateien |
-| `netz ...` | zeigt und prüft Netzangelegenheiten |
-| `dienst ...` | zeigt Dienststände |
-| `system ...` | zeigt oder beendet Systemzustände |
-| `verlassen` | beendet den Muschelvorgang ordnungsgemäß |
-
-Alle übrigen Eingaben werden amtlich beanstandet. Die Muschel teilt dabei mit, ob der angelsächsische Fremdbefehl im System vorhanden, aber noch nicht freigegeben ist.
-
-### Hapsmann
-
-| Befehl | Dienstliche Wirkung |
-| --- | --- |
-| `hapsmann erneuern` | erneuert Paketbestand und System |
-| `hapsmann suchen <Begriff>` | sucht verfügbare Pakete |
-| `hapsmann zeigen <Paket>` | zeigt ein eingerichtetes Paket |
-| `hapsmann fernzeigen <Paket>` | zeigt ein verfügbares Paket |
-| `hapsmann installieren <Paket...>` | richtet Pakete ein |
-| `hapsmann entfernen <Paket...>` | entfernt Pakete samt Folgebestand |
-| `hapsmann bestand` | listet eingerichtete Pakete |
-| `hapsmann aufräumen` | räumt den Paketzwischenspeicher auf |
-
-Die Muschel wird als Paket `anschnur-muschel` bereitgestellt. Gewöhnliche Bogenleinux-Erneuerung bezieht dadurch zugleich die neueste Muschel aus der Deutschland-Anschnur-Paketablage.
-
-### Grundbestand
-
-| Befehl | Dienstliche Wirkung |
-| --- | --- |
+| `hilfe` | zeigt diese dienstliche Auskunft |
+| `verlassen` | schließt die Muschel ordnungsgemäß |
+| `muschel neu laden` | lädt Befehlsakten neu |
 | `verzeichnis ort` | zeigt den derzeitigen Ort |
 | `verzeichnis liste [Pfad]` | zeigt einen Verzeichnisbestand |
 | `verzeichnis wechsel <Pfad>` | wechselt den derzeitigen Ort |
@@ -60,47 +65,27 @@ Die Muschel wird als Paket `anschnur-muschel` bereitgestellt. Gewöhnliche Bogen
 | `dienst stand <Name>` | zeigt einen Dienststand |
 | `system stand` | zeigt Systemstand |
 | `system kennung` | zeigt Betriebssystemkennung |
-| `system neustarten` | startet neu |
-| `system ausschalten` | schaltet aus |
+| `hapsmann erneuern` | erneuert Paketbestand und System, sofern Hapsmann-Bestand vorhanden ist |
+| `hafener zusammensetz hoch --dämonisiere` | übersetzt einen Hafener-Zusammensetzvorgang |
+
+## Prüfung
+
+```bash
+./anschnur-pruefen
+python3 -m unittest tests/test_muschel.py -v
+```
 
 ## Lexikon
-
-<details>
-<summary>Allgemein</summary>
-
-| Deutsches Aktenzeichen | Auflösung |
-| --- | --- |
-| Anschnur | Verbundener Betriebszustand |
-| Abschnur | Getrennter Betriebszustand |
-| Du-Röhre | Videodienst im Zwischennetz |
-| Heimseite | Eigene öffentliche Netzanschrift |
-| Zwischennetz | Weltweiter Rechnerverbund |
-
-</details>
-
-<details>
-<summary>Hartware</summary>
-
-| Deutsches Aktenzeichen | Auflösung |
-| --- | --- |
-| DIN | Datenträgerabbild in Normallage |
-| Hartware | Körperlicher Gerätebestand |
-
-</details>
 
 <details>
 <summary>Weichware</summary>
 
 | Deutsches Aktenzeichen | Auflösung |
 | --- | --- |
-| Weichware | Ausführbarer und verwaltbarer Programmbestand |
-| Muschel | Erlaubnisbasierte Befehlsannahmestelle |
+| Muschel | Befehlsannahmestelle mit deutscher Übersetzungsordnung |
+| Befehlsakte | Datenzeile zur Übersetzung eines Amtsbefehls |
 | Hapsmann | Paketfresser für Paketangelegenheiten |
-| Hilfe | Auskunft über zugelassene Muschel-Befehle |
-| Paket | Programmpaket |
-| Dienstgeist | Hintergrunddienst |
-| Ablagestelle | Geordnete Quelltextablage |
-| Änderungseintrag | Nachweisbare Änderung im Quelltextbestand |
+| Hafener | Behälterdienst für abgeschlossene Laufumgebungen |
 
 </details>
 
@@ -110,10 +95,7 @@ Die Muschel wird als Paket `anschnur-muschel` bereitgestellt. Gewöhnliche Bogen
 | Deutsches Aktenzeichen | Auflösung |
 | --- | --- |
 | DABS | Deutschland Anschnur Betriebssystem |
-| Bogen | Bogenleinux-Grundlage |
 | Einix | Einheitlicher Informations- und Rechendienst nach X-Schreibweise |
 | Leinux | Linus-Einix; von Linus abgeleiteter einheitlicher Informations- und Rechendienst |
-| Wurzel | Oberste Rechte- und Dateibaumebene |
-| Kern | Kern des Betriebssystems |
 
 </details>

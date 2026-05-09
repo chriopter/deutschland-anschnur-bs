@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+"""Prueft Anschnur-Befehlsakten durch Laden der Muschel."""
+
+from pathlib import Path
+import importlib.machinery
+import importlib.util
+import os
+import sys
+
+ROOT = Path(__file__).resolve().parent
+MUSCHEL = ROOT / "muschel"
+
+loader = importlib.machinery.SourceFileLoader("anschnur_muschel", str(MUSCHEL))
+spec = importlib.util.spec_from_loader("anschnur_muschel", loader)
+if spec is None:
+    print("Muschel konnte nicht geladen werden.", file=sys.stderr)
+    raise SystemExit(2)
+modul = importlib.util.module_from_spec(spec)
+loader.exec_module(modul)
+
+if len(sys.argv) > 1:
+    os.environ["ANSCHNUR_BEFEHLE"] = sys.argv[1]
+
+try:
+    muschel = modul.Muschel()
+except Exception as fehler:  # noqa: BLE001 - Prüfwerkzeug meldet amtlich.
+    print(f"Befehlsakten beanstandet: {fehler}", file=sys.stderr)
+    raise SystemExit(1)
+
+print(f"Befehlsakten in Ordnung: {len(muschel.befehle)}")

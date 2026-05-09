@@ -1,24 +1,10 @@
-# Bauausgaben
-arbeit/
-ausgabe/
-bauprofil/
-out/
-work/
-dist/
-paketablage/
-pakete/*/pkg/
-pakete/*/src/
-*.iso
-*.iso.sig
-*.img
-*.pkg.tar.*
-*.db*
-*.files*
+# Lauf- und Prüfreste
+__pycache__/
+*.py[cod]
+.pytest_cache/
 
 # Lokal/Editor
 .env
 .DS_Store
 .idea/
 .vscode/
-__pycache__/
-*.py[cod]

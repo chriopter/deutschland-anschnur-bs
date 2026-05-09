@@ -1,5 +1,11 @@
 # Agentenhinweise
 
+## Projektordnung
+
+Deutschland Anschnur BS ist ab jetzt keine Bogenleinux-Abbildablage mehr, sondern eine eigenständige Muschel mit tabellengetriebenen Befehlsakten.
+
+Arch-, DIN-, Abbild-, Paketablage- und Hapsmann-als-Paketverwaltungsinfrastruktur sind nicht wieder einzubauen, sofern der Nutzer sie nicht ausdrücklich neu anordnet.
+
 ## Sprach- und Stilordnung
 
 Alle öffentlich sichtbaren Texte sind kurz, trocken und konsequent verwaltungsförmig zu verfassen.
@@ -7,8 +13,6 @@ Alle öffentlich sichtbaren Texte sind kurz, trocken und konsequent verwaltungsf
 Angelsächsische Begriffe sind nicht zu verwenden, sofern eine deutsche oder eingedeutschte Bezeichnung ohne Betriebsgefährdung möglich ist.
 
 Diese Vorgabe gilt besonders streng für Benutzerdokumentation, Liesmichakten, Hilfetexte, Fehlermeldungen und das Lexikon.
-
-Übertragene Fachbegriffe sind vorrangig gegenüber angelsächsischen Originalbegriffen zu verwenden; ISO ist im öffentlichen Text als DIN zu bezeichnen.
 
 ## Änderungseintragsordnung
 

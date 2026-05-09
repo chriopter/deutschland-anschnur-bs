@@ -1,0 +1,258 @@
+#!/usr/bin/env python3
+"""Deutschland Anschnur BS Muschel: tabellengetriebene Befehlsuebersetzung."""
+
+from __future__ import annotations
+
+import json
+import os
+import shlex
+import subprocess
+import sys
+from pathlib import Path
+
+def befehlsorte() -> list[Path]:
+    vorgabe = os.environ.get("ANSCHNUR_BEFEHLE")
+    if vorgabe:
+        return [Path(vorgabe)]
+    rohorte = [
+        Path(__file__).resolve().parent / "befehle.d",
+        Path("/usr/share/anschnur/befehle.d"),
+    ]
+    ergebnis: list[Path] = []
+    gesehen: set[Path] = set()
+    for ort in rohorte:
+        if ort is None:
+            continue
+        schluessel = ort.resolve() if ort.exists() else ort.absolute()
+        if schluessel in gesehen:
+            continue
+        gesehen.add(schluessel)
+        ergebnis.append(ort)
+    return ergebnis
+
+ERLAUBTE_TYPEN = {"exec", "builtin", "alias"}
+ERLAUBTER_REST = {"verbieten", "anhaengen", "ein_wert"}
+EINGEBAUT = {"hilfe", "verlassen", "cd", "neu_laden"}
+
+
+class Befehlsfehler(Exception):
+    pass
+
+
+class Muschel:
+    def __init__(self) -> None:
+        self.befehle: dict[tuple[str, ...], dict] = {}
+        self.lade_befehle()
+
+    def lade_befehle(self) -> None:
+        geladen: dict[tuple[str, ...], dict] = {}
+        dateien: list[Path] = []
+        for ort in befehlsorte():
+            if ort.is_dir():
+                dateien.extend(sorted(ort.glob("*.jsonl")))
+        if not dateien:
+            raise Befehlsfehler("Keine Befehlsakten gefunden.")
+
+        for datei in dateien:
+            with datei.open(encoding="utf-8") as handle:
+                for nummer, zeile in enumerate(handle, 1):
+                    zeile = zeile.strip()
+                    if not zeile or zeile.startswith("#"):
+                        continue
+                    try:
+                        eintrag = json.loads(zeile)
+                    except json.JSONDecodeError as fehler:
+                        raise Befehlsfehler(f"{datei}:{nummer}: ungueltige Befehlsakte: {fehler}") from fehler
+                    self.pruefe_eintrag(eintrag, datei, nummer)
+                    schluessel = tuple(eintrag["befehl"])
+                    if schluessel in geladen:
+                        raise Befehlsfehler(f"{datei}:{nummer}: doppelter Befehl: {' '.join(schluessel)}")
+                    geladen[schluessel] = eintrag
+        self.befehle = geladen
+
+    @staticmethod
+    def pruefe_eintrag(eintrag: dict, datei: Path, nummer: int) -> None:
+        ort = f"{datei}:{nummer}"
+        befehl = eintrag.get("befehl")
+        if not isinstance(befehl, list) or not befehl or not all(isinstance(wort, str) and wort for wort in befehl):
+            raise Befehlsfehler(f"{ort}: Befehl muss nichtleere Wortliste sein")
+        typ = eintrag.get("typ")
+        if typ not in ERLAUBTE_TYPEN:
+            raise Befehlsfehler(f"{ort}: unzulaessiger Typ: {typ}")
+        rest = eintrag.get("rest", "verbieten")
+        if rest not in ERLAUBTER_REST:
+            raise Befehlsfehler(f"{ort}: unzulaessige Restordnung: {rest}")
+        if typ == "exec":
+            programm = eintrag.get("programm")
+            if not isinstance(programm, str) or not programm.startswith("/"):
+                raise Befehlsfehler(f"{ort}: Programm muss absoluter Pfad sein")
+            argumente = eintrag.get("argumente", [])
+            if not isinstance(argumente, list) or not all(isinstance(wert, str) for wert in argumente):
+                raise Befehlsfehler(f"{ort}: Argumente muessen Liste aus Textwerten sein")
+            optionen = eintrag.get("optionen", {})
+            if not isinstance(optionen, dict):
+                raise Befehlsfehler(f"{ort}: Optionen muessen Zuordnung sein")
+        elif typ == "builtin":
+            funktion = eintrag.get("funktion")
+            if funktion not in EINGEBAUT:
+                raise Befehlsfehler(f"{ort}: unbekannte eingebaute Funktion: {funktion}")
+        elif typ == "alias":
+            ziel = eintrag.get("ziel")
+            if not isinstance(ziel, list) or not ziel:
+                raise Befehlsfehler(f"{ort}: Aliasziel muss Wortliste sein")
+
+    def finde(self, teile: list[str]) -> tuple[dict | None, list[str]]:
+        for laenge in range(len(teile), 0, -1):
+            schluessel = tuple(teile[:laenge])
+            if schluessel in self.befehle:
+                return self.befehle[schluessel], teile[laenge:]
+        return None, teile
+
+    def hilfe(self) -> None:
+        print("Zugelassene Amtsbefehle:")
+        for schluessel, eintrag in sorted(self.befehle.items()):
+            beschreibung = eintrag.get("beschreibung", "dienstlich erfasst")
+            print(f"  {' '.join(schluessel):32} - {beschreibung}")
+
+    def melde_nicht_erlaubt(self, befehl: str) -> None:
+        print(f"Bescheid der Muschelbehörde: Der Befehl \"{befehl}\" ist nicht erlaubt.")
+        fundstelle = self.finde_programm(befehl)
+        if fundstelle:
+            print(f"Sachstand: \"{befehl}\" ist im System vorhanden ({fundstelle}), aber dienstlich noch nicht freigegeben.")
+        else:
+            print(f"Sachstand: \"{befehl}\" konnte im System nicht festgestellt werden.")
+        print("Hinweis: Bitte reichen Sie einen Antrag auf Befehlsverdeutschung ein.")
+
+    @staticmethod
+    def finde_programm(name: str) -> str | None:
+        for ordner in os.environ.get("PATH", "").split(os.pathsep):
+            if not ordner:
+                continue
+            kandidat = Path(ordner) / name
+            if kandidat.is_file() and os.access(kandidat, os.X_OK):
+                return str(kandidat)
+        return None
+
+    @staticmethod
+    def bereite_rest(eintrag: dict, rest: list[str]) -> list[str] | None:
+        ordnung = eintrag.get("rest", "verbieten")
+        if ordnung == "verbieten":
+            if rest:
+                print("Bescheid der Muschelbehörde: Weitere Angaben sind hier nicht zugelassen.")
+                return None
+            return []
+        if ordnung == "ein_wert":
+            if len(rest) != 1:
+                print("Bescheid der Muschelbehörde: Genau eine weitere Angabe ist erforderlich.")
+                return None
+            return rest
+        return rest
+
+    @staticmethod
+    def uebersetze_optionen(eintrag: dict, werte: list[str]) -> list[str]:
+        optionen = eintrag.get("optionen", {})
+        ergebnis: list[str] = []
+        for wert in werte:
+            if wert in optionen:
+                ziel = optionen[wert]
+                if isinstance(ziel, str):
+                    ergebnis.append(ziel)
+                elif isinstance(ziel, list):
+                    ergebnis.extend(ziel)
+                else:
+                    ergebnis.append(wert)
+            elif "=" in wert:
+                name, inhalt = wert.split("=", 1)
+                ziel = optionen.get(name)
+                if isinstance(ziel, str):
+                    ergebnis.append(f"{ziel}={inhalt}")
+                else:
+                    ergebnis.append(wert)
+            else:
+                ergebnis.append(wert)
+        return ergebnis
+
+    def fuehre_aus(self, eintrag: dict, rest: list[str]) -> None:
+        typ = eintrag["typ"]
+        if typ == "alias":
+            ziel = list(eintrag["ziel"]) + rest
+            self.verarbeite_teile(ziel)
+            return
+
+        if typ == "builtin":
+            self.fuehre_builtin(eintrag, rest)
+            return
+
+        restwerte = self.bereite_rest(eintrag, rest)
+        if restwerte is None:
+            return
+        restwerte = self.uebersetze_optionen(eintrag, restwerte)
+        befehl = [eintrag["programm"], *eintrag.get("argumente", []), *restwerte]
+        try:
+            subprocess.run(befehl, check=False)
+        except FileNotFoundError:
+            print(f"Bescheid der Muschelbehörde: Ausführungsbestand nicht vorhanden: {eintrag['programm']}")
+
+    def fuehre_builtin(self, eintrag: dict, rest: list[str]) -> None:
+        funktion = eintrag["funktion"]
+        restwerte = self.bereite_rest(eintrag, rest)
+        if restwerte is None:
+            return
+        if funktion == "hilfe":
+            self.hilfe()
+        elif funktion == "verlassen":
+            print("Muschel wird ordnungsgemäß geschlossen.")
+            raise SystemExit(0)
+        elif funktion == "cd":
+            ziel = restwerte[0]
+            try:
+                os.chdir(os.path.expanduser(ziel))
+                print(os.getcwd())
+            except OSError as fehler:
+                print(f"Bescheid der Muschelbehörde: Ortswechsel abgelehnt: {fehler}")
+        elif funktion == "neu_laden":
+            self.lade_befehle()
+            print("Befehlsakten neu geladen.")
+
+    def verarbeite_teile(self, teile: list[str]) -> None:
+        if not teile:
+            return
+        eintrag, rest = self.finde(teile)
+        if eintrag is None:
+            self.melde_nicht_erlaubt(teile[0])
+            return
+        self.fuehre_aus(eintrag, rest)
+
+    def verarbeite_zeile(self, zeile: str) -> None:
+        if not zeile.strip():
+            return
+        try:
+            teile = shlex.split(zeile)
+        except ValueError as fehler:
+            print(f"Bescheid der Muschelbehörde: Eingabe nicht lesbar: {fehler}")
+            return
+        self.verarbeite_teile(teile)
+
+    def schleife(self) -> None:
+        if sys.stdin.isatty():
+            print("Deutschland Anschnur BS Muschel")
+            print("Geben Sie 'hilfe' ein.")
+        for zeile in sys.stdin:
+            self.verarbeite_zeile(zeile)
+
+
+def main() -> int:
+    try:
+        muschel = Muschel()
+        if len(sys.argv) > 1:
+            muschel.verarbeite_zeile(" ".join(shlex.quote(wert) for wert in sys.argv[1:]))
+        else:
+            muschel.schleife()
+        return 0
+    except Befehlsfehler as fehler:
+        print(f"Bescheid der Muschelbehörde: {fehler}", file=sys.stderr)
+        return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

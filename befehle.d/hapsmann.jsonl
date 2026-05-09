@@ -1,0 +1,9 @@
+{"befehl":["hapsmann","erneuern"],"typ":"exec","programm":"/usr/bin/pacman","argumente":["-Syu"],"rest":"verbieten","beschreibung":"erneuert Paketbestand und System"}
+{"befehl":["hapsmann","suchen"],"typ":"exec","programm":"/usr/bin/pacman","argumente":["-Ss"],"rest":"ein_wert","beschreibung":"sucht verfügbare Pakete"}
+{"befehl":["hapsmann","zeigen"],"typ":"exec","programm":"/usr/bin/pacman","argumente":["-Qi"],"rest":"ein_wert","beschreibung":"zeigt ein eingerichtetes Paket"}
+{"befehl":["hapsmann","fernzeigen"],"typ":"exec","programm":"/usr/bin/pacman","argumente":["-Si"],"rest":"ein_wert","beschreibung":"zeigt ein verfügbares Paket"}
+{"befehl":["hapsmann","installieren"],"typ":"exec","programm":"/usr/bin/pacman","argumente":["-S"],"rest":"anhaengen","beschreibung":"richtet Pakete ein"}
+{"befehl":["hapsmann","entfernen"],"typ":"exec","programm":"/usr/bin/pacman","argumente":["-Rns"],"rest":"anhaengen","beschreibung":"entfernt Pakete samt Folgebestand"}
+{"befehl":["hapsmann","bestand"],"typ":"exec","programm":"/usr/bin/pacman","argumente":["-Q"],"rest":"verbieten","beschreibung":"listet eingerichtete Pakete"}
+{"befehl":["hapsmann","aufraeumen"],"typ":"exec","programm":"/usr/bin/pacman","argumente":["-Sc"],"rest":"verbieten","beschreibung":"räumt den Paketzwischenspeicher auf"}
+{"befehl":["hapsmann","aufräumen"],"typ":"alias","ziel":["hapsmann","aufraeumen"],"rest":"verbieten","beschreibung":"räumt den Paketzwischenspeicher auf"}
