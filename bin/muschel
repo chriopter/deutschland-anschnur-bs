@@ -338,13 +338,8 @@ class Muschel:
 
     def bashrc_text(self) -> str:
         muschelpfad = shlex.quote(str(Path(__file__).resolve()))
-        haupt: dict[str, set[str]] = {}
-        for schluessel in self.befehle:
-            if not schluessel:
-                continue
-            haupt.setdefault(schluessel[0], set())
-            if len(schluessel) > 1:
-                haupt[schluessel[0]].add(schluessel[1])
+        haupt = sorted({schluessel[0] for schluessel in self.befehle if schluessel})
+        befehlszeilen = [" ".join(schluessel) for schluessel in sorted(self.befehle)]
 
         zeilen = [
             "# Deutschland Anschnur Muschel: Bash-Betriebsraum",
@@ -353,8 +348,32 @@ class Muschel:
             "PS1='muschel \\w > '",
             "hilfe() { \"$__ANSCHNUR_MUSCHEL\" hilfe \"$@\"; }",
             "verlassen() { exit; }",
+            "__anschnur_befehle=(",
         ]
-        for name in sorted(haupt):
+        zeilen.extend(f"  {shlex.quote(zeile)}" for zeile in befehlszeilen)
+        zeilen.extend([
+            ")",
+            "__anschnur_vervollstaendige() {",
+            "  local cur=\"${COMP_WORDS[COMP_CWORD]}\"",
+            "  local befehl=\"${COMP_WORDS[0]}\"",
+            "  local zeile kandidat passt i",
+            "  local -a teile antwort",
+            "  for zeile in \"${__anschnur_befehle[@]}\"; do",
+            "    read -r -a teile <<< \"$zeile\"",
+            "    [ \"${teile[0]}\" = \"$befehl\" ] || continue",
+            "    passt=1",
+            "    for ((i=1; i<COMP_CWORD; i++)); do",
+            "      [ \"${teile[i]}\" = \"${COMP_WORDS[i]}\" ] || { passt=0; break; }",
+            "    done",
+            "    [ \"$passt\" = 1 ] || continue",
+            "    kandidat=\"${teile[COMP_CWORD]}\"",
+            "    [ -n \"$kandidat\" ] || continue",
+            "    [[ \"$kandidat\" == \"$cur\"* ]] && [[ \" ${antwort[*]} \" != *\" $kandidat \"* ]] && antwort+=(\"$kandidat\")",
+            "  done",
+            "  COMPREPLY=($(compgen -W \"${antwort[*]}\" -- \"$cur\"))",
+            "}",
+        ])
+        for name in haupt:
             if name in {"hilfe", "verlassen"}:
                 continue
             sicher = shlex.quote(name)
@@ -365,10 +384,7 @@ class Muschel:
                 )
             else:
                 zeilen.append(f"{name}() {{ \"$__ANSCHNUR_MUSCHEL\" {sicher} \"$@\"; }}")
-            worte = " ".join(shlex.quote(wert) for wert in sorted(haupt[name]))
-            if worte:
-                zeilen.append(f"complete -o default -W {shlex.quote(worte)} {name}")
-        zeilen.append("complete -o default -W 'hilfe verlassen muschel verzeichnis datei netz dienst system hapsmann hafener' muschel")
+            zeilen.append(f"complete -o bashdefault -o default -F __anschnur_vervollstaendige {sicher}")
         return "\n".join(zeilen) + "\n"
 
     def starte_bash(self) -> None:

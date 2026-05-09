@@ -218,7 +218,9 @@ class MuschelTests(unittest.TestCase):
         muschel = modul.Muschel()
         rc = muschel.bashrc_text()
         self.assertIn("hapsmann()", rc)
-        self.assertIn("complete -o default -W", rc)
+        self.assertIn("__anschnur_vervollstaendige()", rc)
+        self.assertIn("complete -o bashdefault -o default -F __anschnur_vervollstaendige hapsmann", rc)
+        self.assertIn("hafener zusammensetz hoch", rc)
         self.assertIn("verzeichnis()", rc)
         self.assertIn('cd "$@"', rc)
 
