@@ -15,7 +15,13 @@ Einige angelsächsische Restbegriffe verbleiben aufgrund technischer Zuständigk
 ```bash
 git clone https://github.com/chriopter/deutschland-anschnur-muschel.git
 cd deutschland-anschnur-muschel
-sudo ./einrichten
+./einrichten
+```
+
+Systemweit, falls ausdrücklich gewünscht:
+
+```bash
+sudo ./einrichten --system
 ```
 
 ### Erneuerung
@@ -23,7 +29,7 @@ sudo ./einrichten
 ```bash
 cd deutschland-anschnur-muschel
 git pull --ff-only
-sudo ./einrichten
+./einrichten
 ```
 
 ### Start

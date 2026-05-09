@@ -36,7 +36,12 @@ jobs:
       - name: Einrichtung prüfen
         run: |
           ziel="$(mktemp -d)"
-          PREFIX="$ziel" ./einrichten
-          "$ziel/bin/anschnur-pruefen"
-          "$ziel/bin/muschel" hilfe
-          PREFIX="$ziel" ./entfernen
+          HOME="$ziel/heim" ./einrichten
+          "$ziel/heim/.local/bin/anschnur-pruefen"
+          "$ziel/heim/.local/bin/muschel" hilfe
+          HOME="$ziel/heim" ./entfernen
+
+          PREFIX="$ziel/system" ./einrichten --system
+          "$ziel/system/bin/anschnur-pruefen"
+          "$ziel/system/bin/muschel" hilfe
+          PREFIX="$ziel/system" ./entfernen --system

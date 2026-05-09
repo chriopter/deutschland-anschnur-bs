@@ -1,7 +1,31 @@
 #!/bin/sh
 set -eu
 
-VORBAU="${PREFIX:-/usr/local}"
+modus="benutzer"
+case "${1:-}" in
+  "") ;;
+  --benutzer) modus="benutzer" ;;
+  --system) modus="system" ;;
+  -h|--hilfe)
+    cat <<'EOF'
+Gebrauch:
+  ./entfernen            benutzerlokale Einrichtung entfernen
+  sudo ./entfernen --system  systemweite Einrichtung entfernen
+EOF
+    exit 0
+    ;;
+  *)
+    echo 'Bescheid der Entfernungsstelle: Unbekannte Angabe.' >&2
+    exit 2
+    ;;
+esac
+
+if [ "$modus" = "system" ]; then
+  VORBAU="${PREFIX:-/usr/local}"
+else
+  VORBAU="${PREFIX:-$HOME/.local}"
+fi
+
 BINDIR="$VORBAU/bin"
 DATDIR="$VORBAU/share/deutschland-anschnur-muschel"
 
