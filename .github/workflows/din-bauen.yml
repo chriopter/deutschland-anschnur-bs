@@ -80,9 +80,10 @@ jobs:
           else
             if [[ "${EREIGNIS}" == "pull_request" && -n "${GRUNDZWEIG}" ]]; then
               git fetch --no-tags origin "${GRUNDZWEIG}"
-              geaendert="$(git diff --name-only "origin/${GRUNDZWEIG}...HEAD")"
-            elif [[ -n "${VORHER}" && ! "${VORHER}" =~ ^0+$ ]]; then
-              geaendert="$(git diff --name-only "${VORHER}...HEAD")"
+              basis="$(git merge-base "origin/${GRUNDZWEIG}" HEAD)"
+              geaendert="$(git diff --name-only "${basis}" HEAD --)"
+            elif [[ -n "${VORHER}" && ! "${VORHER}" =~ ^0+$ ]] && git cat-file -e "${VORHER}^{commit}" 2>/dev/null; then
+              geaendert="$(git diff --name-only "${VORHER}" HEAD --)"
             else
               geaendert=""
               bauen=true
