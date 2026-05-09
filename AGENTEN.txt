@@ -2,7 +2,7 @@
 
 ## Projektordnung
 
-Deutschland Anschnur BS ist ab jetzt keine Bogenleinux-Abbildablage mehr, sondern eine eigenständige Muschel mit tabellengetriebenen Befehlsakten.
+Deutschland Anschnur ist ab jetzt keine Bogenleinux-Abbildablage mehr, sondern eine eigenständige Muschel mit tabellengetriebenen Befehlsakten.
 
 Arch-, DIN-, Abbild-, Paketablage- und Hapsmann-als-Paketverwaltungsinfrastruktur sind nicht wieder einzubauen, sofern der Nutzer sie nicht ausdrücklich neu anordnet.
 
@@ -16,7 +16,7 @@ Diese Vorgabe gilt besonders streng für Benutzerdokumentation, Liesmichakten, H
 
 ## Änderungseintragsordnung
 
-Änderungseinträge für Deutschland Anschnur BS sind in deutscher Akten- und Verwaltungssprache zu verfassen.
+Änderungseinträge für Deutschland Anschnur sind in deutscher Akten- und Verwaltungssprache zu verfassen.
 
 Die Betreffzeile beschreibt die vollzogene Änderung als amtlichen Vorgang, nicht als lockere Entwicklernotiz.
 

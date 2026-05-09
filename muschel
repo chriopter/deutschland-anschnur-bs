@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deutschland Anschnur BS Muschel: tabellengetriebene Befehlsuebersetzung."""
+"""Deutschland Anschnur Muschel: tabellengetriebene Befehlsuebersetzung."""
 
 from __future__ import annotations
 
@@ -235,7 +235,7 @@ class Muschel:
 
     def schleife(self) -> None:
         if sys.stdin.isatty():
-            print("Deutschland Anschnur BS Muschel")
+            print("Deutschland Anschnur Muschel")
             print("Geben Sie 'hilfe' ein.")
         for zeile in sys.stdin:
             self.verarbeite_zeile(zeile)

@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="medien/zeichen.png" alt="Deutschland Anschnur BS Dienstzeichen" width="300">
+  <img src="medien/zeichen.png" alt="Deutschland Anschnur Dienstzeichen" width="300">
 </p>
 
-# Deutschland Anschnur BS
+# Deutschland Anschnur
 
-Deutschland Anschnur BS ist eine tabellengetriebene Muschel zur Verdeutschung von Befehlen auf bestehenden Einix-/Leinux-Systemen.
+Deutschland Anschnur ist eine tabellengetriebene Muschel zur Verdeutschung von Befehlen auf bestehenden Einix-/Leinux-Systemen.
 
 Einige angelsächsische Restbegriffe verbleiben aufgrund technischer Zuständigkeitsbindung bis zur späteren Verdeutschungsverfügung im Bestand.
 
@@ -94,7 +94,7 @@ python3 -m unittest tests/test_muschel.py -v
 
 | Deutsches Aktenzeichen | Auflösung |
 | --- | --- |
-| DABS | Deutschland Anschnur Betriebssystem |
+| DA | Deutschland Anschnur |
 | Einix | Einheitlicher Informations- und Rechendienst nach X-Schreibweise |
 | Leinux | Linus-Einix; von Linus abgeleiteter einheitlicher Informations- und Rechendienst |
 
