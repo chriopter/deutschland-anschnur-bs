@@ -47,25 +47,22 @@ def gruppe(eintrag: dict) -> str:
     return "Grundbestand"
 
 
-def code(wert: str) -> str:
-    return f"`{wert}`"
-
-
 def html_code(wert: str) -> str:
     return f"<code>{html.escape(wert)}</code>"
 
 
-def markdown_zelle(wert: str) -> str:
-    return wert.replace("|", "\\|").replace("\n", " ")
+def html_zelle(wert: str) -> str:
+    return html.escape(str(wert)).replace("\n", " ")
 
 
 def befehlszeile(eintrag: dict, mit_hinweis: bool) -> str:
-    name = markdown_zelle(code(befehlsname(eintrag)))
-    beschreibung = markdown_zelle(eintrag.get("beschreibung", "dienstlich erfasst"))
-    zeile = f"| {name} | {beschreibung}"
+    zellen = [
+        f"<td>{html_code(befehlsname(eintrag))}</td>",
+        f"<td>{html_zelle(eintrag.get('beschreibung', 'dienstlich erfasst'))}</td>",
+    ]
     if mit_hinweis:
-        zeile += f" | {markdown_zelle(eintrag.get('hinweis', ''))}"
-    return zeile + " |"
+        zellen.append(f"<td>{html_zelle(eintrag.get('hinweis', ''))}</td>")
+    return "<tr>" + "".join(zellen) + "</tr>"
 
 
 def gruppierte_eintraege() -> OrderedDict[str, OrderedDict[str, list[dict]]]:
@@ -82,19 +79,47 @@ def gruppierte_eintraege() -> OrderedDict[str, OrderedDict[str, list[dict]]]:
     return OrderedDict((name, daten) for name, daten in gruppen.items() if daten)
 
 
-def hauptdetails(name: str, daten: list[dict]) -> list[str]:
+def hauptzeile(name: str, daten: list[dict]) -> list[str]:
     mit_hinweis = any(eintrag.get("hinweis") for eintrag in daten)
-    kopf = "| Befehl | Zweck | Hinweis |" if mit_hinweis else "| Befehl | Zweck |"
-    trennung = "| --- | --- | --- |" if mit_hinweis else "| --- | --- |"
+    kopf = "<tr><th>Befehl</th><th>Zweck</th>"
+    if mit_hinweis:
+        kopf += "<th>Hinweis</th>"
+    kopf += "</tr>"
+
     zeilen = [
+        "<tr>",
+        f"<td><strong>{html_code(name)}</strong></td>",
+        "<td>",
         "<details>",
-        f"<summary><strong>{html_code(name)}</strong></summary>",
-        "",
+        "<summary>Unterbefehle</summary>",
+        "<table>",
+        "<thead>",
         kopf,
-        trennung,
+        "</thead>",
+        "<tbody>",
     ]
     zeilen.extend(befehlszeile(eintrag, mit_hinweis) for eintrag in daten)
-    zeilen.extend(["", "</details>", ""])
+    zeilen.extend([
+        "</tbody>",
+        "</table>",
+        "</details>",
+        "</td>",
+        "</tr>",
+    ])
+    return zeilen
+
+
+def gruppentabelle(hauptgruppen: OrderedDict[str, list[dict]]) -> list[str]:
+    zeilen = [
+        "<table>",
+        "<thead>",
+        "<tr><th>Bereich</th><th>Befehle</th></tr>",
+        "</thead>",
+        "<tbody>",
+    ]
+    for name, daten in hauptgruppen.items():
+        zeilen.extend(hauptzeile(name, daten))
+    zeilen.extend(["</tbody>", "</table>", ""])
     return zeilen
 
 
@@ -102,8 +127,7 @@ def befehlsblock() -> str:
     teile = [ANFANG, ""]
     for gruppenname, hauptgruppen in gruppierte_eintraege().items():
         teile.extend([f"### {GRUPPEN_TITEL.get(gruppenname, gruppenname)}", ""])
-        for name, daten in hauptgruppen.items():
-            teile.extend(hauptdetails(name, daten))
+        teile.extend(gruppentabelle(hauptgruppen))
     teile.append(ENDE)
     return "\n".join(teile)
 

@@ -31,803 +31,1406 @@ muschel verzeichnis liste .
 
 ### Muschel (eingebaut)
 
+<table>
+<thead>
+<tr><th>Bereich</th><th>Befehle</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>hilfe</code></strong></td>
+<td>
 <details>
-<summary><strong><code>hilfe</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `hilfe` | zeigt diese dienstliche Auskunft |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>hilfe</code></td><td>zeigt diese dienstliche Auskunft</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>verlassen</code></strong></td>
+<td>
 <details>
-<summary><strong><code>verlassen</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `verlassen` | schließt die Muschel ordnungsgemäß |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>verlassen</code></td><td>schließt die Muschel ordnungsgemäß</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>muschel</code></strong></td>
+<td>
 <details>
-<summary><strong><code>muschel</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `muschel neu laden` | lädt die Befehlsakten neu |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>muschel neu laden</code></td><td>lädt die Befehlsakten neu</td></tr>
+</tbody>
+</table>
 </details>
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Grundbestand
 
+<table>
+<thead>
+<tr><th>Bereich</th><th>Befehle</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>verzeichnis</code></strong></td>
+<td>
 <details>
-<summary><strong><code>verzeichnis</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `verzeichnis ort` | zeigt den derzeitigen Ort |
-| `verzeichnis liste` | zeigt einen Verzeichnisbestand |
-| `verzeichnis wechsel` | wechselt den derzeitigen Ort |
-| `verzeichnis mach` | legt Verzeichnisse an |
-| `verzeichnis weg` | entfernt leere Verzeichnisse |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>verzeichnis ort</code></td><td>zeigt den derzeitigen Ort</td></tr>
+<tr><td><code>verzeichnis liste</code></td><td>zeigt einen Verzeichnisbestand</td></tr>
+<tr><td><code>verzeichnis wechsel</code></td><td>wechselt den derzeitigen Ort</td></tr>
+<tr><td><code>verzeichnis mach</code></td><td>legt Verzeichnisse an</td></tr>
+<tr><td><code>verzeichnis weg</code></td><td>entfernt leere Verzeichnisse</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>datei</code></strong></td>
+<td>
 <details>
-<summary><strong><code>datei</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `datei lesen` | liest eine Datei |
-| `datei zeigen` | zeigt Dateiangaben |
-| `datei antipp` | legt Dateien an oder tippt Zeiten neu |
-| `datei blaettern` | blättert durch Dateien |
-| `datei blättern` | blättert durch Dateien |
-| `datei kopf` | zeigt den Dateikopf |
-| `datei schwanz` | zeigt den Dateischwanz |
-| `datei abschrift` | fertigt Abschriften an |
-| `datei umlagern` | verlegt Dateien amtlich |
-| `datei tilgen` | tilgt Dateien |
-| `datei verweis` | schnürt Dateiverweise |
-| `datei rechtezettel` | ändert Zugriffsrechte |
-| `datei habsmann` | ändert Eigentümer und Gruppe |
-| `datei wasndas` | bestimmt Dateiart |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>datei lesen</code></td><td>liest eine Datei</td></tr>
+<tr><td><code>datei zeigen</code></td><td>zeigt Dateiangaben</td></tr>
+<tr><td><code>datei antipp</code></td><td>legt Dateien an oder tippt Zeiten neu</td></tr>
+<tr><td><code>datei blaettern</code></td><td>blättert durch Dateien</td></tr>
+<tr><td><code>datei blättern</code></td><td>blättert durch Dateien</td></tr>
+<tr><td><code>datei kopf</code></td><td>zeigt den Dateikopf</td></tr>
+<tr><td><code>datei schwanz</code></td><td>zeigt den Dateischwanz</td></tr>
+<tr><td><code>datei abschrift</code></td><td>fertigt Abschriften an</td></tr>
+<tr><td><code>datei umlagern</code></td><td>verlegt Dateien amtlich</td></tr>
+<tr><td><code>datei tilgen</code></td><td>tilgt Dateien</td></tr>
+<tr><td><code>datei verweis</code></td><td>schnürt Dateiverweise</td></tr>
+<tr><td><code>datei rechtezettel</code></td><td>ändert Zugriffsrechte</td></tr>
+<tr><td><code>datei habsmann</code></td><td>ändert Eigentümer und Gruppe</td></tr>
+<tr><td><code>datei wasndas</code></td><td>bestimmt Dateiart</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>netz</code></strong></td>
+<td>
 <details>
-<summary><strong><code>netz</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `netz stand` | zeigt Netzanschriften |
-| `netz weg` | zeigt Netzwege |
-| `netz pruefen` | prüft die Erreichbarkeit |
-| `netz prüfen` | prüft die Erreichbarkeit |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>netz stand</code></td><td>zeigt Netzanschriften</td></tr>
+<tr><td><code>netz weg</code></td><td>zeigt Netzwege</td></tr>
+<tr><td><code>netz pruefen</code></td><td>prüft die Erreichbarkeit</td></tr>
+<tr><td><code>netz prüfen</code></td><td>prüft die Erreichbarkeit</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>dienst</code></strong></td>
+<td>
 <details>
-<summary><strong><code>dienst</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `dienst liste` | zeigt laufende Dienste |
-| `dienst stand` | zeigt einen Dienststand |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>dienst liste</code></td><td>zeigt laufende Dienste</td></tr>
+<tr><td><code>dienst stand</code></td><td>zeigt einen Dienststand</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>system</code></strong></td>
+<td>
 <details>
-<summary><strong><code>system</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `system stand` | zeigt Systemstand |
-| `system kennung` | zeigt Betriebssystemkennung |
-| `system neustarten` | startet neu |
-| `system ausschalten` | schaltet aus |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>system stand</code></td><td>zeigt Systemstand</td></tr>
+<tr><td><code>system kennung</code></td><td>zeigt Betriebssystemkennung</td></tr>
+<tr><td><code>system neustarten</code></td><td>startet neu</td></tr>
+<tr><td><code>system ausschalten</code></td><td>schaltet aus</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>platz</code></strong></td>
+<td>
 <details>
-<summary><strong><code>platz</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `platz frass` | zeigt Platzfraß |
-| `platz fraß` | zeigt Platzfraß |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>platz frass</code></td><td>zeigt Platzfraß</td></tr>
+<tr><td><code>platz fraß</code></td><td>zeigt Platzfraß</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>platte</code></strong></td>
+<td>
 <details>
-<summary><strong><code>platte</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `platte stand` | zeigt Plattenfüllstand |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>platte stand</code></td><td>zeigt Plattenfüllstand</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>beipackzettel</code></strong></td>
+<td>
 <details>
-<summary><strong><code>beipackzettel</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `beipackzettel` | zeigt Gebrauchsanweisung |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>beipackzettel</code></td><td>zeigt Gebrauchsanweisung</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>fundort</code></strong></td>
+<td>
 <details>
-<summary><strong><code>fundort</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `fundort befehl` | zeigt Befehlsfundort |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>fundort befehl</code></td><td>zeigt Befehlsfundort</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>fundbuero</code></strong></td>
+<td>
 <details>
-<summary><strong><code>fundbuero</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `fundbuero` | sucht Programmfundstellen |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>fundbuero</code></td><td>sucht Programmfundstellen</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>fundbüro</code></strong></td>
+<td>
 <details>
-<summary><strong><code>fundbüro</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `fundbüro` | sucht Programmfundstellen |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>fundbüro</code></td><td>sucht Programmfundstellen</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>spitzname</code></strong></td>
+<td>
 <details>
-<summary><strong><code>spitzname</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `spitzname liste` | zeigt Spitznamen |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>spitzname liste</code></td><td>zeigt Spitznamen</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>vergangenheitsprotokoll</code></strong></td>
+<td>
 <details>
-<summary><strong><code>vergangenheitsprotokoll</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `vergangenheitsprotokoll` | zeigt Befehlsvergangenheit |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>vergangenheitsprotokoll</code></td><td>zeigt Befehlsvergangenheit</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>bildschirm</code></strong></td>
+<td>
 <details>
-<summary><strong><code>bildschirm</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `bildschirm fegen` | fegt die Ansicht leer |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>bildschirm fegen</code></td><td>fegt die Ansicht leer</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>hapsmann</code></strong></td>
+<td>
 <details>
-<summary><strong><code>hapsmann</code></strong></summary>
-
-| Befehl | Zweck | Hinweis |
-| --- | --- | --- |
-| `hapsmann erneuern` | erneuert Paketbestand und System | Arch/pacman |
-| `hapsmann suchen` | sucht verfügbare Pakete | Arch/pacman |
-| `hapsmann zeigen` | zeigt ein eingerichtetes Paket | Arch/pacman |
-| `hapsmann fernzeigen` | zeigt ein verfügbares Paket | Arch/pacman |
-| `hapsmann installieren` | richtet Pakete ein | Arch/pacman |
-| `hapsmann entfernen` | entfernt Pakete samt Folgebestand | Arch/pacman |
-| `hapsmann bestand` | listet eingerichtete Pakete | Arch/pacman |
-| `hapsmann aufraeumen` | räumt den Paketzwischenspeicher auf | Arch/pacman |
-| `hapsmann aufräumen` | räumt den Paketzwischenspeicher auf | Arch/pacman |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>hapsmann erneuern</code></td><td>erneuert Paketbestand und System</td><td>Arch/pacman</td></tr>
+<tr><td><code>hapsmann suchen</code></td><td>sucht verfügbare Pakete</td><td>Arch/pacman</td></tr>
+<tr><td><code>hapsmann zeigen</code></td><td>zeigt ein eingerichtetes Paket</td><td>Arch/pacman</td></tr>
+<tr><td><code>hapsmann fernzeigen</code></td><td>zeigt ein verfügbares Paket</td><td>Arch/pacman</td></tr>
+<tr><td><code>hapsmann installieren</code></td><td>richtet Pakete ein</td><td>Arch/pacman</td></tr>
+<tr><td><code>hapsmann entfernen</code></td><td>entfernt Pakete samt Folgebestand</td><td>Arch/pacman</td></tr>
+<tr><td><code>hapsmann bestand</code></td><td>listet eingerichtete Pakete</td><td>Arch/pacman</td></tr>
+<tr><td><code>hapsmann aufraeumen</code></td><td>räumt den Paketzwischenspeicher auf</td><td>Arch/pacman</td></tr>
+<tr><td><code>hapsmann aufräumen</code></td><td>räumt den Paketzwischenspeicher auf</td><td>Arch/pacman</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>paeckle</code></strong></td>
+<td>
 <details>
-<summary><strong><code>paeckle</code></strong></summary>
-
-| Befehl | Zweck | Hinweis |
-| --- | --- | --- |
-| `paeckle erneuern` | erneuert den Päckchenbestand | Debian/Ubuntu/apt |
-| `paeckle hochziehen` | zieht eingerichtete Päckchen hoch | Debian/Ubuntu/apt |
-| `paeckle suchen` | sucht verfügbare Päckchen | Debian/Ubuntu/apt |
-| `paeckle zeigen` | zeigt ein verfügbares Päckchen | Debian/Ubuntu/apt |
-| `paeckle installieren` | richtet Päckchen ein | Debian/Ubuntu/apt |
-| `paeckle entfernen` | entfernt Päckchen | Debian/Ubuntu/apt |
-| `paeckle fortwerfen` | wirft überflüssige Päckchen fort | Debian/Ubuntu/apt |
-| `paeckle bestand` | listet eingerichtete Päckchen | Debian/Ubuntu/apt |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>paeckle erneuern</code></td><td>erneuert den Päckchenbestand</td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>paeckle hochziehen</code></td><td>zieht eingerichtete Päckchen hoch</td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>paeckle suchen</code></td><td>sucht verfügbare Päckchen</td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>paeckle zeigen</code></td><td>zeigt ein verfügbares Päckchen</td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>paeckle installieren</code></td><td>richtet Päckchen ein</td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>paeckle entfernen</code></td><td>entfernt Päckchen</td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>paeckle fortwerfen</code></td><td>wirft überflüssige Päckchen fort</td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>paeckle bestand</code></td><td>listet eingerichtete Päckchen</td><td>Debian/Ubuntu/apt</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>päckle</code></strong></td>
+<td>
 <details>
-<summary><strong><code>päckle</code></strong></summary>
-
-| Befehl | Zweck | Hinweis |
-| --- | --- | --- |
-| `päckle erneuern` | erneuert den Päckchenbestand | Debian/Ubuntu/apt |
-| `päckle hochziehen` | zieht eingerichtete Päckchen hoch | Debian/Ubuntu/apt |
-| `päckle suchen` | sucht verfügbare Päckchen | Debian/Ubuntu/apt |
-| `päckle zeigen` | zeigt ein verfügbares Päckchen | Debian/Ubuntu/apt |
-| `päckle installieren` | richtet Päckchen ein | Debian/Ubuntu/apt |
-| `päckle entfernen` | entfernt Päckchen | Debian/Ubuntu/apt |
-| `päckle fortwerfen` | wirft überflüssige Päckchen fort | Debian/Ubuntu/apt |
-| `päckle bestand` | listet eingerichtete Päckchen | Debian/Ubuntu/apt |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>päckle erneuern</code></td><td>erneuert den Päckchenbestand</td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>päckle hochziehen</code></td><td>zieht eingerichtete Päckchen hoch</td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>päckle suchen</code></td><td>sucht verfügbare Päckchen</td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>päckle zeigen</code></td><td>zeigt ein verfügbares Päckchen</td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>päckle installieren</code></td><td>richtet Päckchen ein</td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>päckle entfernen</code></td><td>entfernt Päckchen</td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>päckle fortwerfen</code></td><td>wirft überflüssige Päckchen fort</td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>päckle bestand</code></td><td>listet eingerichtete Päckchen</td><td>Debian/Ubuntu/apt</td></tr>
+</tbody>
+</table>
 </details>
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Textwesen
 
+<table>
+<thead>
+<tr><th>Bereich</th><th>Befehle</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>text</code></strong></td>
+<td>
 <details>
-<summary><strong><code>text</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `text fahndung` | fahndet in Text |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>text fahndung</code></td><td>fahndet in Text</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>datei</code></strong></td>
+<td>
 <details>
-<summary><strong><code>datei</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `datei ortung` | ortet Dateien |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>datei ortung</code></td><td>ortet Dateien</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>argumente</code></strong></td>
+<td>
 <details>
-<summary><strong><code>argumente</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `argumente kleben` | klebt Argumente zusammen |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>argumente kleben</code></td><td>klebt Argumente zusammen</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>wort</code></strong></td>
+<td>
 <details>
-<summary><strong><code>wort</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `wort zaehlamt` | zählt Zeilen Wörter Zeichen |
-| `wort zählamt` | zählt Zeilen Wörter Zeichen |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>wort zaehlamt</code></td><td>zählt Zeilen Wörter Zeichen</td></tr>
+<tr><td><code>wort zählamt</code></td><td>zählt Zeilen Wörter Zeichen</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>zeilen</code></strong></td>
+<td>
 <details>
-<summary><strong><code>zeilen</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `zeilen ordnen` | ordnet Zeilen |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>zeilen ordnen</code></td><td>ordnet Zeilen</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>doppel</code></strong></td>
+<td>
 <details>
-<summary><strong><code>doppel</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `doppel tilgen` | tilgt Nachbardoppel |
-| `doppel zapf` | zapft Ausgabe doppelt |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>doppel tilgen</code></td><td>tilgt Nachbardoppel</td></tr>
+<tr><td><code>doppel zapf</code></td><td>zapft Ausgabe doppelt</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>spalten</code></strong></td>
+<td>
 <details>
-<summary><strong><code>spalten</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `spalten schnipp` | schneidet Spalten |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>spalten schnipp</code></td><td>schneidet Spalten</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>zeichen</code></strong></td>
+<td>
 <details>
-<summary><strong><code>zeichen</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `zeichen tausch` | tauscht Zeichen |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>zeichen tausch</code></td><td>tauscht Zeichen</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>stromtext</code></strong></td>
+<td>
 <details>
-<summary><strong><code>stromtext</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `stromtext aendern` | ändert Stromtext |
-| `stromtext ändern` | ändert Stromtext |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>stromtext aendern</code></td><td>ändert Stromtext</td></tr>
+<tr><td><code>stromtext ändern</code></td><td>ändert Stromtext</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>feld</code></strong></td>
+<td>
 <details>
-<summary><strong><code>feld</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `feld akrobat` | verarbeitet Textfelder |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>feld akrobat</code></td><td>verarbeitet Textfelder</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>unterschied</code></strong></td>
+<td>
 <details>
-<summary><strong><code>unterschied</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `unterschied zeigen` | zeigt Unterschiede |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>unterschied zeigen</code></td><td>zeigt Unterschiede</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>flicken</code></strong></td>
+<td>
 <details>
-<summary><strong><code>flicken</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `flicken anwenden` | wendet Flicken an |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>flicken anwenden</code></td><td>wendet Flicken an</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>namen</code></strong></td>
+<td>
 <details>
-<summary><strong><code>namen</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `namen rest` | zeigt Namensrest |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>namen rest</code></td><td>zeigt Namensrest</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>ordner</code></strong></td>
+<td>
 <details>
-<summary><strong><code>ordner</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `ordner davor` | zeigt Vorordner |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>ordner davor</code></td><td>zeigt Vorordner</td></tr>
+</tbody>
+</table>
 </details>
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Paketwerk
 
+<table>
+<thead>
+<tr><th>Bereich</th><th>Befehle</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>bindball</code></strong></td>
+<td>
 <details>
-<summary><strong><code>bindball</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `bindball mach` | wickelt Dateien zum Bindball |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>bindball mach</code></td><td>wickelt Dateien zum Bindball</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>quetsch</code></strong></td>
+<td>
 <details>
-<summary><strong><code>quetsch</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `quetsch mach` | quetscht Dateien |
-| `quetsch auf` | bläst Gequetschtes auf |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>quetsch mach</code></td><td>quetscht Dateien</td></tr>
+<tr><td><code>quetsch auf</code></td><td>bläst Gequetschtes auf</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>reisszu</code></strong></td>
+<td>
 <details>
-<summary><strong><code>reisszu</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `reisszu mach` | macht Reißverschlussarchiv |
-| `reisszu auf` | öffnet Reißverschlussarchiv |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>reisszu mach</code></td><td>macht Reißverschlussarchiv</td></tr>
+<tr><td><code>reisszu auf</code></td><td>öffnet Reißverschlussarchiv</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>reißzu</code></strong></td>
+<td>
 <details>
-<summary><strong><code>reißzu</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `reißzu mach` | macht Reißverschlussarchiv |
-| `reißzu auf` | öffnet Reißverschlussarchiv |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>reißzu mach</code></td><td>macht Reißverschlussarchiv</td></tr>
+<tr><td><code>reißzu auf</code></td><td>öffnet Reißverschlussarchiv</td></tr>
+</tbody>
+</table>
 </details>
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Systemwesen
 
+<table>
+<thead>
+<tr><th>Bereich</th><th>Befehle</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>vorgang</code></strong></td>
+<td>
 <details>
-<summary><strong><code>vorgang</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `vorgang liste` | listet Vorgänge |
-| `vorgang aufsicht` | zeigt Vorgangsaufsicht |
-| `vorgang huebschaufsicht` | zeigt hübsche Vorgangsaufsicht |
-| `vorgang hübschaufsicht` | zeigt hübsche Vorgangsaufsicht |
-| `vorgang beenden` | beendet Vorgang |
-| `vorgang allebeenden` | beendet Vorgänge nach Namen |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>vorgang liste</code></td><td>listet Vorgänge</td></tr>
+<tr><td><code>vorgang aufsicht</code></td><td>zeigt Vorgangsaufsicht</td></tr>
+<tr><td><code>vorgang huebschaufsicht</code></td><td>zeigt hübsche Vorgangsaufsicht</td></tr>
+<tr><td><code>vorgang hübschaufsicht</code></td><td>zeigt hübsche Vorgangsaufsicht</td></tr>
+<tr><td><code>vorgang beenden</code></td><td>beendet Vorgang</td></tr>
+<tr><td><code>vorgang allebeenden</code></td><td>beendet Vorgänge nach Namen</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>reichsgeraet</code></strong></td>
+<td>
 <details>
-<summary><strong><code>reichsgeraet</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `reichsgeraet ausweis` | zeigt Geräteausweis |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>reichsgeraet ausweis</code></td><td>zeigt Geräteausweis</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>reichsgerät</code></strong></td>
+<td>
 <details>
-<summary><strong><code>reichsgerät</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `reichsgerät ausweis` | zeigt Geräteausweis |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>reichsgerät ausweis</code></td><td>zeigt Geräteausweis</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>betriebszeit</code></strong></td>
+<td>
 <details>
-<summary><strong><code>betriebszeit</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `betriebszeit amtlich` | zeigt Betriebszeit |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>betriebszeit amtlich</code></td><td>zeigt Betriebszeit</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>uhrzeit</code></strong></td>
+<td>
 <details>
-<summary><strong><code>uhrzeit</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `uhrzeit bescheid` | zeigt Uhrzeitbescheid |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>uhrzeit bescheid</code></td><td>zeigt Uhrzeitbescheid</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>werbinichdenn</code></strong></td>
+<td>
 <details>
-<summary><strong><code>werbinichdenn</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `werbinichdenn` | zeigt Benutzername |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>werbinichdenn</code></td><td>zeigt Benutzername</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>personen</code></strong></td>
+<td>
 <details>
-<summary><strong><code>personen</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `personen kennziffer` | zeigt Personenkennziffern |
-| `personen wechsel` | wechselt Person |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>personen kennziffer</code></td><td>zeigt Personenkennziffern</td></tr>
+<tr><td><code>personen wechsel</code></td><td>wechselt Person</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>umwelt</code></strong></td>
+<td>
 <details>
-<summary><strong><code>umwelt</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `umwelt bestand` | zeigt Umweltbestand |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>umwelt bestand</code></td><td>zeigt Umweltbestand</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>oberbitte</code></strong></td>
+<td>
 <details>
-<summary><strong><code>oberbitte</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `oberbitte` | fragt nach Oberbefugnis |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>oberbitte</code></td><td>fragt nach Oberbefugnis</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>augen</code></strong></td>
+<td>
 <details>
-<summary><strong><code>augen</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `augen zu` | wartet amtlich |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>augen zu</code></td><td>wartet amtlich</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>dauer</code></strong></td>
+<td>
 <details>
-<summary><strong><code>dauer</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `dauer guck` | guckt dauernd |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>dauer guck</code></td><td>guckt dauernd</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>geraet</code></strong></td>
+<td>
 <details>
-<summary><strong><code>geraet</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `geraet dranhaeng` | hängt Gerät ein |
-| `geraet abhaeng` | hängt Gerät aus |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>geraet dranhaeng</code></td><td>hängt Gerät ein</td></tr>
+<tr><td><code>geraet abhaeng</code></td><td>hängt Gerät aus</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>gerät</code></strong></td>
+<td>
 <details>
-<summary><strong><code>gerät</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `gerät dranhäng` | hängt Gerät ein |
-| `gerät abhäng` | hängt Gerät aus |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>gerät dranhäng</code></td><td>hängt Gerät ein</td></tr>
+<tr><td><code>gerät abhäng</code></td><td>hängt Gerät aus</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>klotz</code></strong></td>
+<td>
 <details>
-<summary><strong><code>klotz</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `klotz guck` | zeigt Speicherklötze |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>klotz guck</code></td><td>zeigt Speicherklötze</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>dateien</code></strong></td>
+<td>
 <details>
-<summary><strong><code>dateien</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `dateien petz` | petzt offene Dateien |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>dateien petz</code></td><td>petzt offene Dateien</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>ram</code></strong></td>
+<td>
 <details>
-<summary><strong><code>ram</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `ram nochda` | zeigt freien Speicher |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>ram nochda</code></td><td>zeigt freien Speicher</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>tagebuch</code></strong></td>
+<td>
 <details>
-<summary><strong><code>tagebuch</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `tagebuch dienst` | zeigt Diensttagebuch |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>tagebuch dienst</code></td><td>zeigt Diensttagebuch</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>zeitfolge</code></strong></td>
+<td>
 <details>
-<summary><strong><code>zeitfolge</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `zeitfolge verzeichnis` | verwaltet Zeitfolgen |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>zeitfolge verzeichnis</code></td><td>verwaltet Zeitfolgen</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>kern</code></strong></td>
+<td>
 <details>
-<summary><strong><code>kern</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `kern gemurmel` | zeigt Kerngemurmel |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>kern gemurmel</code></td><td>zeigt Kerngemurmel</td></tr>
+</tbody>
+</table>
 </details>
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Netzwesen
 
+<table>
+<thead>
+<tr><th>Bereich</th><th>Befehle</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>netz</code></strong></td>
+<td>
 <details>
-<summary><strong><code>netz</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `netz wegewurst` | verfolgt die Wegewurst |
-| `netz sockenschau` | zeigt Netzsocken |
-| `netz lagebericht` | zeigt Netzlage |
-| `netz kringel` | kringelt Daten übers Netz |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>netz wegewurst</code></td><td>verfolgt die Wegewurst</td></tr>
+<tr><td><code>netz sockenschau</code></td><td>zeigt Netzsocken</td></tr>
+<tr><td><code>netz lagebericht</code></td><td>zeigt Netzlage</td></tr>
+<tr><td><code>netz kringel</code></td><td>kringelt Daten übers Netz</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>fernzieh</code></strong></td>
+<td>
 <details>
-<summary><strong><code>fernzieh</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `fernzieh` | zieht Fernbestand |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>fernzieh</code></td><td>zieht Fernbestand</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>sicherfernsprech</code></strong></td>
+<td>
 <details>
-<summary><strong><code>sicherfernsprech</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `sicherfernsprech` | spricht sicher in die Ferne |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>sicherfernsprech</code></td><td>spricht sicher in die Ferne</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>sicherfernkopier</code></strong></td>
+<td>
 <details>
-<summary><strong><code>sicherfernkopier</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `sicherfernkopier` | kopiert sicher in die Ferne |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>sicherfernkopier</code></td><td>kopiert sicher in die Ferne</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>gleichschalt</code></strong></td>
+<td>
 <details>
-<summary><strong><code>gleichschalt</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `gleichschalt uebertrag` | gleicht Übertragung ab |
-| `gleichschalt übertrag` | gleicht Übertragung ab |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>gleichschalt uebertrag</code></td><td>gleicht Übertragung ab</td></tr>
+<tr><td><code>gleichschalt übertrag</code></td><td>gleicht Übertragung ab</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>dns</code></strong></td>
+<td>
 <details>
-<summary><strong><code>dns</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `dns buddel` | buddelt DNS aus |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>dns buddel</code></td><td>buddelt DNS aus</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>namensschild</code></strong></td>
+<td>
 <details>
-<summary><strong><code>namensschild</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `namensschild guck` | guckt ins Namensschild |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>namensschild guck</code></td><td>guckt ins Namensschild</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>gastgeber</code></strong></td>
+<td>
 <details>
-<summary><strong><code>gastgeber</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `gastgeber auskunft` | fragt Gastgeber aus |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>gastgeber auskunft</code></td><td>fragt Gastgeber aus</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>port</code></strong></td>
+<td>
 <details>
-<summary><strong><code>port</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `port klingel` | klingelt an Ports |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>port klingel</code></td><td>klingelt an Ports</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>paket</code></strong></td>
+<td>
 <details>
-<summary><strong><code>paket</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `paket polizei` | verwaltet Paketpolizei |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>paket polizei</code></td><td>verwaltet Paketpolizei</td></tr>
+</tbody>
+</table>
 </details>
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Entwicklung
 
+<table>
+<thead>
+<tr><th>Bereich</th><th>Befehle</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>astmann</code></strong></td>
+<td>
 <details>
-<summary><strong><code>astmann</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `astmann lage` | zeigt Astlage |
-| `astmann eintueten` | tütet Änderungen ein |
-| `astmann eintüten` | tütet Änderungen ein |
-| `astmann festasteln` | stempelt Änderungen fest |
-| `astmann chronik` | zeigt Astchronik |
-| `astmann meckerstreifen` | zeigt Änderungsmecker |
-| `astmann fernkopie` | legt Fernkopie an |
-| `astmann holen` | holt Fernstand |
-| `astmann schieben` | schiebt Eigenmist fern |
-| `astmann fernneuigkeiten` | holt Fernneuigkeiten |
-| `astmann ferngegenstelle` | verwaltet Ferngegenstellen |
-| `astmann astliste` | zeigt und verwaltet Äste |
-| `astmann astwechsel` | wechselt Ast |
-| `astmann altkletter` | klettert altmodisch |
-| `astmann zusammenklatsch` | klatscht Äste zusammen |
-| `astmann umtopf` | topft Ast um |
-| `astmann handschuhfach` | legt Pfusch ins Handschuhfach |
-| `astmann zurueckkartoffeln` | kartoffelt zurück |
-| `astmann zurückkartoffeln` | kartoffelt zurück |
-| `astmann heilmach` | macht Dateien heil |
-| `astmann preisschild` | hängt Preisschild an |
-| `astmann werwars` | sucht den Schuldigen |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>astmann lage</code></td><td>zeigt Astlage</td></tr>
+<tr><td><code>astmann eintueten</code></td><td>tütet Änderungen ein</td></tr>
+<tr><td><code>astmann eintüten</code></td><td>tütet Änderungen ein</td></tr>
+<tr><td><code>astmann festasteln</code></td><td>stempelt Änderungen fest</td></tr>
+<tr><td><code>astmann chronik</code></td><td>zeigt Astchronik</td></tr>
+<tr><td><code>astmann meckerstreifen</code></td><td>zeigt Änderungsmecker</td></tr>
+<tr><td><code>astmann fernkopie</code></td><td>legt Fernkopie an</td></tr>
+<tr><td><code>astmann holen</code></td><td>holt Fernstand</td></tr>
+<tr><td><code>astmann schieben</code></td><td>schiebt Eigenmist fern</td></tr>
+<tr><td><code>astmann fernneuigkeiten</code></td><td>holt Fernneuigkeiten</td></tr>
+<tr><td><code>astmann ferngegenstelle</code></td><td>verwaltet Ferngegenstellen</td></tr>
+<tr><td><code>astmann astliste</code></td><td>zeigt und verwaltet Äste</td></tr>
+<tr><td><code>astmann astwechsel</code></td><td>wechselt Ast</td></tr>
+<tr><td><code>astmann altkletter</code></td><td>klettert altmodisch</td></tr>
+<tr><td><code>astmann zusammenklatsch</code></td><td>klatscht Äste zusammen</td></tr>
+<tr><td><code>astmann umtopf</code></td><td>topft Ast um</td></tr>
+<tr><td><code>astmann handschuhfach</code></td><td>legt Pfusch ins Handschuhfach</td></tr>
+<tr><td><code>astmann zurueckkartoffeln</code></td><td>kartoffelt zurück</td></tr>
+<tr><td><code>astmann zurückkartoffeln</code></td><td>kartoffelt zurück</td></tr>
+<tr><td><code>astmann heilmach</code></td><td>macht Dateien heil</td></tr>
+<tr><td><code>astmann preisschild</code></td><td>hängt Preisschild an</td></tr>
+<tr><td><code>astmann werwars</code></td><td>sucht den Schuldigen</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>machmal</code></strong></td>
+<td>
 <details>
-<summary><strong><code>machmal</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `machmal` | macht nach Bauzettel |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>machmal</code></td><td>macht nach Bauzettel</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>vormachamt</code></strong></td>
+<td>
 <details>
-<summary><strong><code>vormachamt</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `vormachamt` | erzeugt Machanweisung |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>vormachamt</code></td><td>erzeugt Machanweisung</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>quellwurst</code></strong></td>
+<td>
 <details>
-<summary><strong><code>quellwurst</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `quellwurst press` | presst Quellwurst |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>quellwurst press</code></td><td>presst Quellwurst</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>schlangenamt</code></strong></td>
+<td>
 <details>
-<summary><strong><code>schlangenamt</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `schlangenamt` | führt Schlangenwerk aus |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>schlangenamt</code></td><td>führt Schlangenwerk aus</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>paketpfennig</code></strong></td>
+<td>
 <details>
-<summary><strong><code>paketpfennig</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `paketpfennig` | verwaltet Python-Pakete |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>paketpfennig</code></td><td>verwaltet Python-Pakete</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>jotkuh</code></strong></td>
+<td>
 <details>
-<summary><strong><code>jotkuh</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `jotkuh` | siebt JSON |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>jotkuh</code></td><td>siebt JSON</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>dateikampfstift</code></strong></td>
+<td>
 <details>
-<summary><strong><code>dateikampfstift</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `dateikampfstift` | bearbeitet Text gefährlich |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>dateikampfstift</code></td><td>bearbeitet Text gefährlich</td></tr>
+</tbody>
+</table>
 </details>
-
+</td>
+</tr>
+<tr>
+<td><strong><code>weichgriffschreiber</code></strong></td>
+<td>
 <details>
-<summary><strong><code>weichgriffschreiber</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `weichgriffschreiber` | bearbeitet Text sanft |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>weichgriffschreiber</code></td><td>bearbeitet Text sanft</td></tr>
+</tbody>
+</table>
 </details>
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Applikationen
 
+<table>
+<thead>
+<tr><th>Bereich</th><th>Befehle</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>hafener</code></strong></td>
+<td>
 <details>
-<summary><strong><code>hafener</code></strong></summary>
-
-| Befehl | Zweck |
-| --- | --- |
-| `hafener bilder` | zeigt Hafenerbilder |
-| `hafener bestand` | zeigt Hafenvorgänge |
-| `hafener lauf` | startet einen Hafenvorgang |
-| `hafener zusammensetz zieh` | zieht zusammengesetzte Hafenerbilder |
-| `hafener zusammensetz hoch` | startet zusammengesetzte Hafendienste |
-| `hafener zusammensetz runter` | beendet zusammengesetzte Hafendienste |
-| `hafener zusammensetz tagebuch` | zeigt Hafentagebuch |
-
+<summary>Unterbefehle</summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th></tr>
+</thead>
+<tbody>
+<tr><td><code>hafener bilder</code></td><td>zeigt Hafenerbilder</td></tr>
+<tr><td><code>hafener bestand</code></td><td>zeigt Hafenvorgänge</td></tr>
+<tr><td><code>hafener lauf</code></td><td>startet einen Hafenvorgang</td></tr>
+<tr><td><code>hafener zusammensetz zieh</code></td><td>zieht zusammengesetzte Hafenerbilder</td></tr>
+<tr><td><code>hafener zusammensetz hoch</code></td><td>startet zusammengesetzte Hafendienste</td></tr>
+<tr><td><code>hafener zusammensetz runter</code></td><td>beendet zusammengesetzte Hafendienste</td></tr>
+<tr><td><code>hafener zusammensetz tagebuch</code></td><td>zeigt Hafentagebuch</td></tr>
+</tbody>
+</table>
 </details>
+</td>
+</tr>
+</tbody>
+</table>
 
 <!-- BEFEHLE:ENDE -->
