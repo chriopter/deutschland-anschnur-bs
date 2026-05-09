@@ -21,13 +21,6 @@ GRUPPEN_TITEL = {
 }
 MUSCHEL_FUNKTIONEN = {"hilfe", "verlassen", "neu_laden"}
 
-RESTTEXT = {
-    "verbieten": "keine weiteren Angaben",
-    "ein_wert": "genau eine weitere Angabe",
-    "anhaengen": "weitere Angaben werden angehängt",
-}
-
-
 def eintraege(datei: Path) -> list[dict]:
     daten = []
     with datei.open(encoding="utf-8") as handle:
@@ -62,35 +55,14 @@ def html_code(wert: str) -> str:
     return f"<code>{html.escape(wert)}</code>"
 
 
-def ausfuehrung(eintrag: dict) -> str | None:
-    typ = eintrag.get("typ")
-    if typ == "exec":
-        teile = [eintrag["programm"], *eintrag.get("argumente", [])]
-        return " ".join(teile)
-    if typ == "builtin":
-        return f"eingebaut: {eintrag.get('funktion')}"
-    if typ == "alias":
-        return "Alias auf: " + " ".join(eintrag.get("ziel", []))
-    return None
+def markdown_zelle(wert: str) -> str:
+    return wert.replace("|", "\\|").replace("\n", " ")
 
 
-def befehlszeilen(eintrag: dict) -> list[str]:
-    zeilen = [
-        f"#### {code(befehlsname(eintrag))}",
-        "",
-        eintrag.get("beschreibung", "dienstlich erfasst"),
-        "",
-    ]
-    lauf = ausfuehrung(eintrag)
-    if lauf:
-        zeilen.append(f"- Ausführung: {code(lauf)}")
-    zeilen.append(f"- Ordnung: {RESTTEXT.get(eintrag.get('rest', 'verbieten'), eintrag.get('rest', 'verbieten'))}")
-    if eintrag.get("optionen"):
-        zeilen.append("- Optionen:")
-        for deutsch, technisch in sorted(eintrag["optionen"].items()):
-            zeilen.append(f"  - {code(deutsch)} → {code(technisch)}")
-    zeilen.append("")
-    return zeilen
+def befehlszeile(eintrag: dict) -> str:
+    name = markdown_zelle(code(befehlsname(eintrag)))
+    beschreibung = markdown_zelle(eintrag.get("beschreibung", "dienstlich erfasst"))
+    return f"| {name} | {beschreibung} |"
 
 
 def gruppierte_eintraege() -> OrderedDict[str, OrderedDict[str, list[dict]]]:
@@ -112,10 +84,11 @@ def hauptdetails(name: str, daten: list[dict]) -> list[str]:
         "<details>",
         f"<summary><strong>{html_code(name)}</strong></summary>",
         "",
+        "| Befehl | Zweck |",
+        "| --- | --- |",
     ]
-    for eintrag in daten:
-        zeilen.extend(befehlszeilen(eintrag))
-    zeilen.extend(["</details>", ""])
+    zeilen.extend(befehlszeile(eintrag) for eintrag in daten)
+    zeilen.extend(["", "</details>", ""])
     return zeilen
 
 

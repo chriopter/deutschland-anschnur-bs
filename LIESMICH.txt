@@ -34,36 +34,27 @@ muschel verzeichnis liste .
 <details>
 <summary><strong><code>hilfe</code></strong></summary>
 
-#### `hilfe`
-
-zeigt diese dienstliche Auskunft
-
-- Ausführung: `eingebaut: hilfe`
-- Ordnung: keine weiteren Angaben
+| Befehl | Zweck |
+| --- | --- |
+| `hilfe` | zeigt diese dienstliche Auskunft |
 
 </details>
 
 <details>
 <summary><strong><code>verlassen</code></strong></summary>
 
-#### `verlassen`
-
-schließt die Muschel ordnungsgemäß
-
-- Ausführung: `eingebaut: verlassen`
-- Ordnung: keine weiteren Angaben
+| Befehl | Zweck |
+| --- | --- |
+| `verlassen` | schließt die Muschel ordnungsgemäß |
 
 </details>
 
 <details>
 <summary><strong><code>muschel</code></strong></summary>
 
-#### `muschel neu laden`
-
-lädt die Befehlsakten neu
-
-- Ausführung: `eingebaut: neu_laden`
-- Ordnung: keine weiteren Angaben
+| Befehl | Zweck |
+| --- | --- |
+| `muschel neu laden` | lädt die Befehlsakten neu |
 
 </details>
 
@@ -72,198 +63,72 @@ lädt die Befehlsakten neu
 <details>
 <summary><strong><code>verzeichnis</code></strong></summary>
 
-#### `verzeichnis ort`
-
-zeigt den derzeitigen Ort
-
-- Ausführung: `/usr/bin/pwd`
-- Ordnung: keine weiteren Angaben
-
-#### `verzeichnis liste`
-
-zeigt einen Verzeichnisbestand
-
-- Ausführung: `/usr/bin/ls -la`
-- Ordnung: weitere Angaben werden angehängt
-
-#### `verzeichnis wechsel`
-
-wechselt den derzeitigen Ort
-
-- Ausführung: `eingebaut: cd`
-- Ordnung: genau eine weitere Angabe
+| Befehl | Zweck |
+| --- | --- |
+| `verzeichnis ort` | zeigt den derzeitigen Ort |
+| `verzeichnis liste` | zeigt einen Verzeichnisbestand |
+| `verzeichnis wechsel` | wechselt den derzeitigen Ort |
 
 </details>
 
 <details>
 <summary><strong><code>datei</code></strong></summary>
 
-#### `datei lesen`
-
-liest eine Datei
-
-- Ausführung: `/usr/bin/cat`
-- Ordnung: genau eine weitere Angabe
-
-#### `datei zeigen`
-
-zeigt Dateiangaben
-
-- Ausführung: `/usr/bin/stat`
-- Ordnung: genau eine weitere Angabe
+| Befehl | Zweck |
+| --- | --- |
+| `datei lesen` | liest eine Datei |
+| `datei zeigen` | zeigt Dateiangaben |
 
 </details>
 
 <details>
 <summary><strong><code>netz</code></strong></summary>
 
-#### `netz stand`
-
-zeigt Netzanschriften
-
-- Ausführung: `/usr/bin/ip addr show`
-- Ordnung: keine weiteren Angaben
-
-#### `netz weg`
-
-zeigt Netzwege
-
-- Ausführung: `/usr/bin/ip route show`
-- Ordnung: keine weiteren Angaben
-
-#### `netz pruefen`
-
-prüft die Erreichbarkeit
-
-- Ausführung: `/usr/bin/ping -c 4`
-- Ordnung: genau eine weitere Angabe
-
-#### `netz prüfen`
-
-prüft die Erreichbarkeit
-
-- Ausführung: `Alias auf: netz pruefen`
-- Ordnung: weitere Angaben werden angehängt
+| Befehl | Zweck |
+| --- | --- |
+| `netz stand` | zeigt Netzanschriften |
+| `netz weg` | zeigt Netzwege |
+| `netz pruefen` | prüft die Erreichbarkeit |
+| `netz prüfen` | prüft die Erreichbarkeit |
 
 </details>
 
 <details>
 <summary><strong><code>dienst</code></strong></summary>
 
-#### `dienst liste`
-
-zeigt laufende Dienste
-
-- Ausführung: `/usr/bin/systemctl --type=service --state=running --no-pager`
-- Ordnung: keine weiteren Angaben
-
-#### `dienst stand`
-
-zeigt einen Dienststand
-
-- Ausführung: `/usr/bin/systemctl status --no-pager`
-- Ordnung: genau eine weitere Angabe
+| Befehl | Zweck |
+| --- | --- |
+| `dienst liste` | zeigt laufende Dienste |
+| `dienst stand` | zeigt einen Dienststand |
 
 </details>
 
 <details>
 <summary><strong><code>system</code></strong></summary>
 
-#### `system stand`
-
-zeigt Systemstand
-
-- Ausführung: `/usr/bin/sh -c uname -a; uptime; free -h; df -h`
-- Ordnung: keine weiteren Angaben
-
-#### `system kennung`
-
-zeigt Betriebssystemkennung
-
-- Ausführung: `/usr/bin/cat /etc/os-release`
-- Ordnung: keine weiteren Angaben
-
-#### `system neustarten`
-
-startet neu
-
-- Ausführung: `/usr/bin/systemctl reboot`
-- Ordnung: keine weiteren Angaben
-
-#### `system ausschalten`
-
-schaltet aus
-
-- Ausführung: `/usr/bin/systemctl poweroff`
-- Ordnung: keine weiteren Angaben
+| Befehl | Zweck |
+| --- | --- |
+| `system stand` | zeigt Systemstand |
+| `system kennung` | zeigt Betriebssystemkennung |
+| `system neustarten` | startet neu |
+| `system ausschalten` | schaltet aus |
 
 </details>
 
 <details>
 <summary><strong><code>hapsmann</code></strong></summary>
 
-#### `hapsmann erneuern`
-
-erneuert Paketbestand und System
-
-- Ausführung: `/usr/bin/pacman -Syu`
-- Ordnung: keine weiteren Angaben
-
-#### `hapsmann suchen`
-
-sucht verfügbare Pakete
-
-- Ausführung: `/usr/bin/pacman -Ss`
-- Ordnung: genau eine weitere Angabe
-
-#### `hapsmann zeigen`
-
-zeigt ein eingerichtetes Paket
-
-- Ausführung: `/usr/bin/pacman -Qi`
-- Ordnung: genau eine weitere Angabe
-
-#### `hapsmann fernzeigen`
-
-zeigt ein verfügbares Paket
-
-- Ausführung: `/usr/bin/pacman -Si`
-- Ordnung: genau eine weitere Angabe
-
-#### `hapsmann installieren`
-
-richtet Pakete ein
-
-- Ausführung: `/usr/bin/pacman -S`
-- Ordnung: weitere Angaben werden angehängt
-
-#### `hapsmann entfernen`
-
-entfernt Pakete samt Folgebestand
-
-- Ausführung: `/usr/bin/pacman -Rns`
-- Ordnung: weitere Angaben werden angehängt
-
-#### `hapsmann bestand`
-
-listet eingerichtete Pakete
-
-- Ausführung: `/usr/bin/pacman -Q`
-- Ordnung: keine weiteren Angaben
-
-#### `hapsmann aufraeumen`
-
-räumt den Paketzwischenspeicher auf
-
-- Ausführung: `/usr/bin/pacman -Sc`
-- Ordnung: keine weiteren Angaben
-
-#### `hapsmann aufräumen`
-
-räumt den Paketzwischenspeicher auf
-
-- Ausführung: `Alias auf: hapsmann aufraeumen`
-- Ordnung: keine weiteren Angaben
+| Befehl | Zweck |
+| --- | --- |
+| `hapsmann erneuern` | erneuert Paketbestand und System |
+| `hapsmann suchen` | sucht verfügbare Pakete |
+| `hapsmann zeigen` | zeigt ein eingerichtetes Paket |
+| `hapsmann fernzeigen` | zeigt ein verfügbares Paket |
+| `hapsmann installieren` | richtet Pakete ein |
+| `hapsmann entfernen` | entfernt Pakete samt Folgebestand |
+| `hapsmann bestand` | listet eingerichtete Pakete |
+| `hapsmann aufraeumen` | räumt den Paketzwischenspeicher auf |
+| `hapsmann aufräumen` | räumt den Paketzwischenspeicher auf |
 
 </details>
 
@@ -272,61 +137,15 @@ räumt den Paketzwischenspeicher auf
 <details>
 <summary><strong><code>hafener</code></strong></summary>
 
-#### `hafener bilder`
-
-zeigt Hafenerbilder
-
-- Ausführung: `/usr/bin/docker images`
-- Ordnung: keine weiteren Angaben
-
-#### `hafener bestand`
-
-zeigt Hafenvorgänge
-
-- Ausführung: `/usr/bin/docker ps`
-- Ordnung: weitere Angaben werden angehängt
-
-#### `hafener lauf`
-
-startet einen Hafenvorgang
-
-- Ausführung: `/usr/bin/docker run`
-- Ordnung: weitere Angaben werden angehängt
-
-#### `hafener zusammensetz zieh`
-
-zieht zusammengesetzte Hafenerbilder
-
-- Ausführung: `/usr/bin/docker compose pull`
-- Ordnung: weitere Angaben werden angehängt
-
-#### `hafener zusammensetz hoch`
-
-startet zusammengesetzte Hafendienste
-
-- Ausführung: `/usr/bin/docker compose up`
-- Ordnung: weitere Angaben werden angehängt
-- Optionen:
-  - `--daemonisiere` → `--detach`
-  - `--dämonisiere` → `--detach`
-  - `--neu-bauen` → `--build`
-
-#### `hafener zusammensetz runter`
-
-beendet zusammengesetzte Hafendienste
-
-- Ausführung: `/usr/bin/docker compose down`
-- Ordnung: weitere Angaben werden angehängt
-
-#### `hafener zusammensetz tagebuch`
-
-zeigt Hafentagebuch
-
-- Ausführung: `/usr/bin/docker compose logs`
-- Ordnung: weitere Angaben werden angehängt
-- Optionen:
-  - `--schwanz` → `--tail`
-  - `--verfolge` → `--follow`
+| Befehl | Zweck |
+| --- | --- |
+| `hafener bilder` | zeigt Hafenerbilder |
+| `hafener bestand` | zeigt Hafenvorgänge |
+| `hafener lauf` | startet einen Hafenvorgang |
+| `hafener zusammensetz zieh` | zieht zusammengesetzte Hafenerbilder |
+| `hafener zusammensetz hoch` | startet zusammengesetzte Hafendienste |
+| `hafener zusammensetz runter` | beendet zusammengesetzte Hafendienste |
+| `hafener zusammensetz tagebuch` | zeigt Hafentagebuch |
 
 </details>
 
