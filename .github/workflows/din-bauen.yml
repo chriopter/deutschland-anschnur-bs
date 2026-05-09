@@ -35,6 +35,8 @@ jobs:
 
       - name: Quelltext auschecken
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Paketzwischenspeicher übernehmen
         uses: actions/cache@v4
@@ -62,7 +64,52 @@ jobs:
           cp pakete/anschnur-muschel/*.pkg.tar.* paketablage/x86_64/
           repo-add paketablage/x86_64/deutschland-anschnur.db.tar.gz paketablage/x86_64/*.pkg.tar.*
 
+      - name: DIN-Erfordernis feststellen
+        id: din_bedarf
+        shell: bash
+        env:
+          EREIGNIS: ${{ github.event_name }}
+          VORHER: ${{ github.event.before }}
+          GRUNDZWEIG: ${{ github.base_ref }}
+        run: |
+          set -euo pipefail
+          bauen=false
+
+          if [[ "${EREIGNIS}" == "workflow_dispatch" || "${EREIGNIS}" == "schedule" ]]; then
+            bauen=true
+          else
+            if [[ "${EREIGNIS}" == "pull_request" && -n "${GRUNDZWEIG}" ]]; then
+              git fetch --no-tags origin "${GRUNDZWEIG}"
+              geaendert="$(git diff --name-only "origin/${GRUNDZWEIG}...HEAD")"
+            elif [[ -n "${VORHER}" && ! "${VORHER}" =~ ^0+$ ]]; then
+              geaendert="$(git diff --name-only "${VORHER}...HEAD")"
+            else
+              geaendert=""
+              bauen=true
+            fi
+
+            if [[ "${bauen}" != "true" ]]; then
+              while IFS= read -r pfad; do
+                [[ -z "${pfad}" ]] && continue
+                case "${pfad}" in
+                  din/**|.github/workflows/din-bauen.yml)
+                    bauen=true
+                    break
+                    ;;
+                esac
+              done <<< "${geaendert}"
+            fi
+          fi
+
+          echo "bauen=${bauen}" >> "${GITHUB_OUTPUT}"
+          if [[ "${bauen}" == "true" ]]; then
+            echo "DIN-Fertigung: erforderlich"
+          else
+            echo "DIN-Fertigung: ausgelassen; Paketablage wird erneuert"
+          fi
+
       - name: Bogen-Referenzprofil vorbereiten
+        if: steps.din_bedarf.outputs.bauen == 'true'
         run: |
           rm -rf bauprofil
           cp -a /usr/share/archiso/configs/releng bauprofil
@@ -95,16 +142,18 @@ jobs:
           PY
 
       - name: DIN bauen
+        if: steps.din_bedarf.outputs.bauen == 'true'
         run: mkarchiso -v -w arbeit -o ausgabe bauprofil
 
       - name: Prüfsummen erzeugen
+        if: steps.din_bedarf.outputs.bauen == 'true'
         run: |
           cd ausgabe
           cp *.iso deutschland-anschnur-bs-aktuell.iso
           sha256sum deutschland-anschnur-bs-aktuell.iso > SHA256SUMMEN
 
       - name: DIN als aktuelle Freigabe bereitstellen
-        if: github.event_name == 'push' && github.ref == 'refs/heads/haupt'
+        if: steps.din_bedarf.outputs.bauen == 'true' && github.event_name == 'push' && github.ref == 'refs/heads/haupt'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: aktuell
@@ -119,6 +168,7 @@ jobs:
             ausgabe/SHA256SUMMEN
 
       - name: DIN als Änderungsanlage bereitstellen
+        if: steps.din_bedarf.outputs.bauen == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: deutschland-anschnur-bs-${{ github.sha }}
@@ -129,9 +179,10 @@ jobs:
           retention-days: 14
 
       - name: Paketablage als Netzbestand vorbereiten
-        if: github.event_name == 'push' && github.ref == 'refs/heads/haupt'
         run: |
-          cp ausgabe/SHA256SUMMEN paketablage/SHA256SUMMEN-DIN
+          if [ -f ausgabe/SHA256SUMMEN ]; then
+            cp ausgabe/SHA256SUMMEN paketablage/SHA256SUMMEN-DIN
+          fi
           touch paketablage/.nojekyll
           for endung in db files; do
             pfad="paketablage/x86_64/deutschland-anschnur.${endung}"

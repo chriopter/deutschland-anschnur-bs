@@ -19,7 +19,12 @@ Ein eingerichtetes Deutschland Anschnur BS wird über `hapsmann erneuern` aktual
 | Befehl | Dienstliche Wirkung |
 | --- | --- |
 | `hilfe` | erteilt eine knappe Befehlsauskunft |
-| `hapsmann` | bearbeitet Paketangelegenheiten |
+| `hapsmann ...` | bearbeitet Paketangelegenheiten |
+| `verzeichnis ...` | bearbeitet Orts- und Verzeichnisangelegenheiten |
+| `datei ...` | liest und bezeichnet Dateien |
+| `netz ...` | zeigt und prüft Netzangelegenheiten |
+| `dienst ...` | zeigt Dienststände |
+| `system ...` | zeigt oder beendet Systemzustände |
 | `verlassen` | beendet den Muschelvorgang ordnungsgemäß |
 
 Alle übrigen Eingaben werden amtlich beanstandet. Die Muschel teilt dabei mit, ob der angelsächsische Fremdbefehl im System vorhanden, aber noch nicht freigegeben ist.
@@ -38,6 +43,25 @@ Alle übrigen Eingaben werden amtlich beanstandet. Die Muschel teilt dabei mit, 
 | `hapsmann aufräumen` | räumt den Paketzwischenspeicher auf |
 
 Die Muschel wird als Paket `anschnur-muschel` bereitgestellt. Gewöhnliche Bogenleinux-Erneuerung bezieht dadurch zugleich die neueste Muschel aus der Deutschland-Anschnur-Paketablage.
+
+### Grundbestand
+
+| Befehl | Dienstliche Wirkung |
+| --- | --- |
+| `verzeichnis ort` | zeigt den derzeitigen Ort |
+| `verzeichnis liste [Pfad]` | zeigt einen Verzeichnisbestand |
+| `verzeichnis wechsel <Pfad>` | wechselt den derzeitigen Ort |
+| `datei lesen <Pfad>` | liest eine Datei |
+| `datei zeigen <Pfad>` | zeigt Dateiangaben |
+| `netz stand` | zeigt Netzanschriften |
+| `netz weg` | zeigt Netzwege |
+| `netz pruefen <Ziel>` | prüft die Erreichbarkeit |
+| `dienst liste` | zeigt laufende Dienste |
+| `dienst stand <Name>` | zeigt einen Dienststand |
+| `system stand` | zeigt Systemstand |
+| `system kennung` | zeigt Betriebssystemkennung |
+| `system neustarten` | startet neu |
+| `system ausschalten` | schaltet aus |
 
 ## Lexikon
 

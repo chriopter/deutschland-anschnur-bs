@@ -65,9 +65,14 @@ class MuschelTests(unittest.TestCase):
         self.assertIn("Zugelassene Amtsbefehle", result.stdout)
         self.assertIn("hilfe", result.stdout)
         self.assertIn("hapsmann", result.stdout)
+        self.assertIn("verzeichnis", result.stdout)
+        self.assertIn("datei", result.stdout)
+        self.assertIn("netz", result.stdout)
+        self.assertIn("dienst", result.stdout)
+        self.assertIn("system", result.stdout)
         self.assertIn("verlassen", result.stdout)
         self.assertNotIn("abmelden", result.stdout)
-        self.assertNotIn("ende", result.stdout)
+        self.assertNotRegex(result.stdout, r"(?m)^  ende\\b")
 
     def test_removed_exit_aliases_are_blocked(self):
         result = run_muschel("abmelden\nende\n")
@@ -95,6 +100,29 @@ class MuschelTests(unittest.TestCase):
 
         self.assertEqual(result.returncode, 0)
         self.assertIn("-Syu", result.stdout)
+
+    def test_directory_commands_keep_changed_place(self):
+        with tempfile.TemporaryDirectory() as directory:
+            result = run_muschel(f"verzeichnis wechsel {directory}\nverzeichnis ort\n")
+
+        self.assertEqual(result.returncode, 0)
+        self.assertIn(directory, result.stdout)
+
+    def test_file_commands_read_and_show_file(self):
+        with tempfile.TemporaryDirectory() as directory:
+            akte = Path(directory) / "akte.txt"
+            akte.write_text("Amtsinhalt\n")
+            result = run_muschel(f"datei lesen {akte}\ndatei zeigen {akte}\n")
+
+        self.assertEqual(result.returncode, 0)
+        self.assertIn("Amtsinhalt", result.stdout)
+        self.assertIn("akte.txt", result.stdout)
+
+    def test_system_identity_command_reads_os_release(self):
+        result = run_muschel("system kennung\n")
+
+        self.assertEqual(result.returncode, 0)
+        self.assertIn("NAME=", result.stdout)
 
 
 class HapsmannTests(unittest.TestCase):

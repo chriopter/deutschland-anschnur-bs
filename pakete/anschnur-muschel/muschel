@@ -4,9 +4,23 @@ set -u
 zeige_hilfe() {
   cat <<'EOF'
 Zugelassene Amtsbefehle:
-  hilfe      - zeigt diese dienstliche Auskunft
-  hapsmann   - bearbeitet Paketangelegenheiten
-  verlassen  - schließt die Muschel ordnungsgemäß
+  hilfe                         - zeigt diese dienstliche Auskunft
+  verlassen                     - schließt die Muschel ordnungsgemäß
+  hapsmann ...                  - bearbeitet Paketangelegenheiten
+  verzeichnis ort               - zeigt den derzeitigen Ort
+  verzeichnis liste [Pfad]      - zeigt ein Verzeichnis
+  verzeichnis wechsel <Pfad>    - wechselt den Ort
+  datei lesen <Pfad>            - liest eine Datei
+  datei zeigen <Pfad>           - zeigt Dateiangaben
+  netz stand                    - zeigt Netzanschriften
+  netz weg                      - zeigt Netzwege
+  netz pruefen <Ziel>           - prüft die Erreichbarkeit
+  dienst liste                  - zeigt laufende Dienste
+  dienst stand <Name>           - zeigt einen Dienststand
+  system stand                  - zeigt Systemstand
+  system kennung                - zeigt Betriebssystemkennung
+  system neustarten             - startet das System neu
+  system ausschalten            - schaltet das System aus
 EOF
 }
 
@@ -26,9 +40,126 @@ melde_nicht_erlaubt() {
   echo "Hinweis: Bitte reichen Sie einen Antrag auf Befehlsverdeutschung ein."
 }
 
+melde_fehlnutzung() {
+  echo "Bescheid der Muschelbehörde: Vorgang unvollständig oder nicht zugelassen."
+  echo "Hinweis: 'hilfe' zeigt die zugelassenen Amtsbefehle."
+}
+
+verzeichnis_bearbeiten() {
+  local vorgang="${1:-}"
+  shift || true
+
+  case "${vorgang}" in
+    ort)
+      pwd
+      ;;
+    liste)
+      ls -la -- "${1:-.}"
+      ;;
+    wechsel)
+      [[ $# -eq 1 ]] || { melde_fehlnutzung; return 2; }
+      cd -- "$1" || return $?
+      pwd
+      ;;
+    *)
+      melde_fehlnutzung
+      return 2
+      ;;
+  esac
+}
+
+datei_bearbeiten() {
+  local vorgang="${1:-}"
+  shift || true
+
+  case "${vorgang}" in
+    lesen)
+      [[ $# -eq 1 ]] || { melde_fehlnutzung; return 2; }
+      cat -- "$1"
+      ;;
+    zeigen)
+      [[ $# -eq 1 ]] || { melde_fehlnutzung; return 2; }
+      stat -- "$1"
+      ;;
+    *)
+      melde_fehlnutzung
+      return 2
+      ;;
+  esac
+}
+
+netz_bearbeiten() {
+  local vorgang="${1:-}"
+  shift || true
+
+  case "${vorgang}" in
+    stand)
+      ip addr show
+      ;;
+    weg)
+      ip route show
+      ;;
+    pruefen|prüfen)
+      [[ $# -eq 1 ]] || { melde_fehlnutzung; return 2; }
+      ping -c 4 -- "$1"
+      ;;
+    *)
+      melde_fehlnutzung
+      return 2
+      ;;
+  esac
+}
+
+dienst_bearbeiten() {
+  local vorgang="${1:-}"
+  shift || true
+
+  case "${vorgang}" in
+    liste)
+      systemctl --type=service --state=running --no-pager
+      ;;
+    stand)
+      [[ $# -eq 1 ]] || { melde_fehlnutzung; return 2; }
+      systemctl status --no-pager -- "$1"
+      ;;
+    *)
+      melde_fehlnutzung
+      return 2
+      ;;
+  esac
+}
+
+system_bearbeiten() {
+  local vorgang="${1:-}"
+  shift || true
+
+  case "${vorgang}" in
+    stand)
+      uname -a
+      uptime
+      free -h
+      df -h
+      ;;
+    kennung)
+      cat /etc/os-release
+      ;;
+    neustarten)
+      systemctl reboot
+      ;;
+    ausschalten)
+      systemctl poweroff
+      ;;
+    *)
+      melde_fehlnutzung
+      return 2
+      ;;
+  esac
+}
+
 verarbeite_zeile() {
   local zeile="$1"
   local befehl
+  local -a teile
 
   # Leere Eingaben ignorieren.
   [[ -z "${zeile//[[:space:]]/}" ]] && return 0
@@ -45,6 +176,21 @@ verarbeite_zeile() {
       local eigener_ort
       eigener_ort="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
       "${eigener_ort}/hapsmann" "${teile[@]:1}"
+      ;;
+    verzeichnis)
+      verzeichnis_bearbeiten "${teile[@]:1}"
+      ;;
+    datei)
+      datei_bearbeiten "${teile[@]:1}"
+      ;;
+    netz)
+      netz_bearbeiten "${teile[@]:1}"
+      ;;
+    dienst)
+      dienst_bearbeiten "${teile[@]:1}"
+      ;;
+    system)
+      system_bearbeiten "${teile[@]:1}"
       ;;
     verlassen)
       echo "Muschel wird ordnungsgemäß geschlossen."
