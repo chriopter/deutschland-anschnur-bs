@@ -16,7 +16,7 @@ echo 'alias muschel="$HOME/.deutschland-anschnur-muschel/bin/muschel"' >> ~/.bas
 . ~/.bashrc
 ```
 
-Die Muschel meldet verfügbare Erneuerungen beim Start.
+Die Muschel meldet verfügbare Erneuerungen beim Start und öffnet danach einen Bash-Betriebsraum.
 
 **Muschel**
 

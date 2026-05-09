@@ -8,6 +8,7 @@ import os
 import shlex
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 from typing import Callable
 
@@ -38,6 +39,37 @@ def befehlsorte() -> list[Path]:
 ERLAUBTE_TYPEN = {"exec", "builtin", "alias"}
 ERLAUBTER_REST = {"verbieten", "anhaengen", "ein_wert"}
 EINGEBAUT = {"hilfe", "verlassen", "cd", "neu_laden"}
+GRUEN = "\033[32m"
+RESET = "\033[0m"
+
+
+def gruen(text: str) -> str:
+    if sys.stdout.isatty():
+        return f"{GRUEN}{text}{RESET}"
+    return text
+
+
+def git_text(quelle: Path, *args: str, timeout: int = 3) -> str | None:
+    try:
+        vorgang = subprocess.run(
+            ["git", "-C", str(quelle), *args],
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            timeout=timeout,
+            check=False,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return None
+    if vorgang.returncode != 0:
+        return None
+    return vorgang.stdout.strip()
+
+
+def git_version(quelle: Path, stand: str) -> str:
+    kurz = git_text(quelle, "rev-parse", "--short", stand) or "unbekannt"
+    datum = git_text(quelle, "log", "-1", "--format=%cd", "--date=short", stand) or "unbekannt"
+    return f"{kurz} vom {datum}"
 
 
 class Befehlsfehler(Exception):
@@ -241,29 +273,26 @@ class Muschel:
             return
         self.verarbeite_teile(teile)
 
-    def pruefe_aktualisierung(self, frage: Callable[[str], str] = input) -> None:
-        if os.environ.get("ANSCHNUR_AKTUALISIERUNG", "1") in {"0", "nein", "aus"}:
-            return
+    @staticmethod
+    def quellort() -> Path | None:
         quelle = Path(__file__).resolve().parent
         if not (quelle / ".git").exists() and (quelle.parent / ".git").exists():
             quelle = quelle.parent
         if not (quelle / ".git").exists():
+            return None
+        innen = git_text(quelle, "rev-parse", "--is-inside-work-tree")
+        if innen != "true":
+            return None
+        return quelle
+
+    def pruefe_aktualisierung(self, frage: Callable[[str], str] = input) -> None:
+        if os.environ.get("ANSCHNUR_AKTUALISIERUNG", "1") in {"0", "nein", "aus"}:
+            return
+        quelle = self.quellort()
+        if quelle is None:
             return
 
-        try:
-            innen = subprocess.run(
-                ["git", "-C", str(quelle), "rev-parse", "--is-inside-work-tree"],
-                text=True,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.DEVNULL,
-                timeout=3,
-                check=False,
-            )
-        except (OSError, subprocess.TimeoutExpired):
-            return
-        if innen.returncode != 0 or innen.stdout.strip() != "true":
-            return
-
+        derzeit = git_version(quelle, "HEAD")
         try:
             subprocess.run(
                 ["git", "-C", str(quelle), "fetch", "--quiet", "--prune"],
@@ -272,19 +301,15 @@ class Muschel:
                 timeout=10,
                 check=False,
             )
-            stand = subprocess.run(
-                ["git", "-C", str(quelle), "rev-list", "--left-right", "--count", "HEAD...@{u}"],
-                text=True,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.DEVNULL,
-                timeout=3,
-                check=False,
-            )
         except (OSError, subprocess.TimeoutExpired):
+            print(f"Muschelstand: {gruen('nicht prüfbar')} — derzeit {derzeit}")
             return
-        if stand.returncode != 0:
+
+        stand_text = git_text(quelle, "rev-list", "--left-right", "--count", "HEAD...@{u}")
+        if not stand_text:
+            print(f"Muschelstand: {gruen('ohne Gegenstelle')} — {derzeit}")
             return
-        teile = stand.stdout.split()
+        teile = stand_text.split()
         if len(teile) != 2:
             return
         try:
@@ -292,9 +317,13 @@ class Muschel:
         except ValueError:
             return
         if rueckstand <= 0:
+            print(f"Muschelstand: {gruen('aktuell')} — {derzeit}")
             return
 
-        print(f"Bescheid der Muschelbehörde: {rueckstand} Aktualisierung(en) verfügbar.")
+        bereit = git_version(quelle, "@{u}")
+        print(f"Muschelstand: {gruen('Erneuerung verfügbar')}")
+        print(f"Derzeit: {derzeit}")
+        print(f"Bereit:  {bereit}")
         antwort = frage("Jetzt beziehen? [j/N] ").strip().lower()
         if antwort not in {"j", "ja", "y", "yes"}:
             print("Aktualisierung zurückgestellt.")
@@ -303,15 +332,65 @@ class Muschel:
         vorgang = subprocess.run(["git", "-C", str(quelle), "pull", "--ff-only"], check=False)
         if vorgang.returncode == 0:
             self.lade_befehle()
-            print("Aktualisierung bezogen. Bei Muscheländerungen bitte neu starten.")
+            print(f"Aktualisierung bezogen: {bereit}. Bei Muscheländerungen bitte neu starten.")
         else:
             print("Bescheid der Muschelbehörde: Aktualisierung konnte nicht bezogen werden.")
+
+    def bashrc_text(self) -> str:
+        muschelpfad = shlex.quote(str(Path(__file__).resolve()))
+        haupt: dict[str, set[str]] = {}
+        for schluessel in self.befehle:
+            if not schluessel:
+                continue
+            haupt.setdefault(schluessel[0], set())
+            if len(schluessel) > 1:
+                haupt[schluessel[0]].add(schluessel[1])
+
+        zeilen = [
+            "# Deutschland Anschnur Muschel: Bash-Betriebsraum",
+            "[ -r ~/.bashrc ] && . ~/.bashrc",
+            f"__ANSCHNUR_MUSCHEL={muschelpfad}",
+            "PS1='muschel \\w > '",
+            "hilfe() { \"$__ANSCHNUR_MUSCHEL\" hilfe \"$@\"; }",
+            "verlassen() { exit; }",
+        ]
+        for name in sorted(haupt):
+            if name in {"hilfe", "verlassen"}:
+                continue
+            sicher = shlex.quote(name)
+            if name == "verzeichnis":
+                zeilen.append(
+                    "verzeichnis() { if [ \"$1\" = wechsel ]; then shift; cd \"$@\"; "
+                    "else \"$__ANSCHNUR_MUSCHEL\" verzeichnis \"$@\"; fi; }"
+                )
+            else:
+                zeilen.append(f"{name}() {{ \"$__ANSCHNUR_MUSCHEL\" {sicher} \"$@\"; }}")
+            worte = " ".join(shlex.quote(wert) for wert in sorted(haupt[name]))
+            if worte:
+                zeilen.append(f"complete -o default -W {shlex.quote(worte)} {name}")
+        zeilen.append("complete -o default -W 'hilfe verlassen muschel verzeichnis datei netz dienst system hapsmann hafener' muschel")
+        return "\n".join(zeilen) + "\n"
+
+    def starte_bash(self) -> None:
+        with tempfile.NamedTemporaryFile("w", encoding="utf-8", delete=False) as datei:
+            datei.write(self.bashrc_text())
+            rc = datei.name
+        try:
+            bash = "/usr/bin/bash" if Path("/usr/bin/bash").exists() else "/bin/bash"
+            subprocess.run([bash, "--rcfile", rc, "-i"], check=False)
+        finally:
+            try:
+                os.unlink(rc)
+            except OSError:
+                pass
 
     def schleife(self) -> None:
         if sys.stdin.isatty():
             self.pruefe_aktualisierung()
             print("Deutschland Anschnur Muschel")
-            print("Geben Sie 'hilfe' ein.")
+            print("Bash-Betriebsraum aktiv. 'hilfe' zeigt Amtsbefehle, 'verlassen' schließt.")
+            self.starte_bash()
+            return
         for zeile in sys.stdin:
             self.verarbeite_zeile(zeile)
 

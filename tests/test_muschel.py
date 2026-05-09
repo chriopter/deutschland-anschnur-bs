@@ -140,13 +140,22 @@ class MuschelTests(unittest.TestCase):
                 os.environ["ANSCHNUR_BEFEHLE"] = befehle_alt
 
         def git_lauf(befehl, **_kwargs):
-            if befehl[3:5] == ["rev-parse", "--is-inside-work-tree"]:
+            args = befehl[3:]
+            if args == ["rev-parse", "--is-inside-work-tree"]:
                 return subprocess.CompletedProcess(befehl, 0, stdout="true\n")
-            if befehl[3:5] == ["fetch", "--quiet"]:
+            if args == ["rev-parse", "--short", "HEAD"]:
+                return subprocess.CompletedProcess(befehl, 0, stdout="alt1234\n")
+            if args == ["rev-parse", "--short", "@{u}"]:
+                return subprocess.CompletedProcess(befehl, 0, stdout="neu5678\n")
+            if args == ["log", "-1", "--format=%cd", "--date=short", "HEAD"]:
+                return subprocess.CompletedProcess(befehl, 0, stdout="2026-05-01\n")
+            if args == ["log", "-1", "--format=%cd", "--date=short", "@{u}"]:
+                return subprocess.CompletedProcess(befehl, 0, stdout="2026-05-09\n")
+            if args[:2] == ["fetch", "--quiet"]:
                 return subprocess.CompletedProcess(befehl, 0, stdout="")
-            if befehl[3:5] == ["rev-list", "--left-right"]:
+            if args[:3] == ["rev-list", "--left-right", "--count"]:
                 return subprocess.CompletedProcess(befehl, 0, stdout="0 2\n")
-            if befehl[3:5] == ["pull", "--ff-only"]:
+            if args == ["pull", "--ff-only"]:
                 raise AssertionError("pull darf bei Ablehnung nicht laufen")
             raise AssertionError(f"unerwarteter Befehl: {befehl}")
 
@@ -155,7 +164,9 @@ class MuschelTests(unittest.TestCase):
             with contextlib.redirect_stdout(ausgabe):
                 muschel.pruefe_aktualisierung(lambda _frage: "n")
 
-        self.assertIn("2 Aktualisierung(en) verfügbar", ausgabe.getvalue())
+        self.assertIn("Erneuerung verfügbar", ausgabe.getvalue())
+        self.assertIn("alt1234 vom 2026-05-01", ausgabe.getvalue())
+        self.assertIn("neu5678 vom 2026-05-09", ausgabe.getvalue())
         self.assertIn("Aktualisierung zurückgestellt", ausgabe.getvalue())
 
     def test_update_check_pulls_when_user_accepts(self):
@@ -173,14 +184,23 @@ class MuschelTests(unittest.TestCase):
         gelaufen = []
 
         def git_lauf(befehl, **_kwargs):
-            gelaufen.append(befehl[3])
-            if befehl[3:5] == ["rev-parse", "--is-inside-work-tree"]:
+            args = befehl[3:]
+            gelaufen.append(args[0])
+            if args == ["rev-parse", "--is-inside-work-tree"]:
                 return subprocess.CompletedProcess(befehl, 0, stdout="true\n")
-            if befehl[3:5] == ["fetch", "--quiet"]:
+            if args == ["rev-parse", "--short", "HEAD"]:
+                return subprocess.CompletedProcess(befehl, 0, stdout="alt1234\n")
+            if args == ["rev-parse", "--short", "@{u}"]:
+                return subprocess.CompletedProcess(befehl, 0, stdout="neu5678\n")
+            if args == ["log", "-1", "--format=%cd", "--date=short", "HEAD"]:
+                return subprocess.CompletedProcess(befehl, 0, stdout="2026-05-01\n")
+            if args == ["log", "-1", "--format=%cd", "--date=short", "@{u}"]:
+                return subprocess.CompletedProcess(befehl, 0, stdout="2026-05-09\n")
+            if args[:2] == ["fetch", "--quiet"]:
                 return subprocess.CompletedProcess(befehl, 0, stdout="")
-            if befehl[3:5] == ["rev-list", "--left-right"]:
+            if args[:3] == ["rev-list", "--left-right", "--count"]:
                 return subprocess.CompletedProcess(befehl, 0, stdout="0 1\n")
-            if befehl[3:5] == ["pull", "--ff-only"]:
+            if args == ["pull", "--ff-only"]:
                 return subprocess.CompletedProcess(befehl, 0, stdout="")
             raise AssertionError(f"unerwarteter Befehl: {befehl}")
 
@@ -191,7 +211,16 @@ class MuschelTests(unittest.TestCase):
 
         self.assertIn("pull", gelaufen)
         muschel.lade_befehle.assert_called_once_with()
-        self.assertIn("Aktualisierung bezogen", ausgabe.getvalue())
+        self.assertIn("Aktualisierung bezogen: neu5678 vom 2026-05-09", ausgabe.getvalue())
+
+    def test_bashrc_wraps_main_commands(self):
+        modul = lade_muschel_modul()
+        muschel = modul.Muschel()
+        rc = muschel.bashrc_text()
+        self.assertIn("hapsmann()", rc)
+        self.assertIn("complete -o default -W", rc)
+        self.assertIn("verzeichnis()", rc)
+        self.assertIn('cd "$@"', rc)
 
 
 if __name__ == "__main__":
