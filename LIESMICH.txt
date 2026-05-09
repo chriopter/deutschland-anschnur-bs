@@ -10,11 +10,27 @@ Einige angelsächsische Restbegriffe verbleiben aufgrund technischer Zuständigk
 
 ## Befehle
 
+### Einrichtung
+
+```bash
+git clone https://github.com/chriopter/deutschland-anschnur-muschel.git
+cd deutschland-anschnur-muschel
+sudo ./einrichten
+```
+
+### Erneuerung
+
+```bash
+cd deutschland-anschnur-muschel
+git pull --ff-only
+sudo ./einrichten
+```
+
 ### Start
 
 ```bash
-./muschel
-./muschel verzeichnis liste .
+muschel
+muschel verzeichnis liste .
 ```
 
 ### Muschel

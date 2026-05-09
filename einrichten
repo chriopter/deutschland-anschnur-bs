@@ -1,0 +1,31 @@
+#!/bin/sh
+set -eu
+
+VORBAU="${PREFIX:-/usr/local}"
+BINDIR="$VORBAU/bin"
+DATDIR="$VORBAU/share/deutschland-anschnur-muschel"
+BEFDIR="$DATDIR/befehle.d"
+QUELLORT="$DATDIR/quellort"
+
+hier=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+
+if [ ! -f "$hier/muschel" ] || [ ! -d "$hier/befehle.d" ]; then
+  echo 'Bescheid der Einrichtungsstelle: Quellbestand unvollständig.' >&2
+  exit 1
+fi
+
+install -d "$BINDIR" "$BEFDIR"
+install -m 0755 "$hier/muschel" "$BINDIR/muschel"
+install -m 0755 "$hier/anschnur-pruefen" "$BINDIR/anschnur-pruefen"
+
+# Alte Befehlsakten aus dieser Zuständigkeit entfernen, dann neu niederlegen.
+find "$BEFDIR" -type f -name '*.jsonl' -delete 2>/dev/null || true
+for akte in "$hier"/befehle.d/*.jsonl; do
+  install -m 0644 "$akte" "$BEFDIR/$(basename "$akte")"
+done
+
+printf '%s\n' "$hier" > "$QUELLORT"
+
+echo 'Deutschland Anschnur Muschel wurde eingerichtet.'
+echo "  $BINDIR/muschel"
+echo "  $BEFDIR"

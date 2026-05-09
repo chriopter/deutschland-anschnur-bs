@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+
+VORBAU="${PREFIX:-/usr/local}"
+BINDIR="$VORBAU/bin"
+DATDIR="$VORBAU/share/deutschland-anschnur-muschel"
+
+rm -f "$BINDIR/muschel" "$BINDIR/anschnur-pruefen"
+rm -rf "$DATDIR"
+
+echo 'Deutschland Anschnur Muschel wurde entfernt.'

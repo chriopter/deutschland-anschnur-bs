@@ -32,3 +32,11 @@ jobs:
 
       - name: Muschel prüfen
         run: python -m unittest tests/test_muschel.py -v
+
+      - name: Einrichtung prüfen
+        run: |
+          ziel="$(mktemp -d)"
+          PREFIX="$ziel" ./einrichten
+          "$ziel/bin/anschnur-pruefen"
+          "$ziel/bin/muschel" hilfe
+          PREFIX="$ziel" ./entfernen

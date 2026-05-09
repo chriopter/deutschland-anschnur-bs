@@ -16,6 +16,9 @@ def befehlsorte() -> list[Path]:
         return [Path(vorgabe)]
     rohorte = [
         Path(__file__).resolve().parent / "befehle.d",
+        Path(__file__).resolve().parent.parent / "share" / "deutschland-anschnur-muschel" / "befehle.d",
+        Path("/usr/local/share/deutschland-anschnur-muschel/befehle.d"),
+        Path("/usr/share/deutschland-anschnur-muschel/befehle.d"),
         Path("/usr/share/anschnur/befehle.d"),
     ]
     ergebnis: list[Path] = []
