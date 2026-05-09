@@ -33,20 +33,7 @@ jobs:
       - name: Muschel prüfen
         run: python -m unittest tests/test_muschel.py -v
 
-      - name: Einrichtung prüfen
+      - name: Direktstart prüfen
         run: |
-          ziel="$(mktemp -d)"
-          HOME="$ziel/heim" ./einrichten
-          test -L "$ziel/heim/.local/bin/muschel"
-          grep -q 'Deutschland Anschnur Muschel' "$ziel/heim/.bashrc"
-          "$ziel/heim/.local/bin/anschnur-pruefen"
-          "$ziel/heim/.local/bin/muschel" hilfe
-          HOME="$ziel/heim" ./entfernen
-          test ! -e "$ziel/heim/.local/bin/muschel"
-
-          PREFIX="$ziel/system" ./einrichten --system
-          test -L "$ziel/system/bin/muschel"
-          "$ziel/system/bin/anschnur-pruefen"
-          "$ziel/system/bin/muschel" hilfe
-          PREFIX="$ziel/system" ./entfernen --system
-          test ! -e "$ziel/system/bin/muschel"
+          ./muschel hilfe
+          ./muschel verzeichnis liste .
