@@ -1,0 +1,71 @@
+#!/bin/bash
+set -euo pipefail
+
+PACMAN_BEFEHL="${PACMAN_BEFEHL:-/usr/bin/pacman}"
+
+zeige_hilfe() {
+  cat <<'EOF'
+Hapsmann, zuständig für Paketangelegenheiten:
+  hapsmann erneuern                    - erneuert Paketbestand und System
+  hapsmann suchen <Begriff>            - sucht verfügbare Pakete
+  hapsmann zeigen <Paket>              - zeigt ein eingerichtetes Paket
+  hapsmann fernzeigen <Paket>          - zeigt ein verfügbares Paket
+  hapsmann installieren <Paket...>     - richtet Pakete ein
+  hapsmann entfernen <Paket...>        - entfernt Pakete samt Folgebestand
+  hapsmann bestand                     - listet eingerichtete Pakete
+  hapsmann aufräumen                   - räumt den Paketzwischenspeicher auf
+EOF
+}
+
+verlange_argumente() {
+  local vorgang="$1"
+  shift
+  if [[ "$#" -eq 0 ]]; then
+    echo "Bescheid des Hapsmanns: Für \"${vorgang}\" fehlt ein Gegenstand." >&2
+    exit 2
+  fi
+}
+
+vorgang="${1:-hilfe}"
+if [[ "$#" -gt 0 ]]; then
+  shift
+fi
+
+case "${vorgang}" in
+  hilfe|--hilfe|-h)
+    zeige_hilfe
+    ;;
+  erneuern)
+    exec "${PACMAN_BEFEHL}" -Syu "$@"
+    ;;
+  suchen)
+    verlange_argumente "suchen" "$@"
+    exec "${PACMAN_BEFEHL}" -Ss "$@"
+    ;;
+  zeigen)
+    verlange_argumente "zeigen" "$@"
+    exec "${PACMAN_BEFEHL}" -Qi "$@"
+    ;;
+  fernzeigen)
+    verlange_argumente "fernzeigen" "$@"
+    exec "${PACMAN_BEFEHL}" -Si "$@"
+    ;;
+  installieren)
+    verlange_argumente "installieren" "$@"
+    exec "${PACMAN_BEFEHL}" -S "$@"
+    ;;
+  entfernen)
+    verlange_argumente "entfernen" "$@"
+    exec "${PACMAN_BEFEHL}" -Rns "$@"
+    ;;
+  bestand)
+    exec "${PACMAN_BEFEHL}" -Q "$@"
+    ;;
+  aufraeumen|aufräumen)
+    exec "${PACMAN_BEFEHL}" -Sc "$@"
+    ;;
+  *)
+    echo "Bescheid des Hapsmanns: Der Vorgang \"${vorgang}\" ist nicht zugelassen." >&2
+    exit 2
+    ;;
+esac

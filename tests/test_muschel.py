@@ -1,19 +1,37 @@
 import os
 import subprocess
+import tempfile
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MUSCHEL = ROOT / "pakete" / "anschnur-muschel" / "muschel"
+HAPSMANN = ROOT / "pakete" / "anschnur-muschel" / "hapsmann"
 
 
-def run_muschel(input_text, env_path=None):
+def run_muschel(input_text, env_path=None, extra_env=None):
     env = os.environ.copy()
     if env_path is not None:
         env["PATH"] = env_path
+    if extra_env:
+        env.update(extra_env)
     return subprocess.run(
         ["/bin/bash", str(MUSCHEL)],
         input=input_text,
+        text=True,
+        capture_output=True,
+        env=env,
+        cwd=ROOT,
+        check=False,
+    )
+
+
+def run_hapsmann(*args, pacman_path=None):
+    env = os.environ.copy()
+    if pacman_path is not None:
+        env["PACMAN_BEFEHL"] = str(pacman_path)
+    return subprocess.run(
+        ["/bin/bash", str(HAPSMANN), *args],
         text=True,
         capture_output=True,
         env=env,
@@ -46,6 +64,7 @@ class MuschelTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0)
         self.assertIn("Zugelassene Amtsbefehle", result.stdout)
         self.assertIn("hilfe", result.stdout)
+        self.assertIn("hapsmann", result.stdout)
         self.assertIn("verlassen", result.stdout)
         self.assertNotIn("abmelden", result.stdout)
         self.assertNotIn("ende", result.stdout)
@@ -62,6 +81,51 @@ class MuschelTests(unittest.TestCase):
 
         self.assertEqual(result.returncode, 0)
         self.assertIn("Muschel wird ordnungsgemäß geschlossen", result.stdout)
+
+    def test_hapsmann_translates_update_inside_muschel(self):
+        with tempfile.TemporaryDirectory() as directory:
+            fake_pacman = Path(directory) / "pacman"
+            fake_pacman.write_text("#!/bin/sh\nprintf '%s\\n' \"$*\"\n")
+            fake_pacman.chmod(0o755)
+
+            result = run_muschel(
+                "hapsmann erneuern\n",
+                extra_env={"PACMAN_BEFEHL": str(fake_pacman)},
+            )
+
+        self.assertEqual(result.returncode, 0)
+        self.assertIn("-Syu", result.stdout)
+
+
+class HapsmannTests(unittest.TestCase):
+    def test_translates_package_operations(self):
+        with tempfile.TemporaryDirectory() as directory:
+            fake_pacman = Path(directory) / "pacman"
+            fake_pacman.write_text("#!/bin/sh\nprintf '%s\\n' \"$*\"\n")
+            fake_pacman.chmod(0o755)
+
+            cases = {
+                ("erneuern",): "-Syu",
+                ("suchen", "muschel"): "-Ss muschel",
+                ("zeigen", "anschnur-muschel"): "-Qi anschnur-muschel",
+                ("fernzeigen", "anschnur-muschel"): "-Si anschnur-muschel",
+                ("installieren", "anschnur-muschel"): "-S anschnur-muschel",
+                ("entfernen", "vim"): "-Rns vim",
+                ("bestand",): "-Q",
+                ("aufraeumen",): "-Sc",
+            }
+
+            for eingabe, erwartung in cases.items():
+                with self.subTest(eingabe=eingabe):
+                    result = run_hapsmann(*eingabe, pacman_path=fake_pacman)
+                    self.assertEqual(result.returncode, 0)
+                    self.assertEqual(result.stdout.strip(), erwartung)
+
+    def test_rejects_unknown_hapsmann_operation(self):
+        result = run_hapsmann("vollzerstoerung")
+
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("nicht zugelassen", result.stderr)
 
 
 if __name__ == "__main__":

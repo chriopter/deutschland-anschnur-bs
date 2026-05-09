@@ -8,14 +8,30 @@ Ein lokalisiertes Bogenleinux-Derivat mit `muschel`, einer erlaubnisbasierten Kl
 
 Einige angelsächsische Restbegriffe verbleiben aufgrund technischer Zuständigkeitsbindung bis zur späteren Verdeutschungsverfügung im Bestand.
 
-## Muschel
+## Befehle
+
+### Muschel
 
 | Befehl | Dienstliche Wirkung |
 | --- | --- |
 | `hilfe` | erteilt eine knappe Befehlsauskunft |
+| `hapsmann` | bearbeitet Paketangelegenheiten |
 | `verlassen` | beendet den Muschelvorgang ordnungsgemäß |
 
 Alle übrigen Eingaben werden amtlich beanstandet. Die Muschel teilt dabei mit, ob der angelsächsische Fremdbefehl im System vorhanden, aber noch nicht freigegeben ist.
+
+### Hapsmann
+
+| Befehl | Dienstliche Wirkung |
+| --- | --- |
+| `hapsmann erneuern` | erneuert Paketbestand und System |
+| `hapsmann suchen <Begriff>` | sucht verfügbare Pakete |
+| `hapsmann zeigen <Paket>` | zeigt ein eingerichtetes Paket |
+| `hapsmann fernzeigen <Paket>` | zeigt ein verfügbares Paket |
+| `hapsmann installieren <Paket...>` | richtet Pakete ein |
+| `hapsmann entfernen <Paket...>` | entfernt Pakete samt Folgebestand |
+| `hapsmann bestand` | listet eingerichtete Pakete |
+| `hapsmann aufräumen` | räumt den Paketzwischenspeicher auf |
 
 Die Muschel wird als Paket `anschnur-muschel` bereitgestellt. Gewöhnliche Bogenleinux-Erneuerung bezieht dadurch zugleich die neueste Muschel aus der Deutschland-Anschnur-Paketablage.
 
@@ -51,6 +67,7 @@ Die Muschel wird als Paket `anschnur-muschel` bereitgestellt. Gewöhnliche Bogen
 | --- | --- |
 | Weichware | Ausführbarer und verwaltbarer Programmbestand |
 | Muschel | Erlaubnisbasierte Befehlsannahmestelle |
+| Hapsmann | Paketfresser für Paketangelegenheiten |
 | Hilfe | Auskunft über zugelassene Muschel-Befehle |
 | Paket | Programmpaket |
 | Dienstgeist | Hintergrunddienst |
