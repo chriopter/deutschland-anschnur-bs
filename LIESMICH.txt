@@ -25,6 +25,8 @@ cd ~/.deutschland-anschnur-muschel
 git pull --ff-only
 ```
 
+Beim Start meldet die Muschel verfügbare Erneuerungen von selbst.
+
 ### Start
 
 ```bash

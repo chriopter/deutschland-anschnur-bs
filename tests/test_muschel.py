@@ -1,14 +1,28 @@
+import contextlib
+import importlib.machinery
+import importlib.util
+import io
 import os
 import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import Mock, patch
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MUSCHEL = ROOT / "muschel"
 PRUEFER = ROOT / "anschnur-pruefen"
 BEFEHLE = ROOT / "befehle.d"
+
+
+def lade_muschel_modul():
+    loader = importlib.machinery.SourceFileLoader("anschnur_muschel_test", str(MUSCHEL))
+    spec = importlib.util.spec_from_loader(loader.name, loader)
+    assert spec is not None
+    modul = importlib.util.module_from_spec(spec)
+    loader.exec_module(modul)
+    return modul
 
 
 def run_muschel(input_text=None, *args, env_path=None, befehle=None):
@@ -112,6 +126,72 @@ class MuschelTests(unittest.TestCase):
 
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("Befehlsakten in Ordnung", result.stdout)
+
+    def test_update_check_offers_available_update_and_respects_decline(self):
+        modul = lade_muschel_modul()
+        befehle_alt = os.environ.get("ANSCHNUR_BEFEHLE")
+        os.environ["ANSCHNUR_BEFEHLE"] = str(BEFEHLE)
+        try:
+            muschel = modul.Muschel()
+        finally:
+            if befehle_alt is None:
+                os.environ.pop("ANSCHNUR_BEFEHLE", None)
+            else:
+                os.environ["ANSCHNUR_BEFEHLE"] = befehle_alt
+
+        def git_lauf(befehl, **_kwargs):
+            if befehl[3:5] == ["rev-parse", "--is-inside-work-tree"]:
+                return subprocess.CompletedProcess(befehl, 0, stdout="true\n")
+            if befehl[3:5] == ["fetch", "--quiet"]:
+                return subprocess.CompletedProcess(befehl, 0, stdout="")
+            if befehl[3:5] == ["rev-list", "--left-right"]:
+                return subprocess.CompletedProcess(befehl, 0, stdout="0 2\n")
+            if befehl[3:5] == ["pull", "--ff-only"]:
+                raise AssertionError("pull darf bei Ablehnung nicht laufen")
+            raise AssertionError(f"unerwarteter Befehl: {befehl}")
+
+        with patch.object(modul.subprocess, "run", side_effect=git_lauf):
+            ausgabe = io.StringIO()
+            with contextlib.redirect_stdout(ausgabe):
+                muschel.pruefe_aktualisierung(lambda _frage: "n")
+
+        self.assertIn("2 Aktualisierung(en) verfügbar", ausgabe.getvalue())
+        self.assertIn("Aktualisierung zurückgestellt", ausgabe.getvalue())
+
+    def test_update_check_pulls_when_user_accepts(self):
+        modul = lade_muschel_modul()
+        befehle_alt = os.environ.get("ANSCHNUR_BEFEHLE")
+        os.environ["ANSCHNUR_BEFEHLE"] = str(BEFEHLE)
+        try:
+            muschel = modul.Muschel()
+        finally:
+            if befehle_alt is None:
+                os.environ.pop("ANSCHNUR_BEFEHLE", None)
+            else:
+                os.environ["ANSCHNUR_BEFEHLE"] = befehle_alt
+        muschel.lade_befehle = Mock()
+        gelaufen = []
+
+        def git_lauf(befehl, **_kwargs):
+            gelaufen.append(befehl[3])
+            if befehl[3:5] == ["rev-parse", "--is-inside-work-tree"]:
+                return subprocess.CompletedProcess(befehl, 0, stdout="true\n")
+            if befehl[3:5] == ["fetch", "--quiet"]:
+                return subprocess.CompletedProcess(befehl, 0, stdout="")
+            if befehl[3:5] == ["rev-list", "--left-right"]:
+                return subprocess.CompletedProcess(befehl, 0, stdout="0 1\n")
+            if befehl[3:5] == ["pull", "--ff-only"]:
+                return subprocess.CompletedProcess(befehl, 0, stdout="")
+            raise AssertionError(f"unerwarteter Befehl: {befehl}")
+
+        with patch.object(modul.subprocess, "run", side_effect=git_lauf):
+            ausgabe = io.StringIO()
+            with contextlib.redirect_stdout(ausgabe):
+                muschel.pruefe_aktualisierung(lambda _frage: "ja")
+
+        self.assertIn("pull", gelaufen)
+        muschel.lade_befehle.assert_called_once_with()
+        self.assertIn("Aktualisierung bezogen", ausgabe.getvalue())
 
 
 if __name__ == "__main__":

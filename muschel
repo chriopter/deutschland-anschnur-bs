@@ -9,6 +9,7 @@ import shlex
 import subprocess
 import sys
 from pathlib import Path
+from typing import Callable
 
 def befehlsorte() -> list[Path]:
     vorgabe = os.environ.get("ANSCHNUR_BEFEHLE")
@@ -236,8 +237,73 @@ class Muschel:
             return
         self.verarbeite_teile(teile)
 
+    def pruefe_aktualisierung(self, frage: Callable[[str], str] = input) -> None:
+        if os.environ.get("ANSCHNUR_AKTUALISIERUNG", "1") in {"0", "nein", "aus"}:
+            return
+        quelle = Path(__file__).resolve().parent
+        if not (quelle / ".git").exists():
+            return
+
+        try:
+            innen = subprocess.run(
+                ["git", "-C", str(quelle), "rev-parse", "--is-inside-work-tree"],
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.DEVNULL,
+                timeout=3,
+                check=False,
+            )
+        except (OSError, subprocess.TimeoutExpired):
+            return
+        if innen.returncode != 0 or innen.stdout.strip() != "true":
+            return
+
+        try:
+            subprocess.run(
+                ["git", "-C", str(quelle), "fetch", "--quiet", "--prune"],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                timeout=10,
+                check=False,
+            )
+            stand = subprocess.run(
+                ["git", "-C", str(quelle), "rev-list", "--left-right", "--count", "HEAD...@{u}"],
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.DEVNULL,
+                timeout=3,
+                check=False,
+            )
+        except (OSError, subprocess.TimeoutExpired):
+            return
+        if stand.returncode != 0:
+            return
+        teile = stand.stdout.split()
+        if len(teile) != 2:
+            return
+        try:
+            rueckstand = int(teile[1])
+        except ValueError:
+            return
+        if rueckstand <= 0:
+            return
+
+        print(f"Bescheid der Muschelbehörde: {rueckstand} Aktualisierung(en) verfügbar.")
+        antwort = frage("Jetzt beziehen? [j/N] ").strip().lower()
+        if antwort not in {"j", "ja", "y", "yes"}:
+            print("Aktualisierung zurückgestellt.")
+            return
+
+        vorgang = subprocess.run(["git", "-C", str(quelle), "pull", "--ff-only"], check=False)
+        if vorgang.returncode == 0:
+            self.lade_befehle()
+            print("Aktualisierung bezogen. Bei Muscheländerungen bitte neu starten.")
+        else:
+            print("Bescheid der Muschelbehörde: Aktualisierung konnte nicht bezogen werden.")
+
     def schleife(self) -> None:
         if sys.stdin.isatty():
+            self.pruefe_aktualisierung()
             print("Deutschland Anschnur Muschel")
             print("Geben Sie 'hilfe' ein.")
         for zeile in sys.stdin:
