@@ -6,11 +6,11 @@
 
 Ein lokalisiertes Bogenleinux-Derivat mit `muschel`, einer erlaubnisbasierten Kleinmuschel.
 
-Jede Änderung auf dem Hauptzweig `haupt` veranlasst automatisch eine neue DIN-Abbildfertigung, ein neues Muschelpaket und eine erneuerte Paketablage; das jeweils neueste DIN-Abbild liegt als Änderungsanlage im Handlungslauf: [DIN bauen](https://github.com/chriopter/deutschland-anschnur-bs/actions/workflows/din-bauen.yml?query=branch%3Ahaupt).
-
 Einige angelsächsische Restbegriffe verbleiben aufgrund technischer Zuständigkeitsbindung bis zur späteren Verdeutschungsverfügung im Bestand.
 
 ## DIN-Abbild
+
+Jede Änderung auf dem Hauptzweig `haupt` veranlasst automatisch eine neue DIN-Abbildfertigung, ein neues Muschelpaket und eine erneuerte Paketablage; das jeweils neueste DIN-Abbild liegt als Änderungsanlage im Handlungslauf: [DIN bauen](https://github.com/chriopter/deutschland-anschnur-bs/actions/workflows/din-bauen.yml?query=branch%3Ahaupt).
 
 Die Paketablage für laufende Erneuerungen liegt unter: [Deutschland-Anschnur-Paketablage](https://chriopter.github.io/deutschland-anschnur-bs/x86_64/).
 

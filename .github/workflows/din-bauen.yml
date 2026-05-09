@@ -89,21 +89,6 @@ jobs:
           cd ausgabe
           sha256sum *.iso > SHA256SUMMEN
 
-      - name: Paketablage als Netzbestand vorbereiten
-        if: github.event_name == 'push' && github.ref == 'refs/heads/haupt'
-        run: |
-          cp ausgabe/SHA256SUMMEN paketablage/SHA256SUMMEN-DIN
-
-      - name: Paketablage hochreichen
-        if: github.event_name == 'push' && github.ref == 'refs/heads/haupt'
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: paketablage
-
-      - name: Paketablage veröffentlichen
-        if: github.event_name == 'push' && github.ref == 'refs/heads/haupt'
-        uses: actions/deploy-pages@v4
-
       - name: DIN als Änderungsanlage bereitstellen
         uses: actions/upload-artifact@v4
         with:
@@ -113,3 +98,27 @@ jobs:
             ausgabe/SHA256SUMMEN
           if-no-files-found: error
           retention-days: 14
+
+      - name: Paketablage als Netzbestand vorbereiten
+        if: github.event_name == 'push' && github.ref == 'refs/heads/haupt'
+        run: |
+          cp ausgabe/SHA256SUMMEN paketablage/SHA256SUMMEN-DIN
+
+      - name: Paketablage als Änderungsanlage bereitstellen
+        uses: actions/upload-artifact@v4
+        with:
+          name: deutschland-anschnur-paketablage-${{ github.sha }}
+          path: paketablage
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Paketablage hochreichen
+        if: github.event_name == 'push' && github.ref == 'refs/heads/haupt'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: paketablage
+
+      - name: Paketablage veröffentlichen
+        if: github.event_name == 'push' && github.ref == 'refs/heads/haupt'
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
