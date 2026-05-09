@@ -10,6 +10,12 @@ Jede Änderung auf dem Hauptzweig `haupt` veranlasst automatisch eine neue DIN-A
 
 Einige angelsächsische Restbegriffe verbleiben aufgrund technischer Zuständigkeitsbindung bis zur späteren Verdeutschungsverfügung im Bestand.
 
+## DIN-Abbild
+
+Das jeweils neueste DIN-Abbild liegt als Änderungsanlage im Handlungslauf: [DIN bauen](https://github.com/chriopter/deutschland-anschnur-bs/actions/workflows/din-bauen.yml?query=branch%3Ahaupt).
+
+Die Paketablage für laufende Erneuerungen liegt unter: [Deutschland-Anschnur-Paketablage](https://chriopter.github.io/deutschland-anschnur-bs/x86_64/).
+
 ## Muschel
 
 | Befehl | Dienstliche Wirkung |
