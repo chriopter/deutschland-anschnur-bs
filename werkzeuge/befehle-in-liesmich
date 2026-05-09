@@ -36,6 +36,8 @@ def befehlsname(eintrag: dict) -> str:
 
 
 def hauptbefehl(eintrag: dict) -> str:
+    if eintrag.get("typ") == "alias" and eintrag.get("ziel"):
+        return eintrag["ziel"][0]
     return eintrag["befehl"][0]
 
 
@@ -55,10 +57,14 @@ def html_zelle(wert: str) -> str:
     return html.escape(str(wert)).replace("\n", " ")
 
 
-def unredlicher_befehl(eintrag: dict) -> str:
+def unredlicher_befehl(eintrag: dict, akten: dict[tuple[str, ...], dict] | None = None) -> str:
     typ = eintrag.get("typ")
     if typ == "exec":
         return Path(eintrag["programm"]).name
+    if typ == "alias" and akten is not None:
+        ziel = tuple(eintrag.get("ziel", []))
+        if ziel in akten:
+            return unredlicher_befehl(akten[ziel], akten)
     if typ == "builtin":
         return {"cd": "cd", "hilfe": "help", "verlassen": "exit", "neu_laden": "source"}.get(
             str(eintrag.get("funktion", "")), "muschel"
@@ -67,10 +73,11 @@ def unredlicher_befehl(eintrag: dict) -> str:
 
 
 def unredliche_befehle(daten: list[dict]) -> str:
+    akten = {tuple(eintrag["befehl"]): eintrag for eintrag in daten}
     werte = []
     gesehen = set()
     for eintrag in daten:
-        wert = unredlicher_befehl(eintrag)
+        wert = unredlicher_befehl(eintrag, akten)
         if wert and wert not in gesehen:
             gesehen.add(wert)
             werte.append(wert)

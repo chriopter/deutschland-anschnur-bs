@@ -209,21 +209,11 @@ muschel verzeichnis liste .
 <summary><code>fundbuero</code></summary>
 <ul>
 <li><code>fundbuero</code> — sucht Programmfundstellen</li>
-</ul>
-</details>
-</td>
-<td><code>whereis</code></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>fundbüro</code></summary>
-<ul>
 <li><code>fundbüro</code> — sucht Programmfundstellen</li>
 </ul>
 </details>
 </td>
-<td><code></code></td>
+<td><code>whereis</code></td>
 </tr>
 <tr>
 <td>
@@ -283,35 +273,25 @@ muschel verzeichnis liste .
 <summary><code>paeckle</code></summary>
 <ul>
 <li><code>paeckle erneuern</code> — erneuert den Päckchenbestand</li>
-<li><code>paeckle hochziehen</code> — zieht eingerichtete Päckchen hoch</li>
-<li><code>paeckle suchen</code> — sucht verfügbare Päckchen</li>
-<li><code>paeckle zeigen</code> — zeigt ein verfügbares Päckchen</li>
-<li><code>paeckle installieren</code> — richtet Päckchen ein</li>
-<li><code>paeckle entfernen</code> — entfernt Päckchen</li>
-<li><code>paeckle fortwerfen</code> — wirft überflüssige Päckchen fort</li>
-<li><code>paeckle bestand</code> — listet eingerichtete Päckchen</li>
-</ul>
-</details>
-</td>
-<td><code>apt</code></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>päckle</code></summary>
-<ul>
 <li><code>päckle erneuern</code> — erneuert den Päckchenbestand</li>
+<li><code>paeckle hochziehen</code> — zieht eingerichtete Päckchen hoch</li>
 <li><code>päckle hochziehen</code> — zieht eingerichtete Päckchen hoch</li>
+<li><code>paeckle suchen</code> — sucht verfügbare Päckchen</li>
 <li><code>päckle suchen</code> — sucht verfügbare Päckchen</li>
+<li><code>paeckle zeigen</code> — zeigt ein verfügbares Päckchen</li>
 <li><code>päckle zeigen</code> — zeigt ein verfügbares Päckchen</li>
+<li><code>paeckle installieren</code> — richtet Päckchen ein</li>
 <li><code>päckle installieren</code> — richtet Päckchen ein</li>
+<li><code>paeckle entfernen</code> — entfernt Päckchen</li>
 <li><code>päckle entfernen</code> — entfernt Päckchen</li>
+<li><code>paeckle fortwerfen</code> — wirft überflüssige Päckchen fort</li>
 <li><code>päckle fortwerfen</code> — wirft überflüssige Päckchen fort</li>
+<li><code>paeckle bestand</code> — listet eingerichtete Päckchen</li>
 <li><code>päckle bestand</code> — listet eingerichtete Päckchen</li>
 </ul>
 </details>
 </td>
-<td><code></code></td>
+<td><code>apt</code></td>
 </tr>
 </tbody>
 </table>
@@ -519,23 +499,13 @@ muschel verzeichnis liste .
 <summary><code>reisszu</code></summary>
 <ul>
 <li><code>reisszu mach</code> — macht Reißverschlussarchiv</li>
-<li><code>reisszu auf</code> — öffnet Reißverschlussarchiv</li>
-</ul>
-</details>
-</td>
-<td><code>zip, unzip</code></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>reißzu</code></summary>
-<ul>
 <li><code>reißzu mach</code> — macht Reißverschlussarchiv</li>
+<li><code>reisszu auf</code> — öffnet Reißverschlussarchiv</li>
 <li><code>reißzu auf</code> — öffnet Reißverschlussarchiv</li>
 </ul>
 </details>
 </td>
-<td><code></code></td>
+<td><code>zip, unzip</code></td>
 </tr>
 </tbody>
 </table>
@@ -569,21 +539,11 @@ muschel verzeichnis liste .
 <summary><code>reichsgeraet</code></summary>
 <ul>
 <li><code>reichsgeraet ausweis</code> — zeigt Geräteausweis</li>
-</ul>
-</details>
-</td>
-<td><code>uname</code></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>reichsgerät</code></summary>
-<ul>
 <li><code>reichsgerät ausweis</code> — zeigt Geräteausweis</li>
 </ul>
 </details>
 </td>
-<td><code></code></td>
+<td><code>uname</code></td>
 </tr>
 <tr>
 <td>
@@ -680,23 +640,13 @@ muschel verzeichnis liste .
 <summary><code>geraet</code></summary>
 <ul>
 <li><code>geraet dranhaeng</code> — hängt Gerät ein</li>
-<li><code>geraet abhaeng</code> — hängt Gerät aus</li>
-</ul>
-</details>
-</td>
-<td><code>mount, umount</code></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>gerät</code></summary>
-<ul>
 <li><code>gerät dranhäng</code> — hängt Gerät ein</li>
+<li><code>geraet abhaeng</code> — hängt Gerät aus</li>
 <li><code>gerät abhäng</code> — hängt Gerät aus</li>
 </ul>
 </details>
 </td>
-<td><code></code></td>
+<td><code>mount, umount</code></td>
 </tr>
 <tr>
 <td>
