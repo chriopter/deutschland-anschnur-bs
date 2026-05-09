@@ -29,8 +29,6 @@ jobs:
     container:
       image: archlinux:latest
       options: --privileged
-    environment:
-      name: github-pages
     steps:
       - name: Grundwerkzeuge bereitstellen
         run: pacman -Sy --noconfirm --needed git ca-certificates
