@@ -33,6 +33,11 @@ jobs:
       - name: Muschel prüfen
         run: python -m unittest tests/test_muschel.py -v
 
+      - name: Liesmich-Befehle prüfen
+        run: |
+          ./befehle-in-liesmich
+          git diff --exit-code -- LIESMICH.txt
+
       - name: Direktstart prüfen
         run: |
           ./muschel hilfe

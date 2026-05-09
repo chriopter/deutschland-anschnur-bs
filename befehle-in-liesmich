@@ -1,0 +1,89 @@
+#!/usr/bin/env python3
+"""Schreibt das BEFEHLE-Kapitel der Liesmichakte aus befehle.d/*.jsonl."""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+WURZEL = Path(__file__).resolve().parent
+LIESMICH = WURZEL / "LIESMICH.txt"
+BEFEHLE = WURZEL / "befehle.d"
+ANFANG = "<!-- BEFEHLE:ANFANG -->"
+ENDE = "<!-- BEFEHLE:ENDE -->"
+
+NAMEN = {
+    "basis": "Grundbestand",
+    "hapsmann": "Hapsmann",
+    "hafener": "Hafener",
+}
+REIHENFOLGE = ["basis", "hapsmann", "hafener"]
+MUSCHEL_FUNKTIONEN = {"hilfe", "verlassen", "neu_laden"}
+
+
+def eintraege(datei: Path) -> list[dict]:
+    daten = []
+    with datei.open(encoding="utf-8") as handle:
+        for zeile in handle:
+            zeile = zeile.strip()
+            if zeile and not zeile.startswith("#"):
+                daten.append(json.loads(zeile))
+    return daten
+
+
+def zeile(eintrag: dict) -> str:
+    befehl = " ".join(eintrag["befehl"])
+    beschreibung = eintrag.get("beschreibung", "dienstlich erfasst")
+    return f"| `{befehl}` | {beschreibung} |"
+
+
+def tabelle(titel: str, daten: list[dict]) -> list[str]:
+    if not daten:
+        return []
+    return [
+        f"### {titel}",
+        "",
+        "| Befehl | Wirkung |",
+        "| --- | --- |",
+        *(zeile(eintrag) for eintrag in daten),
+        "",
+    ]
+
+
+def befehlsblock() -> str:
+    teile = [ANFANG, ""]
+    dateien = {datei.stem: datei for datei in BEFEHLE.glob("*.jsonl")}
+    namen = [name for name in REIHENFOLGE if name in dateien]
+    namen.extend(sorted(name for name in dateien if name not in namen))
+    for name in namen:
+        datei = dateien[name]
+        daten = eintraege(datei)
+        if name == "basis":
+            muschel = [e for e in daten if e.get("typ") == "builtin" and e.get("funktion") in MUSCHEL_FUNKTIONEN]
+            grund = [e for e in daten if e not in muschel]
+            teile.extend(tabelle("Muschel", muschel))
+            teile.extend(tabelle("Grundbestand", grund))
+        else:
+            teile.extend(tabelle(NAMEN.get(name, name.capitalize()), daten))
+    teile.append(ENDE)
+    return "\n".join(teile)
+
+
+def main() -> int:
+    text = LIESMICH.read_text(encoding="utf-8")
+    block = befehlsblock()
+    if ANFANG in text and ENDE in text:
+        davor, rest = text.split(ANFANG, 1)
+        _, danach = rest.split(ENDE, 1)
+        neu = davor.rstrip() + "\n\n" + block + danach
+    else:
+        marker = "## BEFEHLE\n"
+        davor, danach = text.split(marker, 1)
+        ende = danach.split("## Lexikon", 1)[1]
+        neu = davor + marker + "\n" + block + "\n\n## Lexikon" + ende
+    LIESMICH.write_text(neu, encoding="utf-8")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

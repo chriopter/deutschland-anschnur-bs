@@ -27,37 +27,63 @@ muschel verzeichnis liste .
 
 ## BEFEHLE
 
+<!-- BEFEHLE:ANFANG -->
+
 ### Muschel
 
 | Befehl | Wirkung |
 | --- | --- |
-| `hilfe` | zeigt die Befehlsauskunft |
-| `verlassen` | schließt die Muschel |
-| `muschel neu laden` | lädt Befehlsakten neu |
+| `hilfe` | zeigt diese dienstliche Auskunft |
+| `verlassen` | schließt die Muschel ordnungsgemäß |
+| `muschel neu laden` | lädt die Befehlsakten neu |
 
 ### Grundbestand
 
 | Befehl | Wirkung |
 | --- | --- |
 | `verzeichnis ort` | zeigt den derzeitigen Ort |
-| `verzeichnis liste [Pfad]` | zeigt einen Verzeichnisbestand |
-| `verzeichnis wechsel <Pfad>` | wechselt den derzeitigen Ort |
-| `datei lesen <Pfad>` | liest eine Datei |
-| `datei zeigen <Pfad>` | zeigt Dateiangaben |
+| `verzeichnis liste` | zeigt einen Verzeichnisbestand |
+| `verzeichnis wechsel` | wechselt den derzeitigen Ort |
+| `datei lesen` | liest eine Datei |
+| `datei zeigen` | zeigt Dateiangaben |
 | `netz stand` | zeigt Netzanschriften |
 | `netz weg` | zeigt Netzwege |
-| `netz pruefen <Ziel>` | prüft die Erreichbarkeit |
+| `netz pruefen` | prüft die Erreichbarkeit |
+| `netz prüfen` | prüft die Erreichbarkeit |
 | `dienst liste` | zeigt laufende Dienste |
-| `dienst stand <Name>` | zeigt einen Dienststand |
+| `dienst stand` | zeigt einen Dienststand |
 | `system stand` | zeigt Systemstand |
 | `system kennung` | zeigt Betriebssystemkennung |
+| `system neustarten` | startet neu |
+| `system ausschalten` | schaltet aus |
 
-### Weitere Befehlsakten
+### Hapsmann
 
 | Befehl | Wirkung |
 | --- | --- |
-| `hapsmann erneuern` | erneuert Paketbestand und System, sofern Hapsmann-Bestand vorhanden ist |
-| `hafener zusammensetz hoch --dämonisiere` | übersetzt einen Hafener-Zusammensetzvorgang |
+| `hapsmann erneuern` | erneuert Paketbestand und System |
+| `hapsmann suchen` | sucht verfügbare Pakete |
+| `hapsmann zeigen` | zeigt ein eingerichtetes Paket |
+| `hapsmann fernzeigen` | zeigt ein verfügbares Paket |
+| `hapsmann installieren` | richtet Pakete ein |
+| `hapsmann entfernen` | entfernt Pakete samt Folgebestand |
+| `hapsmann bestand` | listet eingerichtete Pakete |
+| `hapsmann aufraeumen` | räumt den Paketzwischenspeicher auf |
+| `hapsmann aufräumen` | räumt den Paketzwischenspeicher auf |
+
+### Hafener
+
+| Befehl | Wirkung |
+| --- | --- |
+| `hafener bilder` | zeigt Hafenerbilder |
+| `hafener bestand` | zeigt Hafenvorgänge |
+| `hafener lauf` | startet einen Hafenvorgang |
+| `hafener zusammensetz zieh` | zieht zusammengesetzte Hafenerbilder |
+| `hafener zusammensetz hoch` | startet zusammengesetzte Hafendienste |
+| `hafener zusammensetz runter` | beendet zusammengesetzte Hafendienste |
+| `hafener zusammensetz tagebuch` | zeigt Hafentagebuch |
+
+<!-- BEFEHLE:ENDE -->
 
 ## Lexikon
 
