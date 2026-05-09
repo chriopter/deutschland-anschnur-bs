@@ -132,6 +132,32 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/haupt'
         run: |
           cp ausgabe/SHA256SUMMEN paketablage/SHA256SUMMEN-DIN
+          touch paketablage/.nojekyll
+          for endung in db files; do
+            pfad="paketablage/x86_64/deutschland-anschnur.${endung}"
+            if [ -L "${pfad}" ]; then
+              ziel="$(readlink -f "${pfad}")"
+              rm "${pfad}"
+              cp "${ziel}" "${pfad}"
+            fi
+          done
+          cat > paketablage/index.html <<'HTML'
+          <!doctype html>
+          <meta charset="utf-8">
+          <title>Deutschland Anschnur Paketablage</title>
+          <h1>Deutschland Anschnur Paketablage</h1>
+          <p><a href="x86_64/">x86_64</a></p>
+          HTML
+          cat > paketablage/x86_64/index.html <<'HTML'
+          <!doctype html>
+          <meta charset="utf-8">
+          <title>Deutschland Anschnur Paketablage x86_64</title>
+          <h1>Deutschland Anschnur Paketablage x86_64</h1>
+          <ul>
+            <li><a href="deutschland-anschnur.db">Paketverzeichnis</a></li>
+            <li><a href="deutschland-anschnur.files">Dateiverzeichnis</a></li>
+          </ul>
+          HTML
 
       - name: Paketablage als Änderungsanlage bereitstellen
         uses: actions/upload-artifact@v4
