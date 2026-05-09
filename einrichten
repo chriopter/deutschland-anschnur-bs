@@ -9,8 +9,8 @@ case "${1:-}" in
   -h|--hilfe)
     cat <<'EOF'
 Gebrauch:
-  ./einrichten            benutzerlokal nach ~/.local einrichten
-  sudo ./einrichten --system  systemweit nach /usr/local einrichten
+  ./einrichten                 muschel benutzerlokal erreichbar machen
+  sudo ./einrichten --system   muschel systemweit erreichbar machen
 EOF
     exit 0
     ;;
@@ -20,17 +20,6 @@ EOF
     ;;
 esac
 
-if [ "$modus" = "system" ]; then
-  VORBAU="${PREFIX:-/usr/local}"
-else
-  VORBAU="${PREFIX:-$HOME/.local}"
-fi
-
-BINDIR="$VORBAU/bin"
-DATDIR="$VORBAU/share/deutschland-anschnur-muschel"
-BEFDIR="$DATDIR/befehle.d"
-QUELLORT="$DATDIR/quellort"
-
 hier=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 
 if [ ! -f "$hier/muschel" ] || [ ! -f "$hier/anschnur-pruefen" ] || [ ! -d "$hier/befehle.d" ]; then
@@ -38,25 +27,39 @@ if [ ! -f "$hier/muschel" ] || [ ! -f "$hier/anschnur-pruefen" ] || [ ! -d "$hie
   exit 1
 fi
 
-install -d "$BINDIR" "$BEFDIR"
-install -m 0755 "$hier/muschel" "$BINDIR/muschel"
-install -m 0755 "$hier/anschnur-pruefen" "$BINDIR/anschnur-pruefen"
+if [ "$modus" = "system" ]; then
+  bindir="${PREFIX:-/usr/local}/bin"
+else
+  bindir="${PREFIX:-$HOME/.local}/bin"
+fi
 
-find "$BEFDIR" -type f -name '*.jsonl' -delete 2>/dev/null || true
-for akte in "$hier"/befehle.d/*.jsonl; do
-  install -m 0644 "$akte" "$BEFDIR/$(basename "$akte")"
-done
+mkdir -p "$bindir"
+ln -sfn "$hier/muschel" "$bindir/muschel"
+ln -sfn "$hier/anschnur-pruefen" "$bindir/anschnur-pruefen"
 
-printf '%s\n' "$hier" > "$QUELLORT"
+if [ "$modus" = "benutzer" ]; then
+  rc="$HOME/.bashrc"
+  zeile='export PATH="$HOME/.local/bin:$PATH"'
+  if [ -f "$rc" ]; then
+    if ! grep -Fxq "$zeile" "$rc"; then
+      {
+        echo ''
+        echo '# Deutschland Anschnur Muschel'
+        echo "$zeile"
+      } >> "$rc"
+    fi
+  else
+    {
+      echo '# Deutschland Anschnur Muschel'
+      echo "$zeile"
+    } > "$rc"
+  fi
+fi
 
-echo 'Deutschland Anschnur Muschel wurde eingerichtet.'
-echo "  $BINDIR/muschel"
-echo "  $BEFDIR"
+echo 'Deutschland Anschnur Muschel wurde erreichbar gemacht.'
+echo "  $bindir/muschel"
 
 case ":$PATH:" in
-  *":$BINDIR:"*) ;;
-  *)
-    echo "Hinweis: $BINDIR ist nicht im Suchpfad."
-    echo "Für diese Sitzung: PATH=\"$BINDIR:\$PATH\""
-    ;;
+  *":$bindir:"*) ;;
+  *) echo "Hinweis: Neue Bash-Sitzung öffnen oder ausführen: PATH=\"$bindir:\$PATH\"" ;;
 esac

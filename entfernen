@@ -9,8 +9,8 @@ case "${1:-}" in
   -h|--hilfe)
     cat <<'EOF'
 Gebrauch:
-  ./entfernen            benutzerlokale Einrichtung entfernen
-  sudo ./entfernen --system  systemweite Einrichtung entfernen
+  ./entfernen                 benutzerlokale Erreichbarkeit entfernen
+  sudo ./entfernen --system   systemweite Erreichbarkeit entfernen
 EOF
     exit 0
     ;;
@@ -21,15 +21,11 @@ EOF
 esac
 
 if [ "$modus" = "system" ]; then
-  VORBAU="${PREFIX:-/usr/local}"
+  bindir="${PREFIX:-/usr/local}/bin"
 else
-  VORBAU="${PREFIX:-$HOME/.local}"
+  bindir="${PREFIX:-$HOME/.local}/bin"
 fi
 
-BINDIR="$VORBAU/bin"
-DATDIR="$VORBAU/share/deutschland-anschnur-muschel"
+rm -f "$bindir/muschel" "$bindir/anschnur-pruefen"
 
-rm -f "$BINDIR/muschel" "$BINDIR/anschnur-pruefen"
-rm -rf "$DATDIR"
-
-echo 'Deutschland Anschnur Muschel wurde entfernt.'
+echo 'Deutschland Anschnur Muschel wurde aus dem Befehlsweg entfernt.'

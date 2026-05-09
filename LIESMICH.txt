@@ -29,7 +29,6 @@ sudo ./einrichten --system
 ```bash
 cd deutschland-anschnur-muschel
 git pull --ff-only
-./einrichten
 ```
 
 ### Start
