@@ -4,7 +4,7 @@
 iso_name="deutschland-anschnur-bs"
 iso_label="DABS_$(date +%Y%m)"
 iso_publisher="Deutschland Anschnur BS <https://example.invalid>"
-iso_application="Deutschland Anschnur BS Live/Rescue ISO"
+iso_application="Deutschland Anschnur BS Betriebsabbild"
 iso_version="$(date +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=("iso")

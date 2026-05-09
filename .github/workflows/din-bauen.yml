@@ -1,4 +1,4 @@
-name: ISO bauen
+name: DIN bauen
 
 on:
   push:
@@ -13,55 +13,59 @@ permissions:
   contents: read
 
 concurrency:
-  group: iso-${{ github.ref }}
+  group: din-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  iso-bauen:
-    name: ArchISO bauen
+  din-bauen:
+    name: Bogen-DIN bauen
     runs-on: ubuntu-latest
     container:
       image: archlinux:latest
       options: --privileged
     steps:
-      - name: Abhaengigkeiten installieren
+      - name: Abhängigkeiten installieren
         run: pacman -Syu --noconfirm --needed git python archiso grub syslinux squashfs-tools xorriso dosfstools mtools libisoburn
 
       - name: Quelltext auschecken
         uses: actions/checkout@v4
 
-      - name: Muschel pruefen
+      - name: Muschel prüfen
         run: python -m unittest tests/test_muschel.py -v
 
       - name: Bogen-Referenzprofil vorbereiten
         run: |
           rm -rf bauprofil
           cp -a /usr/share/archiso/configs/releng bauprofil
-          cp -a iso/archiso-profile/airootfs/. bauprofil/airootfs/
+          cp -a din/bogenprofil/airootfs/. bauprofil/airootfs/
           python - <<'PY'
           from pathlib import Path
           profil = Path('bauprofil/profiledef.sh')
           text = profil.read_text()
-          ersetzungen = {
-              'iso_name="archlinux"': 'iso_name="deutschland-anschnur-bs"',
-              'iso_label="ARCH_$(date +%Y%m)"': 'iso_label="DABS_$(date +%Y%m)"',
-              'iso_publisher="Arch Linux <https://archlinux.org>"': 'iso_publisher="Deutschland Anschnur BS <https://github.com/chriopter/deutschland-anschnur-bs>"',
-              'iso_application="Arch Linux Live/Rescue CD"': 'iso_application="Deutschland Anschnur BS Live-Abbild"',
+          vorgaben = {
+              'iso_name': 'deutschland-anschnur-bs',
+              'iso_label': 'DABS_$(date +%Y%m)',
+              'iso_publisher': 'Deutschland Anschnur BS <https://github.com/chriopter/deutschland-anschnur-bs>',
+              'iso_application': 'Deutschland Anschnur BS Betriebsabbild',
           }
-          for alt, neu in ersetzungen.items():
-              text = text.replace(alt, neu)
-          profil.write_text(text)
+          zeilen = []
+          for zeile in text.splitlines():
+              schluessel = zeile.split('=', 1)[0]
+              if schluessel in vorgaben:
+                  zeile = f'{schluessel}="{vorgaben[schluessel]}"'
+              zeilen.append(zeile)
+          profil.write_text('\n'.join(zeilen) + '\n')
           PY
 
-      - name: ISO bauen
+      - name: DIN bauen
         run: mkarchiso -v -w arbeit -o ausgabe bauprofil
 
-      - name: Pruefsummen erzeugen
+      - name: Prüfsummen erzeugen
         run: |
           cd ausgabe
           sha256sum *.iso > SHA256SUMMEN
 
-      - name: ISO als Aenderungsartefakt hochladen
+      - name: DIN als Änderungsanlage bereitstellen
         uses: actions/upload-artifact@v4
         with:
           name: deutschland-anschnur-bs-${{ github.sha }}
