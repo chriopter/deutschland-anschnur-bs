@@ -27,7 +27,7 @@ Alle übrigen Eingaben werden amtlich beanstandet. Die Muschel teilt dabei mit, 
 | Deutsches Aktenzeichen | Auflösung |
 | --- | --- |
 | DIN | Datenträgerabbild in Normallage |
-| Hartware | Hardware; körperlicher Gerätebestand |
+| Hartware | Körperlicher Gerätebestand |
 
 </details>
 
@@ -36,13 +36,13 @@ Alle übrigen Eingaben werden amtlich beanstandet. Die Muschel teilt dabei mit, 
 
 | Deutsches Aktenzeichen | Auflösung |
 | --- | --- |
-| Weichware | Software; ausführbarer und verwaltbarer Programmbestand |
-| Muschel | Shell; erlaubnisbasierte Befehlsannahmestelle |
+| Weichware | Ausführbarer und verwaltbarer Programmbestand |
+| Muschel | Erlaubnisbasierte Befehlsannahmestelle |
 | Hilfe | Auskunft über zugelassene Muschel-Befehle |
 | Paket | Softwarepaket |
 | Dienstgeist | Hintergrunddienst |
-| Ablagestelle | Repository; geordnete Quelltextablage |
-| Änderungseintrag | Commit; nachweisbare Änderung im Quelltextbestand |
+| Ablagestelle | Geordnete Quelltextablage |
+| Änderungseintrag | Nachweisbare Änderung im Quelltextbestand |
 
 </details>
 
@@ -52,10 +52,10 @@ Alle übrigen Eingaben werden amtlich beanstandet. Die Muschel teilt dabei mit, 
 | Deutsches Aktenzeichen | Auflösung |
 | --- | --- |
 | DABS | Deutschland Anschnur Betriebssystem |
-| Bogen | Arch; Bogenleinux-Grundlage |
+| Bogen | Bogenleinux-Grundlage |
 | Einix | Einheitlicher Informations- und Rechendienst nach X-Schreibweise |
 | Leinux | Linus-Einix; von Linus abgeleiteter einheitlicher Informations- und Rechendienst |
-| Wurzel | Root; oberste Rechte- und Dateibaumebene |
+| Wurzel | Oberste Rechte- und Dateibaumebene |
 | Kern | Kern des Betriebssystems |
 
 </details>
