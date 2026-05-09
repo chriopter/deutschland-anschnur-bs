@@ -3,7 +3,9 @@
 
 from __future__ import annotations
 
+import html
 import json
+from collections import OrderedDict
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parents[1]
@@ -12,13 +14,16 @@ BEFEHLE = WURZEL / "befehle.d"
 ANFANG = "<!-- BEFEHLE:ANFANG -->"
 ENDE = "<!-- BEFEHLE:ENDE -->"
 
-NAMEN = {
-    "basis": "Grundbestand",
-    "hapsmann": "Hapsmann",
-    "hafener": "Hafener",
-}
-REIHENFOLGE = ["basis", "hapsmann", "hafener"]
+DATEI_REIHENFOLGE = ["basis", "hapsmann", "hafener"]
+GRUPPEN_REIHENFOLGE = ["Muschel", "Grundbestand", "Hapsmann", "Hafener"]
 MUSCHEL_FUNKTIONEN = {"hilfe", "verlassen", "neu_laden"}
+
+
+RESTTEXT = {
+    "verbieten": "keine weiteren Angaben",
+    "ein_wert": "genau eine weitere Angabe",
+    "anhaengen": "weitere Angaben werden angehängt",
+}
 
 
 def eintraege(datei: Path) -> list[dict]:
@@ -31,40 +36,76 @@ def eintraege(datei: Path) -> list[dict]:
     return daten
 
 
-def zeile(eintrag: dict) -> str:
-    befehl = " ".join(eintrag["befehl"])
+def befehlsname(eintrag: dict) -> str:
+    return " ".join(eintrag["befehl"])
+
+
+def gruppe(eintrag: dict) -> str:
+    if eintrag.get("gruppe"):
+        return str(eintrag["gruppe"])
+    if eintrag.get("typ") == "builtin" and eintrag.get("funktion") in MUSCHEL_FUNKTIONEN:
+        return "Muschel"
+    return "Grundbestand"
+
+
+def code(wert: str) -> str:
+    return f"`{wert}`"
+
+
+def html_code(wert: str) -> str:
+    return f"<code>{html.escape(wert)}</code>"
+
+
+def ausfuehrung(eintrag: dict) -> str | None:
+    typ = eintrag.get("typ")
+    if typ == "exec":
+        teile = [eintrag["programm"], *eintrag.get("argumente", [])]
+        return " ".join(teile)
+    if typ == "builtin":
+        return f"eingebaut: {eintrag.get('funktion')}"
+    if typ == "alias":
+        return "Alias auf: " + " ".join(eintrag.get("ziel", []))
+    return None
+
+
+def befehlsdetails(eintrag: dict) -> list[str]:
+    name = befehlsname(eintrag)
     beschreibung = eintrag.get("beschreibung", "dienstlich erfasst")
-    return f"| `{befehl}` | {beschreibung} |"
-
-
-def tabelle(titel: str, daten: list[dict]) -> list[str]:
-    if not daten:
-        return []
-    return [
-        f"### {titel}",
-        "",
-        "| Befehl | Wirkung |",
-        "| --- | --- |",
-        *(zeile(eintrag) for eintrag in daten),
+    zeilen = [
+        "<details>",
+        f"<summary>{html_code(name)} — {html.escape(beschreibung)}</summary>",
         "",
     ]
+    lauf = ausfuehrung(eintrag)
+    if lauf:
+        zeilen.append(f"- Ausführung: {code(lauf)}")
+    zeilen.append(f"- Ordnung: {RESTTEXT.get(eintrag.get('rest', 'verbieten'), eintrag.get('rest', 'verbieten'))}")
+    if eintrag.get("optionen"):
+        zeilen.append("- Optionen:")
+        for deutsch, technisch in sorted(eintrag["optionen"].items()):
+            zeilen.append(f"  - {code(deutsch)} → {code(technisch)}")
+    zeilen.extend(["", "</details>", ""])
+    return zeilen
+
+
+def gruppierte_eintraege() -> OrderedDict[str, list[dict]]:
+    dateien = {datei.stem: datei for datei in BEFEHLE.glob("*.jsonl")}
+    namen = [name for name in DATEI_REIHENFOLGE if name in dateien]
+    namen.extend(sorted(name for name in dateien if name not in namen))
+
+    gruppen: OrderedDict[str, list[dict]] = OrderedDict((name, []) for name in GRUPPEN_REIHENFOLGE)
+    for name in namen:
+        for eintrag in eintraege(dateien[name]):
+            gruppen.setdefault(gruppe(eintrag), []).append(eintrag)
+    return OrderedDict((name, daten) for name, daten in gruppen.items() if daten)
 
 
 def befehlsblock() -> str:
     teile = [ANFANG, ""]
-    dateien = {datei.stem: datei for datei in BEFEHLE.glob("*.jsonl")}
-    namen = [name for name in REIHENFOLGE if name in dateien]
-    namen.extend(sorted(name for name in dateien if name not in namen))
-    for name in namen:
-        datei = dateien[name]
-        daten = eintraege(datei)
-        if name == "basis":
-            muschel = [e for e in daten if e.get("typ") == "builtin" and e.get("funktion") in MUSCHEL_FUNKTIONEN]
-            grund = [e for e in daten if e not in muschel]
-            teile.extend(tabelle("Muschel", muschel))
-            teile.extend(tabelle("Grundbestand", grund))
-        else:
-            teile.extend(tabelle(NAMEN.get(name, name.capitalize()), daten))
+    for gruppenname, daten in gruppierte_eintraege().items():
+        teile.extend([f"### {gruppenname}", ""])
+        for eintrag in daten:
+            teile.extend(befehlsdetails(eintrag))
     teile.append(ENDE)
     return "\n".join(teile)
 
@@ -79,8 +120,7 @@ def main() -> int:
     else:
         marker = "## BEFEHLE\n"
         davor, danach = text.split(marker, 1)
-        ende = danach.split("## Lexikon", 1)[1]
-        neu = davor + marker + "\n" + block + "\n\n## Lexikon" + ende
+        neu = davor + marker + "\n" + block + "\n"
     LIESMICH.write_text(neu, encoding="utf-8")
     return 0
 

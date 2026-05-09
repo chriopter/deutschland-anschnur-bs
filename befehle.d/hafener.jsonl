@@ -1,7 +1,7 @@
-{"befehl":["hafener","bilder"],"typ":"exec","programm":"/usr/bin/docker","argumente":["images"],"rest":"verbieten","beschreibung":"zeigt Hafenerbilder"}
-{"befehl":["hafener","bestand"],"typ":"exec","programm":"/usr/bin/docker","argumente":["ps"],"rest":"anhaengen","beschreibung":"zeigt Hafenvorgänge"}
-{"befehl":["hafener","lauf"],"typ":"exec","programm":"/usr/bin/docker","argumente":["run"],"rest":"anhaengen","beschreibung":"startet einen Hafenvorgang"}
-{"befehl":["hafener","zusammensetz","zieh"],"typ":"exec","programm":"/usr/bin/docker","argumente":["compose","pull"],"rest":"anhaengen","beschreibung":"zieht zusammengesetzte Hafenerbilder"}
-{"befehl":["hafener","zusammensetz","hoch"],"typ":"exec","programm":"/usr/bin/docker","argumente":["compose","up"],"optionen":{"--dämonisiere":"--detach","--daemonisiere":"--detach","--neu-bauen":"--build"},"rest":"anhaengen","beschreibung":"startet zusammengesetzte Hafendienste"}
-{"befehl":["hafener","zusammensetz","runter"],"typ":"exec","programm":"/usr/bin/docker","argumente":["compose","down"],"rest":"anhaengen","beschreibung":"beendet zusammengesetzte Hafendienste"}
-{"befehl":["hafener","zusammensetz","tagebuch"],"typ":"exec","programm":"/usr/bin/docker","argumente":["compose","logs"],"optionen":{"--verfolge":"--follow","--schwanz":"--tail"},"rest":"anhaengen","beschreibung":"zeigt Hafentagebuch"}
+{"befehl":["hafener","bilder"],"gruppe":"Hafener","typ":"exec","programm":"/usr/bin/docker","argumente":["images"],"rest":"verbieten","beschreibung":"zeigt Hafenerbilder"}
+{"befehl":["hafener","bestand"],"gruppe":"Hafener","typ":"exec","programm":"/usr/bin/docker","argumente":["ps"],"rest":"anhaengen","beschreibung":"zeigt Hafenvorgänge"}
+{"befehl":["hafener","lauf"],"gruppe":"Hafener","typ":"exec","programm":"/usr/bin/docker","argumente":["run"],"rest":"anhaengen","beschreibung":"startet einen Hafenvorgang"}
+{"befehl":["hafener","zusammensetz","zieh"],"gruppe":"Hafener","typ":"exec","programm":"/usr/bin/docker","argumente":["compose","pull"],"rest":"anhaengen","beschreibung":"zieht zusammengesetzte Hafenerbilder"}
+{"befehl":["hafener","zusammensetz","hoch"],"gruppe":"Hafener","typ":"exec","programm":"/usr/bin/docker","argumente":["compose","up"],"optionen":{"--dämonisiere":"--detach","--daemonisiere":"--detach","--neu-bauen":"--build"},"rest":"anhaengen","beschreibung":"startet zusammengesetzte Hafendienste"}
+{"befehl":["hafener","zusammensetz","runter"],"gruppe":"Hafener","typ":"exec","programm":"/usr/bin/docker","argumente":["compose","down"],"rest":"anhaengen","beschreibung":"beendet zusammengesetzte Hafendienste"}
+{"befehl":["hafener","zusammensetz","tagebuch"],"gruppe":"Hafener","typ":"exec","programm":"/usr/bin/docker","argumente":["compose","logs"],"optionen":{"--verfolge":"--follow","--schwanz":"--tail"},"rest":"anhaengen","beschreibung":"zeigt Hafentagebuch"}

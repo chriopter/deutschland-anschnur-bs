@@ -1,18 +1,18 @@
-{"befehl":["hilfe"],"typ":"builtin","funktion":"hilfe","rest":"verbieten","beschreibung":"zeigt diese dienstliche Auskunft"}
-{"befehl":["verlassen"],"typ":"builtin","funktion":"verlassen","rest":"verbieten","beschreibung":"schließt die Muschel ordnungsgemäß"}
-{"befehl":["muschel","neu","laden"],"typ":"builtin","funktion":"neu_laden","rest":"verbieten","beschreibung":"lädt die Befehlsakten neu"}
-{"befehl":["verzeichnis","ort"],"typ":"exec","programm":"/usr/bin/pwd","argumente":[],"rest":"verbieten","beschreibung":"zeigt den derzeitigen Ort"}
-{"befehl":["verzeichnis","liste"],"typ":"exec","programm":"/usr/bin/ls","argumente":["-la"],"rest":"anhaengen","beschreibung":"zeigt einen Verzeichnisbestand"}
-{"befehl":["verzeichnis","wechsel"],"typ":"builtin","funktion":"cd","rest":"ein_wert","beschreibung":"wechselt den derzeitigen Ort"}
-{"befehl":["datei","lesen"],"typ":"exec","programm":"/usr/bin/cat","argumente":[],"rest":"ein_wert","beschreibung":"liest eine Datei"}
-{"befehl":["datei","zeigen"],"typ":"exec","programm":"/usr/bin/stat","argumente":[],"rest":"ein_wert","beschreibung":"zeigt Dateiangaben"}
-{"befehl":["netz","stand"],"typ":"exec","programm":"/usr/bin/ip","argumente":["addr","show"],"rest":"verbieten","beschreibung":"zeigt Netzanschriften"}
-{"befehl":["netz","weg"],"typ":"exec","programm":"/usr/bin/ip","argumente":["route","show"],"rest":"verbieten","beschreibung":"zeigt Netzwege"}
-{"befehl":["netz","pruefen"],"typ":"exec","programm":"/usr/bin/ping","argumente":["-c","4"],"rest":"ein_wert","beschreibung":"prüft die Erreichbarkeit"}
-{"befehl":["netz","prüfen"],"typ":"alias","ziel":["netz","pruefen"],"rest":"anhaengen","beschreibung":"prüft die Erreichbarkeit"}
-{"befehl":["dienst","liste"],"typ":"exec","programm":"/usr/bin/systemctl","argumente":["--type=service","--state=running","--no-pager"],"rest":"verbieten","beschreibung":"zeigt laufende Dienste"}
-{"befehl":["dienst","stand"],"typ":"exec","programm":"/usr/bin/systemctl","argumente":["status","--no-pager"],"rest":"ein_wert","beschreibung":"zeigt einen Dienststand"}
-{"befehl":["system","stand"],"typ":"exec","programm":"/usr/bin/sh","argumente":["-c","uname -a; uptime; free -h; df -h"],"rest":"verbieten","beschreibung":"zeigt Systemstand"}
-{"befehl":["system","kennung"],"typ":"exec","programm":"/usr/bin/cat","argumente":["/etc/os-release"],"rest":"verbieten","beschreibung":"zeigt Betriebssystemkennung"}
-{"befehl":["system","neustarten"],"typ":"exec","programm":"/usr/bin/systemctl","argumente":["reboot"],"rest":"verbieten","beschreibung":"startet neu"}
-{"befehl":["system","ausschalten"],"typ":"exec","programm":"/usr/bin/systemctl","argumente":["poweroff"],"rest":"verbieten","beschreibung":"schaltet aus"}
+{"befehl":["hilfe"],"gruppe":"Muschel","typ":"builtin","funktion":"hilfe","rest":"verbieten","beschreibung":"zeigt diese dienstliche Auskunft"}
+{"befehl":["verlassen"],"gruppe":"Muschel","typ":"builtin","funktion":"verlassen","rest":"verbieten","beschreibung":"schließt die Muschel ordnungsgemäß"}
+{"befehl":["muschel","neu","laden"],"gruppe":"Muschel","typ":"builtin","funktion":"neu_laden","rest":"verbieten","beschreibung":"lädt die Befehlsakten neu"}
+{"befehl":["verzeichnis","ort"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/pwd","argumente":[],"rest":"verbieten","beschreibung":"zeigt den derzeitigen Ort"}
+{"befehl":["verzeichnis","liste"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/ls","argumente":["-la"],"rest":"anhaengen","beschreibung":"zeigt einen Verzeichnisbestand"}
+{"befehl":["verzeichnis","wechsel"],"gruppe":"Grundbestand","typ":"builtin","funktion":"cd","rest":"ein_wert","beschreibung":"wechselt den derzeitigen Ort"}
+{"befehl":["datei","lesen"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/cat","argumente":[],"rest":"ein_wert","beschreibung":"liest eine Datei"}
+{"befehl":["datei","zeigen"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/stat","argumente":[],"rest":"ein_wert","beschreibung":"zeigt Dateiangaben"}
+{"befehl":["netz","stand"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/ip","argumente":["addr","show"],"rest":"verbieten","beschreibung":"zeigt Netzanschriften"}
+{"befehl":["netz","weg"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/ip","argumente":["route","show"],"rest":"verbieten","beschreibung":"zeigt Netzwege"}
+{"befehl":["netz","pruefen"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/ping","argumente":["-c","4"],"rest":"ein_wert","beschreibung":"prüft die Erreichbarkeit"}
+{"befehl":["netz","prüfen"],"gruppe":"Grundbestand","typ":"alias","ziel":["netz","pruefen"],"rest":"anhaengen","beschreibung":"prüft die Erreichbarkeit"}
+{"befehl":["dienst","liste"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/systemctl","argumente":["--type=service","--state=running","--no-pager"],"rest":"verbieten","beschreibung":"zeigt laufende Dienste"}
+{"befehl":["dienst","stand"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/systemctl","argumente":["status","--no-pager"],"rest":"ein_wert","beschreibung":"zeigt einen Dienststand"}
+{"befehl":["system","stand"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/sh","argumente":["-c","uname -a; uptime; free -h; df -h"],"rest":"verbieten","beschreibung":"zeigt Systemstand"}
+{"befehl":["system","kennung"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/cat","argumente":["/etc/os-release"],"rest":"verbieten","beschreibung":"zeigt Betriebssystemkennung"}
+{"befehl":["system","neustarten"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/systemctl","argumente":["reboot"],"rest":"verbieten","beschreibung":"startet neu"}
+{"befehl":["system","ausschalten"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/systemctl","argumente":["poweroff"],"rest":"verbieten","beschreibung":"schaltet aus"}

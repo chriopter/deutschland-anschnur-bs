@@ -22,7 +22,7 @@ Bei Änderungen an `befehle.d/*.jsonl`, `bin/muschel` oder sonstigem befehlswirk
 ./werkzeuge/befehle-in-liesmich
 ```
 
-Das Kapitel `## BEFEHLE` in `LIESMICH.txt` wird nicht händisch gepflegt.
+Das Kapitel `## BEFEHLE` in `LIESMICH.txt` wird nicht händisch gepflegt. Befehlsgruppen werden in den JSONL-Akten über `gruppe` geführt.
 
 ## Änderungseintragsordnung
 

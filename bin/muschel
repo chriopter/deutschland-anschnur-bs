@@ -81,6 +81,9 @@ class Muschel:
         befehl = eintrag.get("befehl")
         if not isinstance(befehl, list) or not befehl or not all(isinstance(wort, str) and wort for wort in befehl):
             raise Befehlsfehler(f"{ort}: Befehl muss nichtleere Wortliste sein")
+        gruppe = eintrag.get("gruppe", "Grundbestand")
+        if not isinstance(gruppe, str) or not gruppe:
+            raise Befehlsfehler(f"{ort}: Gruppe muss Textwert sein")
         typ = eintrag.get("typ")
         if typ not in ERLAUBTE_TYPEN:
             raise Befehlsfehler(f"{ort}: unzulaessiger Typ: {typ}")
