@@ -29,13 +29,14 @@ muschel verzeichnis liste .
 
 <!-- BEFEHLE:ANFANG -->
 
+### Muschel (eingebaut)
+
 <table>
 <thead>
-<tr><th>Befehlskategorie</th><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>
+<tr><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>
 </thead>
 <tbody>
 <tr>
-<td rowspan="3"><strong>Muschel (eingebaut)</strong></td>
 <td>
 <details>
 <summary><code>hilfe</code></summary>
@@ -68,8 +69,17 @@ muschel verzeichnis liste .
 </td>
 <td><code>source</code></td>
 </tr>
+</tbody>
+</table>
+
+### Grundbestand
+
+<table>
+<thead>
+<tr><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>
+</thead>
+<tbody>
 <tr>
-<td rowspan="17"><strong>Grundbestand</strong></td>
 <td>
 <details>
 <summary><code>verzeichnis</code></summary>
@@ -303,8 +313,17 @@ muschel verzeichnis liste .
 </td>
 <td><code></code></td>
 </tr>
+</tbody>
+</table>
+
+### Textwesen
+
+<table>
+<thead>
+<tr><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>
+</thead>
+<tbody>
 <tr>
-<td rowspan="14"><strong>Textwesen</strong></td>
 <td>
 <details>
 <summary><code>text</code></summary>
@@ -461,8 +480,17 @@ muschel verzeichnis liste .
 </td>
 <td><code>dirname</code></td>
 </tr>
+</tbody>
+</table>
+
+### Paketwerk
+
+<table>
+<thead>
+<tr><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>
+</thead>
+<tbody>
 <tr>
-<td rowspan="4"><strong>Paketwerk</strong></td>
 <td>
 <details>
 <summary><code>bindball</code></summary>
@@ -509,8 +537,17 @@ muschel verzeichnis liste .
 </td>
 <td><code></code></td>
 </tr>
+</tbody>
+</table>
+
+### Systemwesen
+
+<table>
+<thead>
+<tr><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>
+</thead>
+<tbody>
 <tr>
-<td rowspan="19"><strong>Systemwesen</strong></td>
 <td>
 <details>
 <summary><code>vorgang</code></summary>
@@ -727,8 +764,17 @@ muschel verzeichnis liste .
 </td>
 <td><code>dmesg</code></td>
 </tr>
+</tbody>
+</table>
+
+### Netzwesen
+
+<table>
+<thead>
+<tr><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>
+</thead>
+<tbody>
 <tr>
-<td rowspan="10"><strong>Netzwesen</strong></td>
 <td>
 <details>
 <summary><code>netz</code></summary>
@@ -842,8 +888,17 @@ muschel verzeichnis liste .
 </td>
 <td><code>iptables</code></td>
 </tr>
+</tbody>
+</table>
+
+### Entwicklung
+
+<table>
+<thead>
+<tr><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>
+</thead>
+<tbody>
 <tr>
-<td rowspan="9"><strong>Entwicklung</strong></td>
 <td>
 <details>
 <summary><code>astmann</code></summary>
@@ -963,8 +1018,17 @@ muschel verzeichnis liste .
 </td>
 <td><code>nano</code></td>
 </tr>
+</tbody>
+</table>
+
+### Applikationen
+
+<table>
+<thead>
+<tr><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>
+</thead>
+<tbody>
 <tr>
-<td rowspan="1"><strong>Applikationen</strong></td>
 <td>
 <details>
 <summary><code>hafener</code></summary>
