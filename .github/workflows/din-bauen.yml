@@ -10,9 +10,12 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 concurrency:
   group: din-${{ github.ref }}
@@ -99,7 +102,23 @@ jobs:
       - name: Prüfsummen erzeugen
         run: |
           cd ausgabe
-          sha256sum *.iso > SHA256SUMMEN
+          cp *.iso deutschland-anschnur-bs-aktuell.iso
+          sha256sum deutschland-anschnur-bs-aktuell.iso > SHA256SUMMEN
+
+      - name: DIN als aktuelle Freigabe bereitstellen
+        if: github.event_name == 'push' && github.ref == 'refs/heads/haupt'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: aktuell
+          name: Aktuelle DIN-Anlage
+          body: Automatisch erneuerte DIN-Anlage des Hauptzweigs.
+          make_latest: true
+          prerelease: false
+          overwrite_files: true
+          fail_on_unmatched_files: true
+          files: |
+            ausgabe/deutschland-anschnur-bs-aktuell.iso
+            ausgabe/SHA256SUMMEN
 
       - name: DIN als Änderungsanlage bereitstellen
         uses: actions/upload-artifact@v4

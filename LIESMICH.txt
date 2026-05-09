@@ -4,7 +4,7 @@
 
 # Deutschland Anschnur BS
 
-Ein lokalisiertes Bogenleinux-Derivat mit `muschel`, einer erlaubnisbasierten Kleinmuschel. Neueste DIN-Anlage: [DIN bauen](https://github.com/chriopter/deutschland-anschnur-bs/actions/workflows/din-bauen.yml?query=branch%3Ahaupt).
+Ein lokalisiertes Bogenleinux-Derivat mit `muschel`, einer erlaubnisbasierten Kleinmuschel. Neueste DIN-Anlage: [Herunterladen](https://github.com/chriopter/deutschland-anschnur-bs/releases/latest/download/deutschland-anschnur-bs-aktuell.iso).
 
 Einige angelsächsische Restbegriffe verbleiben aufgrund technischer Zuständigkeitsbindung bis zur späteren Verdeutschungsverfügung im Bestand.
 
