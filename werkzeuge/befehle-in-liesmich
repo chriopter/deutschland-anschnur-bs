@@ -55,10 +55,24 @@ def html_zelle(wert: str) -> str:
     return html.escape(str(wert)).replace("\n", " ")
 
 
+def unredlicher_befehl(eintrag: dict) -> str:
+    typ = eintrag.get("typ")
+    if typ == "exec":
+        programm = Path(eintrag["programm"]).name
+        teile = [programm, *eintrag.get("argumente", [])]
+        return " ".join(str(teil) for teil in teile)
+    if typ == "alias":
+        return "→ " + " ".join(eintrag.get("ziel", []))
+    if typ == "builtin":
+        return "muschel eingebaut"
+    return ""
+
+
 def befehlszeile(eintrag: dict, mit_hinweis: bool) -> str:
     zellen = [
         f"<td>{html_code(befehlsname(eintrag))}</td>",
         f"<td>{html_zelle(eintrag.get('beschreibung', 'dienstlich erfasst'))}</td>",
+        f"<td>{html_code(unredlicher_befehl(eintrag))}</td>",
     ]
     if mit_hinweis:
         zellen.append(f"<td>{html_zelle(eintrag.get('hinweis', ''))}</td>")
@@ -81,17 +95,16 @@ def gruppierte_eintraege() -> OrderedDict[str, OrderedDict[str, list[dict]]]:
 
 def hauptzeile(name: str, daten: list[dict]) -> list[str]:
     mit_hinweis = any(eintrag.get("hinweis") for eintrag in daten)
-    kopf = "<tr><th>Befehl</th><th>Zweck</th>"
+    kopf = "<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th>"
     if mit_hinweis:
         kopf += "<th>Hinweis</th>"
     kopf += "</tr>"
 
     zeilen = [
         "<tr>",
-        f"<td><strong>{html_code(name)}</strong></td>",
-        "<td>",
+        "<td colspan=\"2\">",
         "<details>",
-        "<summary>Unterbefehle</summary>",
+        f"<summary><strong>{html_code(name)}</strong></summary>",
         "<table>",
         "<thead>",
         kopf,
@@ -113,7 +126,7 @@ def gruppentabelle(hauptgruppen: OrderedDict[str, list[dict]]) -> list[str]:
     zeilen = [
         "<table>",
         "<thead>",
-        "<tr><th>Bereich</th><th>Befehle</th></tr>",
+        "<tr><th>Aufklappbarer Befehl</th></tr>",
         "</thead>",
         "<tbody>",
     ]
