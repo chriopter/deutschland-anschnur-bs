@@ -14,6 +14,16 @@ Angelsächsische Begriffe sind nicht zu verwenden, sofern eine deutsche oder ein
 
 Diese Vorgabe gilt besonders streng für Benutzerdokumentation, Liesmichakten, Hilfetexte, Fehlermeldungen und das Lexikon.
 
+## Befehlsverzeichnisordnung
+
+Bei Änderungen an `befehle.d/*.jsonl`, `bin/muschel` oder sonstigem befehlswirksamem Bestand ist stets auszuführen:
+
+```bash
+./werkzeuge/befehle-in-liesmich
+```
+
+Das Kapitel `## BEFEHLE` in `LIESMICH.txt` wird nicht händisch gepflegt.
+
 ## Änderungseintragsordnung
 
 Änderungseinträge für Deutschland Anschnur Muschel sind in deutscher Akten- und Verwaltungssprache zu verfassen.
