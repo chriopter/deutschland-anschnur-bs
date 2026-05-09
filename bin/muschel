@@ -343,8 +343,10 @@ class Muschel:
 
         zeilen = [
             "# Deutschland Anschnur Muschel: Bash-Betriebsraum",
-            "[ -r ~/.bashrc ] && . ~/.bashrc",
+            "# Dienstlich gekapselt: die private ~/.bashrc wird nicht eingelesen.",
+            "# Sonst koennen Aliasse, Promptprogramme oder exec-Zeilen die Amtsmuschel zerlegen.",
             f"__ANSCHNUR_MUSCHEL={muschelpfad}",
+            "export ANSCHNUR_IN_MUSCHEL=1",
             "PS1='muschel \\w > '",
             "hilfe() { \"$__ANSCHNUR_MUSCHEL\" hilfe \"$@\"; }",
             "verlassen() { exit; }",
@@ -377,7 +379,12 @@ class Muschel:
             if name in {"hilfe", "verlassen"}:
                 continue
             sicher = shlex.quote(name)
-            if name == "verzeichnis":
+            if name == "muschel":
+                zeilen.append(
+                    "muschel() { if [ $# -eq 0 ]; then printf '%s\\n' 'Muschel ist bereits geöffnet.'; "
+                    "else \"$__ANSCHNUR_MUSCHEL\" muschel \"$@\"; fi; }"
+                )
+            elif name == "verzeichnis":
                 zeilen.append(
                     "verzeichnis() { if [ \"$1\" = wechsel ]; then shift; cd \"$@\"; "
                     "else \"$__ANSCHNUR_MUSCHEL\" verzeichnis \"$@\"; fi; }"
