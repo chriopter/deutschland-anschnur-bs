@@ -18,11 +18,9 @@ echo 'alias muschel="$HOME/.deutschland-anschnur-muschel/muschel"' >> ~/.bashrc
 . ~/.bashrc
 ```
 
-### Erneuerung
-
 Die Muschel meldet verfügbare Erneuerungen beim Start.
 
-### Start
+**Muschel**
 
 ```bash
 muschel
