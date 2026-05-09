@@ -68,15 +68,19 @@ def unredlicher_befehl(eintrag: dict) -> str:
     return ""
 
 
-def befehlszeile(eintrag: dict, mit_hinweis: bool) -> str:
+def befehlszellen(eintrag: dict, mit_hinweis: bool) -> list[str]:
     zellen = [
-        f"<td>{html_code(befehlsname(eintrag))}</td>",
-        f"<td>{html_zelle(eintrag.get('beschreibung', 'dienstlich erfasst'))}</td>",
+        "<td>",
+        "<details>",
+        f"<summary>{html_code(befehlsname(eintrag))}</summary>",
+        f"<p>{html_zelle(eintrag.get('beschreibung', 'dienstlich erfasst'))}</p>",
+        "</details>",
+        "</td>",
         f"<td>{html_code(unredlicher_befehl(eintrag))}</td>",
     ]
     if mit_hinweis:
         zellen.append(f"<td>{html_zelle(eintrag.get('hinweis', ''))}</td>")
-    return "<tr>" + "".join(zellen) + "</tr>"
+    return zellen
 
 
 def gruppierte_eintraege() -> OrderedDict[str, OrderedDict[str, list[dict]]]:
@@ -93,45 +97,34 @@ def gruppierte_eintraege() -> OrderedDict[str, OrderedDict[str, list[dict]]]:
     return OrderedDict((name, daten) for name, daten in gruppen.items() if daten)
 
 
-def hauptzeile(name: str, daten: list[dict]) -> list[str]:
-    mit_hinweis = any(eintrag.get("hinweis") for eintrag in daten)
-    kopf = "<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th>"
+def hauptzeilen(name: str, daten: list[dict], mit_hinweis: bool) -> list[str]:
+    zeilen: list[str] = []
+    span = len(daten)
+    for nummer, eintrag in enumerate(daten):
+        zellen = ["<tr>"]
+        if nummer == 0:
+            zellen.append(f"<td rowspan=\"{span}\"><strong>{html_code(name)}</strong></td>")
+        zellen.extend(befehlszellen(eintrag, mit_hinweis))
+        zellen.append("</tr>")
+        zeilen.extend(zellen)
+    return zeilen
+
+
+def gruppentabelle(hauptgruppen: OrderedDict[str, list[dict]]) -> list[str]:
+    mit_hinweis = any(eintrag.get("hinweis") for daten in hauptgruppen.values() for eintrag in daten)
+    kopf = "<tr><th>Befehlskategorie</th><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th>"
     if mit_hinweis:
         kopf += "<th>Hinweis</th>"
     kopf += "</tr>"
-
     zeilen = [
-        "<tr>",
-        "<td colspan=\"2\">",
-        "<details>",
-        f"<summary><strong>{html_code(name)}</strong></summary>",
         "<table>",
         "<thead>",
         kopf,
         "</thead>",
         "<tbody>",
     ]
-    zeilen.extend(befehlszeile(eintrag, mit_hinweis) for eintrag in daten)
-    zeilen.extend([
-        "</tbody>",
-        "</table>",
-        "</details>",
-        "</td>",
-        "</tr>",
-    ])
-    return zeilen
-
-
-def gruppentabelle(hauptgruppen: OrderedDict[str, list[dict]]) -> list[str]:
-    zeilen = [
-        "<table>",
-        "<thead>",
-        "<tr><th>Aufklappbarer Befehl</th></tr>",
-        "</thead>",
-        "<tbody>",
-    ]
     for name, daten in hauptgruppen.items():
-        zeilen.extend(hauptzeile(name, daten))
+        zeilen.extend(hauptzeilen(name, daten, mit_hinweis))
     zeilen.extend(["</tbody>", "</table>", ""])
     return zeilen
 
