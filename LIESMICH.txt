@@ -22,6 +22,19 @@ Alle übrigen Eingaben werden amtlich beanstandet. Die Muschel teilt dabei mit, 
 ## Lexikon
 
 <details>
+<summary>Allgemein</summary>
+
+| Deutsches Aktenzeichen | Auflösung |
+| --- | --- |
+| Anschnur | Verbundener Betriebszustand |
+| Abschnur | Getrennter Betriebszustand |
+| Du-Röhre | Videodienst im Zwischennetz |
+| Heimseite | Eigene öffentliche Netzanschrift |
+| Zwischennetz | Weltweiter Rechnerverbund |
+
+</details>
+
+<details>
 <summary>Hartware</summary>
 
 | Deutsches Aktenzeichen | Auflösung |
