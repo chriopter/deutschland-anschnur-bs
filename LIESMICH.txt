@@ -10,6 +10,10 @@ Einige angelsächsische Restbegriffe verbleiben aufgrund technischer Zuständigk
 
 ## Befehle
 
+### Aktualisieren
+
+Ein eingerichtetes Deutschland Anschnur BS wird über `hapsmann erneuern` aktualisiert; die zugehörigen Anschnur-Pakete werden in der [Deutschland-Anschnur-Paketablage](https://chriopter.github.io/deutschland-anschnur-bs/x86_64/) gepflegt.
+
 ### Muschel
 
 | Befehl | Dienstliche Wirkung |
