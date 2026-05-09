@@ -214,17 +214,49 @@ muschel verzeichnis liste .
 <details>
 <summary><strong><code>hapsmann</code></strong></summary>
 
-| Befehl | Zweck |
-| --- | --- |
-| `hapsmann erneuern` | erneuert Paketbestand und System |
-| `hapsmann suchen` | sucht verfügbare Pakete |
-| `hapsmann zeigen` | zeigt ein eingerichtetes Paket |
-| `hapsmann fernzeigen` | zeigt ein verfügbares Paket |
-| `hapsmann installieren` | richtet Pakete ein |
-| `hapsmann entfernen` | entfernt Pakete samt Folgebestand |
-| `hapsmann bestand` | listet eingerichtete Pakete |
-| `hapsmann aufraeumen` | räumt den Paketzwischenspeicher auf |
-| `hapsmann aufräumen` | räumt den Paketzwischenspeicher auf |
+| Befehl | Zweck | Hinweis |
+| --- | --- | --- |
+| `hapsmann erneuern` | erneuert Paketbestand und System | Arch/pacman |
+| `hapsmann suchen` | sucht verfügbare Pakete | Arch/pacman |
+| `hapsmann zeigen` | zeigt ein eingerichtetes Paket | Arch/pacman |
+| `hapsmann fernzeigen` | zeigt ein verfügbares Paket | Arch/pacman |
+| `hapsmann installieren` | richtet Pakete ein | Arch/pacman |
+| `hapsmann entfernen` | entfernt Pakete samt Folgebestand | Arch/pacman |
+| `hapsmann bestand` | listet eingerichtete Pakete | Arch/pacman |
+| `hapsmann aufraeumen` | räumt den Paketzwischenspeicher auf | Arch/pacman |
+| `hapsmann aufräumen` | räumt den Paketzwischenspeicher auf | Arch/pacman |
+
+</details>
+
+<details>
+<summary><strong><code>paeckle</code></strong></summary>
+
+| Befehl | Zweck | Hinweis |
+| --- | --- | --- |
+| `paeckle erneuern` | erneuert den Päckchenbestand | Debian/Ubuntu/apt |
+| `paeckle hochziehen` | zieht eingerichtete Päckchen hoch | Debian/Ubuntu/apt |
+| `paeckle suchen` | sucht verfügbare Päckchen | Debian/Ubuntu/apt |
+| `paeckle zeigen` | zeigt ein verfügbares Päckchen | Debian/Ubuntu/apt |
+| `paeckle installieren` | richtet Päckchen ein | Debian/Ubuntu/apt |
+| `paeckle entfernen` | entfernt Päckchen | Debian/Ubuntu/apt |
+| `paeckle fortwerfen` | wirft überflüssige Päckchen fort | Debian/Ubuntu/apt |
+| `paeckle bestand` | listet eingerichtete Päckchen | Debian/Ubuntu/apt |
+
+</details>
+
+<details>
+<summary><strong><code>päckle</code></strong></summary>
+
+| Befehl | Zweck | Hinweis |
+| --- | --- | --- |
+| `päckle erneuern` | erneuert den Päckchenbestand | Debian/Ubuntu/apt |
+| `päckle hochziehen` | zieht eingerichtete Päckchen hoch | Debian/Ubuntu/apt |
+| `päckle suchen` | sucht verfügbare Päckchen | Debian/Ubuntu/apt |
+| `päckle zeigen` | zeigt ein verfügbares Päckchen | Debian/Ubuntu/apt |
+| `päckle installieren` | richtet Päckchen ein | Debian/Ubuntu/apt |
+| `päckle entfernen` | entfernt Päckchen | Debian/Ubuntu/apt |
+| `päckle fortwerfen` | wirft überflüssige Päckchen fort | Debian/Ubuntu/apt |
+| `päckle bestand` | listet eingerichtete Päckchen | Debian/Ubuntu/apt |
 
 </details>
 

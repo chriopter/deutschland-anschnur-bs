@@ -14,7 +14,7 @@ BEFEHLE = WURZEL / "befehle.d"
 ANFANG = "<!-- BEFEHLE:ANFANG -->"
 ENDE = "<!-- BEFEHLE:ENDE -->"
 
-DATEI_REIHENFOLGE = ["basis", "grundbestand-extra", "hapsmann", "textwesen", "paketwerk", "systemwesen", "netzwesen", "astmann", "hafener"]
+DATEI_REIHENFOLGE = ["basis", "grundbestand-extra", "hapsmann", "paeckle", "textwesen", "paketwerk", "systemwesen", "netzwesen", "astmann", "hafener"]
 GRUPPEN_REIHENFOLGE = ["Muschel", "Grundbestand", "Textwesen", "Paketwerk", "Systemwesen", "Netzwesen", "Entwicklung", "Applikationen"]
 GRUPPEN_TITEL = {
     "Muschel": "Muschel (eingebaut)",
@@ -59,10 +59,13 @@ def markdown_zelle(wert: str) -> str:
     return wert.replace("|", "\\|").replace("\n", " ")
 
 
-def befehlszeile(eintrag: dict) -> str:
+def befehlszeile(eintrag: dict, mit_hinweis: bool) -> str:
     name = markdown_zelle(code(befehlsname(eintrag)))
     beschreibung = markdown_zelle(eintrag.get("beschreibung", "dienstlich erfasst"))
-    return f"| {name} | {beschreibung} |"
+    zeile = f"| {name} | {beschreibung}"
+    if mit_hinweis:
+        zeile += f" | {markdown_zelle(eintrag.get('hinweis', ''))}"
+    return zeile + " |"
 
 
 def gruppierte_eintraege() -> OrderedDict[str, OrderedDict[str, list[dict]]]:
@@ -80,14 +83,17 @@ def gruppierte_eintraege() -> OrderedDict[str, OrderedDict[str, list[dict]]]:
 
 
 def hauptdetails(name: str, daten: list[dict]) -> list[str]:
+    mit_hinweis = any(eintrag.get("hinweis") for eintrag in daten)
+    kopf = "| Befehl | Zweck | Hinweis |" if mit_hinweis else "| Befehl | Zweck |"
+    trennung = "| --- | --- | --- |" if mit_hinweis else "| --- | --- |"
     zeilen = [
         "<details>",
         f"<summary><strong>{html_code(name)}</strong></summary>",
         "",
-        "| Befehl | Zweck |",
-        "| --- | --- |",
+        kopf,
+        trennung,
     ]
-    zeilen.extend(befehlszeile(eintrag) for eintrag in daten)
+    zeilen.extend(befehlszeile(eintrag, mit_hinweis) for eintrag in daten)
     zeilen.extend(["", "</details>", ""])
     return zeilen
 
