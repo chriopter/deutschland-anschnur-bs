@@ -8,9 +8,7 @@ Eine tabellengeführte Muschel zur Verdeutschung von Befehlen auf bestehenden Ei
 
 Einige angelsächsische Restbegriffe verbleiben aufgrund technischer Zuständigkeitsbindung bis zur späteren Verdeutschungsverfügung im Bestand.
 
-## Befehle
-
-### Einrichtung
+## Einrichtung
 
 ```bash
 git clone https://github.com/chriopter/deutschland-anschnur-muschel.git ~/.deutschland-anschnur-muschel
@@ -26,6 +24,8 @@ Die Muschel meldet verfügbare Erneuerungen beim Start.
 muschel
 muschel verzeichnis liste .
 ```
+
+## BEFEHLE
 
 ### Muschel
 
