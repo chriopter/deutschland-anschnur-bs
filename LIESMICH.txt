@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="medien/zeichen.png" alt="Deutschland Anschnur Dienstzeichen" width="300">
+  <img src="medien/zeichen.png" alt="Deutschland Anschnur Muschel Dienstzeichen" width="300">
 </p>
 
-# Deutschland Anschnur
+# Deutschland Anschnur Muschel
 
 Eine tabellengeführte Muschel zur Verdeutschung von Befehlen auf bestehenden Einix-/Leinux-Systemen.
 
@@ -68,7 +68,7 @@ Einige angelsächsische Restbegriffe verbleiben aufgrund technischer Zuständigk
 
 | Deutsches Aktenzeichen | Auflösung |
 | --- | --- |
-| DA | Deutschland Anschnur |
+| DAM | Deutschland Anschnur Muschel |
 | Einix | Einheitlicher Informations- und Rechendienst nach X-Schreibweise |
 | Leinux | Linus-Einix; von Linus abgeleiteter einheitlicher Informations- und Rechendienst |
 
