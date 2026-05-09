@@ -39,7 +39,7 @@ Alle übrigen Eingaben werden amtlich beanstandet. Die Muschel teilt dabei mit, 
 | Weichware | Ausführbarer und verwaltbarer Programmbestand |
 | Muschel | Erlaubnisbasierte Befehlsannahmestelle |
 | Hilfe | Auskunft über zugelassene Muschel-Befehle |
-| Paket | Softwarepaket |
+| Paket | Programmpaket |
 | Dienstgeist | Hintergrunddienst |
 | Ablagestelle | Geordnete Quelltextablage |
 | Änderungseintrag | Nachweisbare Änderung im Quelltextbestand |

@@ -4,7 +4,9 @@
 
 Alle öffentlich sichtbaren Texte sind kurz, trocken und konsequent verwaltungsförmig zu verfassen.
 
-Angelsächsische Begriffe sind niemals zu verwenden, sofern eine deutsche oder eingedeutschte Bezeichnung ohne Betriebsgefährdung möglich ist.
+Angelsächsische Begriffe sind nicht zu verwenden, sofern eine deutsche oder eingedeutschte Bezeichnung ohne Betriebsgefährdung möglich ist.
+
+Diese Vorgabe gilt besonders streng für Benutzerdokumentation, Liesmichakten, Hilfetexte, Fehlermeldungen und das Lexikon.
 
 Übertragene Fachbegriffe sind vorrangig gegenüber angelsächsischen Originalbegriffen zu verwenden; ISO ist im öffentlichen Text als DIN zu bezeichnen.
 
@@ -17,3 +19,5 @@ Die Betreffzeile beschreibt die vollzogene Änderung als amtlichen Vorgang, nich
 ## Restbegriffe
 
 Technisch notwendige angelsächsische Aktenzeichen dürfen nur verbleiben, sofern ihre Verdeutschung den Betriebsvorgang gefährden würde.
+
+Verbleibende Restbegriffe sind als Ausnahme zu behandeln und nach Möglichkeit in einer späteren Verdeutschungsverfügung zu beseitigen.
