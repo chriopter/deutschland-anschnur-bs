@@ -22,20 +22,32 @@ jobs:
   din-bauen:
     name: Bogen-DIN bauen
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     container:
       image: archlinux:latest
       options: --privileged
     environment:
       name: github-pages
     steps:
-      - name: Abhängigkeiten installieren
-        run: |
-          pacman -Syu --noconfirm --needed base-devel git python archiso grub syslinux squashfs-tools xorriso dosfstools mtools libisoburn
-          useradd -m bauer
-          printf 'bauer ALL=(ALL) NOPASSWD: ALL\n' > /etc/sudoers.d/bauer
+      - name: Grundwerkzeuge bereitstellen
+        run: pacman -Sy --noconfirm --needed git ca-certificates
 
       - name: Quelltext auschecken
         uses: actions/checkout@v4
+
+      - name: Paketzwischenspeicher übernehmen
+        uses: actions/cache@v4
+        with:
+          path: /var/cache/pacman/pkg
+          key: pacman-${{ runner.os }}-${{ hashFiles('.github/workflows/din-bauen.yml', 'din/bogenprofil/packages.x86_64', 'pakete/**/PKGBUILD') }}
+          restore-keys: |
+            pacman-${{ runner.os }}-
+
+      - name: Abhängigkeiten installieren
+        run: |
+          pacman -Syu --noconfirm --needed base-devel git python archiso grub syslinux squashfs-tools xorriso dosfstools mtools libisoburn pacman-contrib
+          useradd -m bauer
+          printf 'bauer ALL=(ALL) NOPASSWD: ALL\n' > /etc/sudoers.d/bauer
 
       - name: Muschel prüfen
         run: python -m unittest tests/test_muschel.py -v
@@ -122,3 +134,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/haupt'
         continue-on-error: true
         uses: actions/deploy-pages@v4
+
+      - name: Paketzwischenspeicher beschneiden
+        if: always()
+        run: paccache -rk2 || true
