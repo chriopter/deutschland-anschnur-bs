@@ -29,15 +29,13 @@ muschel verzeichnis liste .
 
 <!-- BEFEHLE:ANFANG -->
 
-### Muschel (eingebaut)
-
 <table>
 <thead>
-<tr><th>Befehlskategorie</th><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>
+<tr><th>Befehlskategorie</th><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
 </thead>
 <tbody>
 <tr>
-<td rowspan="1"><strong><code>hilfe</code></strong></td>
+<td rowspan="3"><strong>Muschel (eingebaut)</strong></td>
 <td>
 <details>
 <summary><code>hilfe</code></summary>
@@ -45,9 +43,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>muschel eingebaut</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>verlassen</code></strong></td>
 <td>
 <details>
 <summary><code>verlassen</code></summary>
@@ -55,9 +53,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>muschel eingebaut</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>muschel</code></strong></td>
 <td>
 <details>
 <summary><code>muschel neu laden</code></summary>
@@ -65,19 +63,10 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>muschel eingebaut</code></td>
+<td></td>
 </tr>
-</tbody>
-</table>
-
-### Grundbestand
-
-<table>
-<thead>
-<tr><th>Befehlskategorie</th><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
-</thead>
-<tbody>
 <tr>
-<td rowspan="5"><strong><code>verzeichnis</code></strong></td>
+<td rowspan="64"><strong>Grundbestand</strong></td>
 <td>
 <details>
 <summary><code>verzeichnis ort</code></summary>
@@ -128,7 +117,6 @@ muschel verzeichnis liste .
 <td></td>
 </tr>
 <tr>
-<td rowspan="14"><strong><code>datei</code></strong></td>
 <td>
 <details>
 <summary><code>datei lesen</code></summary>
@@ -269,7 +257,6 @@ muschel verzeichnis liste .
 <td></td>
 </tr>
 <tr>
-<td rowspan="4"><strong><code>netz</code></strong></td>
 <td>
 <details>
 <summary><code>netz stand</code></summary>
@@ -310,7 +297,6 @@ muschel verzeichnis liste .
 <td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong><code>dienst</code></strong></td>
 <td>
 <details>
 <summary><code>dienst liste</code></summary>
@@ -331,7 +317,6 @@ muschel verzeichnis liste .
 <td></td>
 </tr>
 <tr>
-<td rowspan="4"><strong><code>system</code></strong></td>
 <td>
 <details>
 <summary><code>system stand</code></summary>
@@ -372,7 +357,6 @@ muschel verzeichnis liste .
 <td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong><code>platz</code></strong></td>
 <td>
 <details>
 <summary><code>platz frass</code></summary>
@@ -393,7 +377,6 @@ muschel verzeichnis liste .
 <td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>platte</code></strong></td>
 <td>
 <details>
 <summary><code>platte stand</code></summary>
@@ -404,7 +387,6 @@ muschel verzeichnis liste .
 <td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>beipackzettel</code></strong></td>
 <td>
 <details>
 <summary><code>beipackzettel</code></summary>
@@ -415,7 +397,6 @@ muschel verzeichnis liste .
 <td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>fundort</code></strong></td>
 <td>
 <details>
 <summary><code>fundort befehl</code></summary>
@@ -426,7 +407,6 @@ muschel verzeichnis liste .
 <td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>fundbuero</code></strong></td>
 <td>
 <details>
 <summary><code>fundbuero</code></summary>
@@ -437,7 +417,6 @@ muschel verzeichnis liste .
 <td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>fundbüro</code></strong></td>
 <td>
 <details>
 <summary><code>fundbüro</code></summary>
@@ -448,7 +427,6 @@ muschel verzeichnis liste .
 <td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>spitzname</code></strong></td>
 <td>
 <details>
 <summary><code>spitzname liste</code></summary>
@@ -459,7 +437,6 @@ muschel verzeichnis liste .
 <td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>vergangenheitsprotokoll</code></strong></td>
 <td>
 <details>
 <summary><code>vergangenheitsprotokoll</code></summary>
@@ -470,7 +447,6 @@ muschel verzeichnis liste .
 <td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>bildschirm</code></strong></td>
 <td>
 <details>
 <summary><code>bildschirm fegen</code></summary>
@@ -481,7 +457,6 @@ muschel verzeichnis liste .
 <td></td>
 </tr>
 <tr>
-<td rowspan="9"><strong><code>hapsmann</code></strong></td>
 <td>
 <details>
 <summary><code>hapsmann erneuern</code></summary>
@@ -572,7 +547,6 @@ muschel verzeichnis liste .
 <td>Arch/pacman</td>
 </tr>
 <tr>
-<td rowspan="8"><strong><code>paeckle</code></strong></td>
 <td>
 <details>
 <summary><code>paeckle erneuern</code></summary>
@@ -653,7 +627,6 @@ muschel verzeichnis liste .
 <td>Debian/Ubuntu/apt</td>
 </tr>
 <tr>
-<td rowspan="8"><strong><code>päckle</code></strong></td>
 <td>
 <details>
 <summary><code>päckle erneuern</code></summary>
@@ -733,18 +706,8 @@ muschel verzeichnis liste .
 <td><code>→ paeckle bestand</code></td>
 <td>Debian/Ubuntu/apt</td>
 </tr>
-</tbody>
-</table>
-
-### Textwesen
-
-<table>
-<thead>
-<tr><th>Befehlskategorie</th><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>
-</thead>
-<tbody>
 <tr>
-<td rowspan="1"><strong><code>text</code></strong></td>
+<td rowspan="17"><strong>Textwesen</strong></td>
 <td>
 <details>
 <summary><code>text fahndung</code></summary>
@@ -752,9 +715,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>grep</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>datei</code></strong></td>
 <td>
 <details>
 <summary><code>datei ortung</code></summary>
@@ -762,9 +725,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>find</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>argumente</code></strong></td>
 <td>
 <details>
 <summary><code>argumente kleben</code></summary>
@@ -772,9 +735,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>xargs</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong><code>wort</code></strong></td>
 <td>
 <details>
 <summary><code>wort zaehlamt</code></summary>
@@ -782,6 +745,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>wc</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -791,9 +755,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>→ wort zaehlamt</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>zeilen</code></strong></td>
 <td>
 <details>
 <summary><code>zeilen ordnen</code></summary>
@@ -801,9 +765,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>sort</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong><code>doppel</code></strong></td>
 <td>
 <details>
 <summary><code>doppel tilgen</code></summary>
@@ -811,6 +775,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>uniq</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -820,9 +785,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>tee</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>spalten</code></strong></td>
 <td>
 <details>
 <summary><code>spalten schnipp</code></summary>
@@ -830,9 +795,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>cut</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>zeichen</code></strong></td>
 <td>
 <details>
 <summary><code>zeichen tausch</code></summary>
@@ -840,9 +805,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>tr</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong><code>stromtext</code></strong></td>
 <td>
 <details>
 <summary><code>stromtext aendern</code></summary>
@@ -850,6 +815,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>sed</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -859,9 +825,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>→ stromtext aendern</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>feld</code></strong></td>
 <td>
 <details>
 <summary><code>feld akrobat</code></summary>
@@ -869,9 +835,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>awk</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>unterschied</code></strong></td>
 <td>
 <details>
 <summary><code>unterschied zeigen</code></summary>
@@ -879,9 +845,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>diff</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>flicken</code></strong></td>
 <td>
 <details>
 <summary><code>flicken anwenden</code></summary>
@@ -889,9 +855,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>patch</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>namen</code></strong></td>
 <td>
 <details>
 <summary><code>namen rest</code></summary>
@@ -899,9 +865,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>basename</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>ordner</code></strong></td>
 <td>
 <details>
 <summary><code>ordner davor</code></summary>
@@ -909,19 +875,10 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>dirname</code></td>
+<td></td>
 </tr>
-</tbody>
-</table>
-
-### Paketwerk
-
-<table>
-<thead>
-<tr><th>Befehlskategorie</th><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>
-</thead>
-<tbody>
 <tr>
-<td rowspan="1"><strong><code>bindball</code></strong></td>
+<td rowspan="7"><strong>Paketwerk</strong></td>
 <td>
 <details>
 <summary><code>bindball mach</code></summary>
@@ -929,9 +886,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>tar</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong><code>quetsch</code></strong></td>
 <td>
 <details>
 <summary><code>quetsch mach</code></summary>
@@ -939,6 +896,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>gzip</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -948,9 +906,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>gunzip</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong><code>reisszu</code></strong></td>
 <td>
 <details>
 <summary><code>reisszu mach</code></summary>
@@ -958,6 +916,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>zip</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -967,9 +926,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>unzip</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong><code>reißzu</code></strong></td>
 <td>
 <details>
 <summary><code>reißzu mach</code></summary>
@@ -977,6 +936,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>→ reisszu mach</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -986,19 +946,10 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>→ reisszu auf</code></td>
+<td></td>
 </tr>
-</tbody>
-</table>
-
-### Systemwesen
-
-<table>
-<thead>
-<tr><th>Befehlskategorie</th><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>
-</thead>
-<tbody>
 <tr>
-<td rowspan="6"><strong><code>vorgang</code></strong></td>
+<td rowspan="27"><strong>Systemwesen</strong></td>
 <td>
 <details>
 <summary><code>vorgang liste</code></summary>
@@ -1006,6 +957,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>ps aux</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1015,6 +967,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>top</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1024,6 +977,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>htop</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1033,6 +987,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>→ vorgang huebschaufsicht</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1042,6 +997,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>kill</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1051,9 +1007,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>killall</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>reichsgeraet</code></strong></td>
 <td>
 <details>
 <summary><code>reichsgeraet ausweis</code></summary>
@@ -1061,9 +1017,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>uname -a</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>reichsgerät</code></strong></td>
 <td>
 <details>
 <summary><code>reichsgerät ausweis</code></summary>
@@ -1071,9 +1027,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>→ reichsgeraet ausweis</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>betriebszeit</code></strong></td>
 <td>
 <details>
 <summary><code>betriebszeit amtlich</code></summary>
@@ -1081,9 +1037,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>uptime</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>uhrzeit</code></strong></td>
 <td>
 <details>
 <summary><code>uhrzeit bescheid</code></summary>
@@ -1091,9 +1047,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>date</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>werbinichdenn</code></strong></td>
 <td>
 <details>
 <summary><code>werbinichdenn</code></summary>
@@ -1101,9 +1057,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>whoami</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong><code>personen</code></strong></td>
 <td>
 <details>
 <summary><code>personen kennziffer</code></summary>
@@ -1111,6 +1067,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>id</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1120,9 +1077,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>su</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>umwelt</code></strong></td>
 <td>
 <details>
 <summary><code>umwelt bestand</code></summary>
@@ -1130,9 +1087,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>env</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>oberbitte</code></strong></td>
 <td>
 <details>
 <summary><code>oberbitte</code></summary>
@@ -1140,9 +1097,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>sudo</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>augen</code></strong></td>
 <td>
 <details>
 <summary><code>augen zu</code></summary>
@@ -1150,9 +1107,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>sleep</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>dauer</code></strong></td>
 <td>
 <details>
 <summary><code>dauer guck</code></summary>
@@ -1160,9 +1117,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>watch</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong><code>geraet</code></strong></td>
 <td>
 <details>
 <summary><code>geraet dranhaeng</code></summary>
@@ -1170,6 +1127,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>mount</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1179,9 +1137,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>umount</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong><code>gerät</code></strong></td>
 <td>
 <details>
 <summary><code>gerät dranhäng</code></summary>
@@ -1189,6 +1147,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>→ geraet dranhaeng</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1198,9 +1157,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>→ geraet abhaeng</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>klotz</code></strong></td>
 <td>
 <details>
 <summary><code>klotz guck</code></summary>
@@ -1208,9 +1167,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>lsblk</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>dateien</code></strong></td>
 <td>
 <details>
 <summary><code>dateien petz</code></summary>
@@ -1218,9 +1177,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>lsof</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>ram</code></strong></td>
 <td>
 <details>
 <summary><code>ram nochda</code></summary>
@@ -1228,9 +1187,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>free -h</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>tagebuch</code></strong></td>
 <td>
 <details>
 <summary><code>tagebuch dienst</code></summary>
@@ -1238,9 +1197,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>journalctl --no-pager</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>zeitfolge</code></strong></td>
 <td>
 <details>
 <summary><code>zeitfolge verzeichnis</code></summary>
@@ -1248,9 +1207,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>crontab</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>kern</code></strong></td>
 <td>
 <details>
 <summary><code>kern gemurmel</code></summary>
@@ -1258,19 +1217,10 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>dmesg</code></td>
+<td></td>
 </tr>
-</tbody>
-</table>
-
-### Netzwesen
-
-<table>
-<thead>
-<tr><th>Befehlskategorie</th><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>
-</thead>
-<tbody>
 <tr>
-<td rowspan="4"><strong><code>netz</code></strong></td>
+<td rowspan="14"><strong>Netzwesen</strong></td>
 <td>
 <details>
 <summary><code>netz wegewurst</code></summary>
@@ -1278,6 +1228,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>traceroute</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1287,6 +1238,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>ss</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1296,6 +1248,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>netstat</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1305,9 +1258,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>curl</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>fernzieh</code></strong></td>
 <td>
 <details>
 <summary><code>fernzieh</code></summary>
@@ -1315,9 +1268,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>wget</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>sicherfernsprech</code></strong></td>
 <td>
 <details>
 <summary><code>sicherfernsprech</code></summary>
@@ -1325,9 +1278,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>ssh</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>sicherfernkopier</code></strong></td>
 <td>
 <details>
 <summary><code>sicherfernkopier</code></summary>
@@ -1335,9 +1288,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>scp</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="2"><strong><code>gleichschalt</code></strong></td>
 <td>
 <details>
 <summary><code>gleichschalt uebertrag</code></summary>
@@ -1345,6 +1298,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>rsync</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1354,9 +1308,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>→ gleichschalt uebertrag</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>dns</code></strong></td>
 <td>
 <details>
 <summary><code>dns buddel</code></summary>
@@ -1364,9 +1318,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>dig</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>namensschild</code></strong></td>
 <td>
 <details>
 <summary><code>namensschild guck</code></summary>
@@ -1374,9 +1328,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>nslookup</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>gastgeber</code></strong></td>
 <td>
 <details>
 <summary><code>gastgeber auskunft</code></summary>
@@ -1384,9 +1338,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>host</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>port</code></strong></td>
 <td>
 <details>
 <summary><code>port klingel</code></summary>
@@ -1394,9 +1348,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>nc</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>paket</code></strong></td>
 <td>
 <details>
 <summary><code>paket polizei</code></summary>
@@ -1404,19 +1358,10 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>iptables</code></td>
+<td></td>
 </tr>
-</tbody>
-</table>
-
-### Entwicklung
-
-<table>
-<thead>
-<tr><th>Befehlskategorie</th><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>
-</thead>
-<tbody>
 <tr>
-<td rowspan="22"><strong><code>astmann</code></strong></td>
+<td rowspan="30"><strong>Entwicklung</strong></td>
 <td>
 <details>
 <summary><code>astmann lage</code></summary>
@@ -1424,6 +1369,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git status</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1433,6 +1379,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git add</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1442,6 +1389,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>→ astmann eintueten</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1451,6 +1399,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git commit</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1460,6 +1409,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git log --oneline --decorate --graph</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1469,6 +1419,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git diff</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1478,6 +1429,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git clone</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1487,6 +1439,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git pull --ff-only</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1496,6 +1449,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git push</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1505,6 +1459,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git fetch</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1514,6 +1469,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git remote</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1523,6 +1479,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git branch</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1532,6 +1489,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git switch</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1541,6 +1499,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git checkout</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1550,6 +1509,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git merge</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1559,6 +1519,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git rebase</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1568,6 +1529,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git stash</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1577,6 +1539,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git reset</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1586,6 +1549,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>→ astmann zurueckkartoffeln</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1595,6 +1559,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git restore</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1604,6 +1569,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git tag</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1613,9 +1579,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>git blame</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>machmal</code></strong></td>
 <td>
 <details>
 <summary><code>machmal</code></summary>
@@ -1623,9 +1589,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>make</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>vormachamt</code></strong></td>
 <td>
 <details>
 <summary><code>vormachamt</code></summary>
@@ -1633,9 +1599,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>cmake</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>quellwurst</code></strong></td>
 <td>
 <details>
 <summary><code>quellwurst press</code></summary>
@@ -1643,9 +1609,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>gcc</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>schlangenamt</code></strong></td>
 <td>
 <details>
 <summary><code>schlangenamt</code></summary>
@@ -1653,9 +1619,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>python3</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>paketpfennig</code></strong></td>
 <td>
 <details>
 <summary><code>paketpfennig</code></summary>
@@ -1663,9 +1629,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>pip</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>jotkuh</code></strong></td>
 <td>
 <details>
 <summary><code>jotkuh</code></summary>
@@ -1673,9 +1639,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>jq</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>dateikampfstift</code></strong></td>
 <td>
 <details>
 <summary><code>dateikampfstift</code></summary>
@@ -1683,9 +1649,9 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>vim</code></td>
+<td></td>
 </tr>
 <tr>
-<td rowspan="1"><strong><code>weichgriffschreiber</code></strong></td>
 <td>
 <details>
 <summary><code>weichgriffschreiber</code></summary>
@@ -1693,19 +1659,10 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>nano</code></td>
+<td></td>
 </tr>
-</tbody>
-</table>
-
-### Applikationen
-
-<table>
-<thead>
-<tr><th>Befehlskategorie</th><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>
-</thead>
-<tbody>
 <tr>
-<td rowspan="7"><strong><code>hafener</code></strong></td>
+<td rowspan="7"><strong>Applikationen</strong></td>
 <td>
 <details>
 <summary><code>hafener bilder</code></summary>
@@ -1713,6 +1670,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>docker images</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1722,6 +1680,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>docker ps</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1731,6 +1690,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>docker run</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1740,6 +1700,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>docker compose pull</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1749,6 +1710,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>docker compose up</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1758,6 +1720,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>docker compose down</code></td>
+<td></td>
 </tr>
 <tr>
 <td>
@@ -1767,6 +1730,7 @@ muschel verzeichnis liste .
 </details>
 </td>
 <td><code>docker compose logs</code></td>
+<td></td>
 </tr>
 </tbody>
 </table>
