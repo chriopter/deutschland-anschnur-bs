@@ -22,40 +22,40 @@ Alle übrigen Eingaben werden amtlich beanstandet. Die Muschel teilt dabei mit, 
 ## Lexikon
 
 <details>
-<summary>HARTWARE</summary>
+<summary>Hartware</summary>
 
 | Deutsches Aktenzeichen | Auflösung |
 | --- | --- |
 | DIN | Datenträgerabbild in Normallage |
-| HARTWARE | Hardware; körperlicher Gerätebestand |
+| Hartware | Hardware; körperlicher Gerätebestand |
 
 </details>
 
 <details>
-<summary>WEICHWARE</summary>
+<summary>Weichware</summary>
 
 | Deutsches Aktenzeichen | Auflösung |
 | --- | --- |
-| WEICHWARE | Software; ausführbarer und verwaltbarer Programmbestand |
-| MUSCHEL | Shell; erlaubnisbasierte Befehlsannahmestelle |
-| HILFE | Auskunft über zugelassene Muschel-Befehle |
-| PAKET | Softwarepaket |
-| DIENSTGEIST | Hintergrunddienst |
-| ABLAGESTELLE | Repository; geordnete Quelltextablage |
-| ÄNDERUNGSEINTRAG | Commit; nachweisbare Änderung im Quelltextbestand |
+| Weichware | Software; ausführbarer und verwaltbarer Programmbestand |
+| Muschel | Shell; erlaubnisbasierte Befehlsannahmestelle |
+| Hilfe | Auskunft über zugelassene Muschel-Befehle |
+| Paket | Softwarepaket |
+| Dienstgeist | Hintergrunddienst |
+| Ablagestelle | Repository; geordnete Quelltextablage |
+| Änderungseintrag | Commit; nachweisbare Änderung im Quelltextbestand |
 
 </details>
 
 <details>
-<summary>BETRIEBSSYSTEM</summary>
+<summary>Betriebssystem</summary>
 
 | Deutsches Aktenzeichen | Auflösung |
 | --- | --- |
 | DABS | Deutschland Anschnur Betriebssystem |
-| BOGEN | Arch; Bogenleinux-Grundlage |
-| EINIX | Einheitlicher Informations- und Rechendienst nach X-Schreibweise |
-| LEINUX | Linus-Einix; von Linus abgeleiteter einheitlicher Informations- und Rechendienst |
-| WURZEL | Root; oberste Rechte- und Dateibaumebene |
-| KERN | Kern des Betriebssystems |
+| Bogen | Arch; Bogenleinux-Grundlage |
+| Einix | Einheitlicher Informations- und Rechendienst nach X-Schreibweise |
+| Leinux | Linus-Einix; von Linus abgeleiteter einheitlicher Informations- und Rechendienst |
+| Wurzel | Root; oberste Rechte- und Dateibaumebene |
+| Kern | Kern des Betriebssystems |
 
 </details>
