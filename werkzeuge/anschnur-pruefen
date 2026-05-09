@@ -7,8 +7,8 @@ import importlib.util
 import os
 import sys
 
-ROOT = Path(__file__).resolve().parent
-MUSCHEL = ROOT / "muschel"
+ROOT = Path(__file__).resolve().parents[1]
+MUSCHEL = ROOT / "bin" / "muschel"
 
 loader = importlib.machinery.SourceFileLoader("anschnur_muschel", str(MUSCHEL))
 spec = importlib.util.spec_from_loader("anschnur_muschel", loader)

@@ -28,17 +28,17 @@ jobs:
           python-version: '3.x'
 
       - name: Befehlsakten prüfen
-        run: ./anschnur-pruefen
+        run: ./werkzeuge/anschnur-pruefen
 
       - name: Muschel prüfen
         run: python -m unittest tests/test_muschel.py -v
 
       - name: Liesmich-Befehle prüfen
         run: |
-          ./befehle-in-liesmich
+          ./werkzeuge/befehle-in-liesmich
           git diff --exit-code -- LIESMICH.txt
 
       - name: Direktstart prüfen
         run: |
-          ./muschel hilfe
-          ./muschel verzeichnis liste .
+          ./bin/muschel hilfe
+          ./bin/muschel verzeichnis liste .

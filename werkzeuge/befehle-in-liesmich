@@ -6,7 +6,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-WURZEL = Path(__file__).resolve().parent
+WURZEL = Path(__file__).resolve().parents[1]
 LIESMICH = WURZEL / "LIESMICH.txt"
 BEFEHLE = WURZEL / "befehle.d"
 ANFANG = "<!-- BEFEHLE:ANFANG -->"

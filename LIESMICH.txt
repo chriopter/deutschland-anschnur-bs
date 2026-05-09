@@ -12,7 +12,7 @@ Einige angelsächsische Restbegriffe verbleiben aufgrund technischer Zuständigk
 
 ```bash
 git clone https://github.com/chriopter/deutschland-anschnur-muschel.git ~/.deutschland-anschnur-muschel
-echo 'alias muschel="$HOME/.deutschland-anschnur-muschel/muschel"' >> ~/.bashrc
+echo 'alias muschel="$HOME/.deutschland-anschnur-muschel/bin/muschel"' >> ~/.bashrc
 . ~/.bashrc
 ```
 

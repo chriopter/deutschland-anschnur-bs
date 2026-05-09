@@ -11,8 +11,8 @@ from unittest.mock import Mock, patch
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MUSCHEL = ROOT / "muschel"
-PRUEFER = ROOT / "anschnur-pruefen"
+MUSCHEL = ROOT / "bin" / "muschel"
+PRUEFER = ROOT / "werkzeuge" / "anschnur-pruefen"
 BEFEHLE = ROOT / "befehle.d"
 
 

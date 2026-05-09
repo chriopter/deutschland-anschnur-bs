@@ -16,6 +16,7 @@ def befehlsorte() -> list[Path]:
     if vorgabe:
         return [Path(vorgabe)]
     rohorte = [
+        Path(__file__).resolve().parent.parent / "befehle.d",
         Path(__file__).resolve().parent / "befehle.d",
         Path(__file__).resolve().parent.parent / "share" / "deutschland-anschnur-muschel" / "befehle.d",
         Path("/usr/local/share/deutschland-anschnur-muschel/befehle.d"),
@@ -241,6 +242,8 @@ class Muschel:
         if os.environ.get("ANSCHNUR_AKTUALISIERUNG", "1") in {"0", "nein", "aus"}:
             return
         quelle = Path(__file__).resolve().parent
+        if not (quelle / ".git").exists() and (quelle.parent / ".git").exists():
+            quelle = quelle.parent
         if not (quelle / ".git").exists():
             return
 
