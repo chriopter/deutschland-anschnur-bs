@@ -14,8 +14,8 @@ BEFEHLE = WURZEL / "befehle.d"
 ANFANG = "<!-- BEFEHLE:ANFANG -->"
 ENDE = "<!-- BEFEHLE:ENDE -->"
 
-DATEI_REIHENFOLGE = ["basis", "hapsmann", "hafener"]
-GRUPPEN_REIHENFOLGE = ["Muschel", "Grundbestand", "Applikationen"]
+DATEI_REIHENFOLGE = ["basis", "grundbestand-extra", "hapsmann", "textwesen", "paketwerk", "systemwesen", "netzwesen", "astmann", "hafener"]
+GRUPPEN_REIHENFOLGE = ["Muschel", "Grundbestand", "Textwesen", "Paketwerk", "Systemwesen", "Netzwesen", "Entwicklung", "Applikationen"]
 GRUPPEN_TITEL = {
     "Muschel": "Muschel (eingebaut)",
 }

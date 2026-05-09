@@ -1,0 +1,7 @@
+{"befehl":["bindball","mach"],"gruppe":"Paketwerk","typ":"exec","programm":"/usr/bin/tar","argumente":[],"rest":"anhaengen","beschreibung":"wickelt Dateien zum Bindball"}
+{"befehl":["quetsch","mach"],"gruppe":"Paketwerk","typ":"exec","programm":"/usr/bin/gzip","argumente":[],"rest":"anhaengen","beschreibung":"quetscht Dateien"}
+{"befehl":["quetsch","auf"],"gruppe":"Paketwerk","typ":"exec","programm":"/usr/bin/gunzip","argumente":[],"rest":"anhaengen","beschreibung":"bläst Gequetschtes auf"}
+{"befehl":["reisszu","mach"],"gruppe":"Paketwerk","typ":"exec","programm":"/usr/bin/zip","argumente":[],"rest":"anhaengen","beschreibung":"macht Reißverschlussarchiv"}
+{"befehl":["reißzu","mach"],"gruppe":"Paketwerk","typ":"alias","ziel":["reisszu","mach"],"rest":"anhaengen","beschreibung":"macht Reißverschlussarchiv"}
+{"befehl":["reisszu","auf"],"gruppe":"Paketwerk","typ":"exec","programm":"/usr/bin/unzip","argumente":[],"rest":"anhaengen","beschreibung":"öffnet Reißverschlussarchiv"}
+{"befehl":["reißzu","auf"],"gruppe":"Paketwerk","typ":"alias","ziel":["reisszu","auf"],"rest":"anhaengen","beschreibung":"öffnet Reißverschlussarchiv"}

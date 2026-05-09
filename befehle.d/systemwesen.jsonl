@@ -1,0 +1,27 @@
+{"befehl":["vorgang","liste"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/ps","argumente":["aux"],"rest":"anhaengen","beschreibung":"listet Vorgänge"}
+{"befehl":["vorgang","aufsicht"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/top","argumente":[],"rest":"anhaengen","beschreibung":"zeigt Vorgangsaufsicht"}
+{"befehl":["vorgang","huebschaufsicht"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/htop","argumente":[],"rest":"anhaengen","beschreibung":"zeigt hübsche Vorgangsaufsicht"}
+{"befehl":["vorgang","hübschaufsicht"],"gruppe":"Systemwesen","typ":"alias","ziel":["vorgang","huebschaufsicht"],"rest":"anhaengen","beschreibung":"zeigt hübsche Vorgangsaufsicht"}
+{"befehl":["vorgang","beenden"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/kill","argumente":[],"rest":"anhaengen","beschreibung":"beendet Vorgang"}
+{"befehl":["vorgang","allebeenden"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/killall","argumente":[],"rest":"anhaengen","beschreibung":"beendet Vorgänge nach Namen"}
+{"befehl":["reichsgeraet","ausweis"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/uname","argumente":["-a"],"rest":"anhaengen","beschreibung":"zeigt Geräteausweis"}
+{"befehl":["reichsgerät","ausweis"],"gruppe":"Systemwesen","typ":"alias","ziel":["reichsgeraet","ausweis"],"rest":"anhaengen","beschreibung":"zeigt Geräteausweis"}
+{"befehl":["betriebszeit","amtlich"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/uptime","argumente":[],"rest":"verbieten","beschreibung":"zeigt Betriebszeit"}
+{"befehl":["uhrzeit","bescheid"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/date","argumente":[],"rest":"anhaengen","beschreibung":"zeigt Uhrzeitbescheid"}
+{"befehl":["werbinichdenn"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/whoami","argumente":[],"rest":"verbieten","beschreibung":"zeigt Benutzername"}
+{"befehl":["personen","kennziffer"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/id","argumente":[],"rest":"anhaengen","beschreibung":"zeigt Personenkennziffern"}
+{"befehl":["umwelt","bestand"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/env","argumente":[],"rest":"anhaengen","beschreibung":"zeigt Umweltbestand"}
+{"befehl":["oberbitte"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/sudo","argumente":[],"rest":"anhaengen","beschreibung":"fragt nach Oberbefugnis"}
+{"befehl":["personen","wechsel"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/su","argumente":[],"rest":"anhaengen","beschreibung":"wechselt Person"}
+{"befehl":["augen","zu"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/sleep","argumente":[],"rest":"anhaengen","beschreibung":"wartet amtlich"}
+{"befehl":["dauer","guck"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/watch","argumente":[],"rest":"anhaengen","beschreibung":"guckt dauernd"}
+{"befehl":["geraet","dranhaeng"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/mount","argumente":[],"rest":"anhaengen","beschreibung":"hängt Gerät ein"}
+{"befehl":["gerät","dranhäng"],"gruppe":"Systemwesen","typ":"alias","ziel":["geraet","dranhaeng"],"rest":"anhaengen","beschreibung":"hängt Gerät ein"}
+{"befehl":["geraet","abhaeng"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/umount","argumente":[],"rest":"anhaengen","beschreibung":"hängt Gerät aus"}
+{"befehl":["gerät","abhäng"],"gruppe":"Systemwesen","typ":"alias","ziel":["geraet","abhaeng"],"rest":"anhaengen","beschreibung":"hängt Gerät aus"}
+{"befehl":["klotz","guck"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/lsblk","argumente":[],"rest":"anhaengen","beschreibung":"zeigt Speicherklötze"}
+{"befehl":["dateien","petz"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/lsof","argumente":[],"rest":"anhaengen","beschreibung":"petzt offene Dateien"}
+{"befehl":["ram","nochda"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/free","argumente":["-h"],"rest":"anhaengen","beschreibung":"zeigt freien Speicher"}
+{"befehl":["tagebuch","dienst"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/journalctl","argumente":["--no-pager"],"rest":"anhaengen","beschreibung":"zeigt Diensttagebuch"}
+{"befehl":["zeitfolge","verzeichnis"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/crontab","argumente":[],"rest":"anhaengen","beschreibung":"verwaltet Zeitfolgen"}
+{"befehl":["kern","gemurmel"],"gruppe":"Systemwesen","typ":"exec","programm":"/usr/bin/dmesg","argumente":[],"rest":"anhaengen","beschreibung":"zeigt Kerngemurmel"}

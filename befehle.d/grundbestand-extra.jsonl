@@ -1,0 +1,24 @@
+{"befehl":["verzeichnis","mach"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/mkdir","argumente":[],"rest":"anhaengen","beschreibung":"legt Verzeichnisse an"}
+{"befehl":["verzeichnis","weg"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/rmdir","argumente":[],"rest":"anhaengen","beschreibung":"entfernt leere Verzeichnisse"}
+{"befehl":["datei","antipp"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/touch","argumente":[],"rest":"anhaengen","beschreibung":"legt Dateien an oder tippt Zeiten neu"}
+{"befehl":["datei","blaettern"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/less","argumente":[],"rest":"anhaengen","beschreibung":"blättert durch Dateien"}
+{"befehl":["datei","blättern"],"gruppe":"Grundbestand","typ":"alias","ziel":["datei","blaettern"],"rest":"anhaengen","beschreibung":"blättert durch Dateien"}
+{"befehl":["datei","kopf"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/head","argumente":[],"rest":"anhaengen","beschreibung":"zeigt den Dateikopf"}
+{"befehl":["datei","schwanz"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/tail","argumente":[],"rest":"anhaengen","beschreibung":"zeigt den Dateischwanz"}
+{"befehl":["datei","abschrift"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/cp","argumente":[],"rest":"anhaengen","beschreibung":"fertigt Abschriften an"}
+{"befehl":["datei","umlagern"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/mv","argumente":[],"rest":"anhaengen","beschreibung":"verlegt Dateien amtlich"}
+{"befehl":["datei","tilgen"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/rm","argumente":[],"rest":"anhaengen","beschreibung":"tilgt Dateien"}
+{"befehl":["datei","verweis"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/ln","argumente":[],"rest":"anhaengen","beschreibung":"schnürt Dateiverweise"}
+{"befehl":["datei","rechtezettel"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/chmod","argumente":[],"rest":"anhaengen","beschreibung":"ändert Zugriffsrechte"}
+{"befehl":["datei","habsmann"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/chown","argumente":[],"rest":"anhaengen","beschreibung":"ändert Eigentümer und Gruppe"}
+{"befehl":["platz","frass"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/du","argumente":["-h"],"rest":"anhaengen","beschreibung":"zeigt Platzfraß"}
+{"befehl":["platz","fraß"],"gruppe":"Grundbestand","typ":"alias","ziel":["platz","frass"],"rest":"anhaengen","beschreibung":"zeigt Platzfraß"}
+{"befehl":["platte","stand"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/df","argumente":["-h"],"rest":"anhaengen","beschreibung":"zeigt Plattenfüllstand"}
+{"befehl":["datei","wasndas"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/file","argumente":[],"rest":"anhaengen","beschreibung":"bestimmt Dateiart"}
+{"befehl":["beipackzettel"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/man","argumente":[],"rest":"anhaengen","beschreibung":"zeigt Gebrauchsanweisung"}
+{"befehl":["fundort","befehl"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/which","argumente":[],"rest":"anhaengen","beschreibung":"zeigt Befehlsfundort"}
+{"befehl":["fundbuero"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/whereis","argumente":[],"rest":"anhaengen","beschreibung":"sucht Programmfundstellen"}
+{"befehl":["fundbüro"],"gruppe":"Grundbestand","typ":"alias","ziel":["fundbuero"],"rest":"anhaengen","beschreibung":"sucht Programmfundstellen"}
+{"befehl":["spitzname","liste"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/bash","argumente":["-lc","alias"],"rest":"verbieten","beschreibung":"zeigt Spitznamen"}
+{"befehl":["vergangenheitsprotokoll"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/bash","argumente":["-lc","history"],"rest":"verbieten","beschreibung":"zeigt Befehlsvergangenheit"}
+{"befehl":["bildschirm","fegen"],"gruppe":"Grundbestand","typ":"exec","programm":"/usr/bin/clear","argumente":[],"rest":"verbieten","beschreibung":"fegt die Ansicht leer"}

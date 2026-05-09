@@ -1,0 +1,30 @@
+{"befehl":["astmann","lage"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["status"],"rest":"anhaengen","beschreibung":"zeigt Astlage"}
+{"befehl":["astmann","eintueten"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["add"],"rest":"anhaengen","beschreibung":"tütet Änderungen ein"}
+{"befehl":["astmann","eintüten"],"gruppe":"Entwicklung","typ":"alias","ziel":["astmann","eintueten"],"rest":"anhaengen","beschreibung":"tütet Änderungen ein"}
+{"befehl":["astmann","festasteln"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["commit"],"rest":"anhaengen","beschreibung":"stempelt Änderungen fest"}
+{"befehl":["astmann","chronik"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["log","--oneline","--decorate","--graph"],"rest":"anhaengen","beschreibung":"zeigt Astchronik"}
+{"befehl":["astmann","meckerstreifen"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["diff"],"rest":"anhaengen","beschreibung":"zeigt Änderungsmecker"}
+{"befehl":["astmann","fernkopie"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["clone"],"rest":"anhaengen","beschreibung":"legt Fernkopie an"}
+{"befehl":["astmann","holen"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["pull","--ff-only"],"rest":"anhaengen","beschreibung":"holt Fernstand"}
+{"befehl":["astmann","schieben"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["push"],"rest":"anhaengen","beschreibung":"schiebt Eigenmist fern"}
+{"befehl":["astmann","fernneuigkeiten"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["fetch"],"rest":"anhaengen","beschreibung":"holt Fernneuigkeiten"}
+{"befehl":["astmann","ferngegenstelle"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["remote"],"rest":"anhaengen","beschreibung":"verwaltet Ferngegenstellen"}
+{"befehl":["astmann","astliste"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["branch"],"rest":"anhaengen","beschreibung":"zeigt und verwaltet Äste"}
+{"befehl":["astmann","astwechsel"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["switch"],"rest":"anhaengen","beschreibung":"wechselt Ast"}
+{"befehl":["astmann","altkletter"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["checkout"],"rest":"anhaengen","beschreibung":"klettert altmodisch"}
+{"befehl":["astmann","zusammenklatsch"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["merge"],"rest":"anhaengen","beschreibung":"klatscht Äste zusammen"}
+{"befehl":["astmann","umtopf"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["rebase"],"rest":"anhaengen","beschreibung":"topft Ast um"}
+{"befehl":["astmann","handschuhfach"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["stash"],"rest":"anhaengen","beschreibung":"legt Pfusch ins Handschuhfach"}
+{"befehl":["astmann","zurueckkartoffeln"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["reset"],"rest":"anhaengen","beschreibung":"kartoffelt zurück"}
+{"befehl":["astmann","zurückkartoffeln"],"gruppe":"Entwicklung","typ":"alias","ziel":["astmann","zurueckkartoffeln"],"rest":"anhaengen","beschreibung":"kartoffelt zurück"}
+{"befehl":["astmann","heilmach"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["restore"],"rest":"anhaengen","beschreibung":"macht Dateien heil"}
+{"befehl":["astmann","preisschild"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["tag"],"rest":"anhaengen","beschreibung":"hängt Preisschild an"}
+{"befehl":["astmann","werwars"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/git","argumente":["blame"],"rest":"anhaengen","beschreibung":"sucht den Schuldigen"}
+{"befehl":["machmal"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/make","argumente":[],"rest":"anhaengen","beschreibung":"macht nach Bauzettel"}
+{"befehl":["vormachamt"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/cmake","argumente":[],"rest":"anhaengen","beschreibung":"erzeugt Machanweisung"}
+{"befehl":["quellwurst","press"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/gcc","argumente":[],"rest":"anhaengen","beschreibung":"presst Quellwurst"}
+{"befehl":["schlangenamt"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/python3","argumente":[],"rest":"anhaengen","beschreibung":"führt Schlangenwerk aus"}
+{"befehl":["paketpfennig"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/pip","argumente":[],"rest":"anhaengen","beschreibung":"verwaltet Python-Pakete"}
+{"befehl":["jotkuh"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/jq","argumente":[],"rest":"anhaengen","beschreibung":"siebt JSON"}
+{"befehl":["dateikampfstift"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/vim","argumente":[],"rest":"anhaengen","beschreibung":"bearbeitet Text gefährlich"}
+{"befehl":["weichgriffschreiber"],"gruppe":"Entwicklung","typ":"exec","programm":"/usr/bin/nano","argumente":[],"rest":"anhaengen","beschreibung":"bearbeitet Text sanft"}

@@ -1,0 +1,17 @@
+{"befehl":["text","fahndung"],"gruppe":"Textwesen","typ":"exec","programm":"/usr/bin/grep","argumente":[],"rest":"anhaengen","beschreibung":"fahndet in Text"}
+{"befehl":["datei","ortung"],"gruppe":"Textwesen","typ":"exec","programm":"/usr/bin/find","argumente":[],"rest":"anhaengen","beschreibung":"ortet Dateien"}
+{"befehl":["argumente","kleben"],"gruppe":"Textwesen","typ":"exec","programm":"/usr/bin/xargs","argumente":[],"rest":"anhaengen","beschreibung":"klebt Argumente zusammen"}
+{"befehl":["wort","zaehlamt"],"gruppe":"Textwesen","typ":"exec","programm":"/usr/bin/wc","argumente":[],"rest":"anhaengen","beschreibung":"zählt Zeilen Wörter Zeichen"}
+{"befehl":["wort","zählamt"],"gruppe":"Textwesen","typ":"alias","ziel":["wort","zaehlamt"],"rest":"anhaengen","beschreibung":"zählt Zeilen Wörter Zeichen"}
+{"befehl":["zeilen","ordnen"],"gruppe":"Textwesen","typ":"exec","programm":"/usr/bin/sort","argumente":[],"rest":"anhaengen","beschreibung":"ordnet Zeilen"}
+{"befehl":["doppel","tilgen"],"gruppe":"Textwesen","typ":"exec","programm":"/usr/bin/uniq","argumente":[],"rest":"anhaengen","beschreibung":"tilgt Nachbardoppel"}
+{"befehl":["spalten","schnipp"],"gruppe":"Textwesen","typ":"exec","programm":"/usr/bin/cut","argumente":[],"rest":"anhaengen","beschreibung":"schneidet Spalten"}
+{"befehl":["zeichen","tausch"],"gruppe":"Textwesen","typ":"exec","programm":"/usr/bin/tr","argumente":[],"rest":"anhaengen","beschreibung":"tauscht Zeichen"}
+{"befehl":["stromtext","aendern"],"gruppe":"Textwesen","typ":"exec","programm":"/usr/bin/sed","argumente":[],"rest":"anhaengen","beschreibung":"ändert Stromtext"}
+{"befehl":["stromtext","ändern"],"gruppe":"Textwesen","typ":"alias","ziel":["stromtext","aendern"],"rest":"anhaengen","beschreibung":"ändert Stromtext"}
+{"befehl":["feld","akrobat"],"gruppe":"Textwesen","typ":"exec","programm":"/usr/bin/awk","argumente":[],"rest":"anhaengen","beschreibung":"verarbeitet Textfelder"}
+{"befehl":["unterschied","zeigen"],"gruppe":"Textwesen","typ":"exec","programm":"/usr/bin/diff","argumente":[],"rest":"anhaengen","beschreibung":"zeigt Unterschiede"}
+{"befehl":["flicken","anwenden"],"gruppe":"Textwesen","typ":"exec","programm":"/usr/bin/patch","argumente":[],"rest":"anhaengen","beschreibung":"wendet Flicken an"}
+{"befehl":["doppel","zapf"],"gruppe":"Textwesen","typ":"exec","programm":"/usr/bin/tee","argumente":[],"rest":"anhaengen","beschreibung":"zapft Ausgabe doppelt"}
+{"befehl":["namen","rest"],"gruppe":"Textwesen","typ":"exec","programm":"/usr/bin/basename","argumente":[],"rest":"anhaengen","beschreibung":"zeigt Namensrest"}
+{"befehl":["ordner","davor"],"gruppe":"Textwesen","typ":"exec","programm":"/usr/bin/dirname","argumente":[],"rest":"anhaengen","beschreibung":"zeigt Vorordner"}

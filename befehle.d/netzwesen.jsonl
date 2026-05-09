@@ -1,0 +1,14 @@
+{"befehl":["netz","wegewurst"],"gruppe":"Netzwesen","typ":"exec","programm":"/usr/bin/traceroute","argumente":[],"rest":"anhaengen","beschreibung":"verfolgt die Wegewurst"}
+{"befehl":["netz","sockenschau"],"gruppe":"Netzwesen","typ":"exec","programm":"/usr/bin/ss","argumente":[],"rest":"anhaengen","beschreibung":"zeigt Netzsocken"}
+{"befehl":["netz","lagebericht"],"gruppe":"Netzwesen","typ":"exec","programm":"/usr/bin/netstat","argumente":[],"rest":"anhaengen","beschreibung":"zeigt Netzlage"}
+{"befehl":["netz","kringel"],"gruppe":"Netzwesen","typ":"exec","programm":"/usr/bin/curl","argumente":[],"rest":"anhaengen","beschreibung":"kringelt Daten übers Netz"}
+{"befehl":["fernzieh"],"gruppe":"Netzwesen","typ":"exec","programm":"/usr/bin/wget","argumente":[],"rest":"anhaengen","beschreibung":"zieht Fernbestand"}
+{"befehl":["sicherfernsprech"],"gruppe":"Netzwesen","typ":"exec","programm":"/usr/bin/ssh","argumente":[],"rest":"anhaengen","beschreibung":"spricht sicher in die Ferne"}
+{"befehl":["sicherfernkopier"],"gruppe":"Netzwesen","typ":"exec","programm":"/usr/bin/scp","argumente":[],"rest":"anhaengen","beschreibung":"kopiert sicher in die Ferne"}
+{"befehl":["gleichschalt","uebertrag"],"gruppe":"Netzwesen","typ":"exec","programm":"/usr/bin/rsync","argumente":[],"rest":"anhaengen","beschreibung":"gleicht Übertragung ab"}
+{"befehl":["gleichschalt","übertrag"],"gruppe":"Netzwesen","typ":"alias","ziel":["gleichschalt","uebertrag"],"rest":"anhaengen","beschreibung":"gleicht Übertragung ab"}
+{"befehl":["dns","buddel"],"gruppe":"Netzwesen","typ":"exec","programm":"/usr/bin/dig","argumente":[],"rest":"anhaengen","beschreibung":"buddelt DNS aus"}
+{"befehl":["namensschild","guck"],"gruppe":"Netzwesen","typ":"exec","programm":"/usr/bin/nslookup","argumente":[],"rest":"anhaengen","beschreibung":"guckt ins Namensschild"}
+{"befehl":["gastgeber","auskunft"],"gruppe":"Netzwesen","typ":"exec","programm":"/usr/bin/host","argumente":[],"rest":"anhaengen","beschreibung":"fragt Gastgeber aus"}
+{"befehl":["port","klingel"],"gruppe":"Netzwesen","typ":"exec","programm":"/usr/bin/nc","argumente":[],"rest":"anhaengen","beschreibung":"klingelt an Ports"}
+{"befehl":["paket","polizei"],"gruppe":"Netzwesen","typ":"exec","programm":"/usr/sbin/iptables","argumente":[],"rest":"anhaengen","beschreibung":"verwaltet Paketpolizei"}

@@ -68,6 +68,8 @@ muschel verzeichnis liste .
 | `verzeichnis ort` | zeigt den derzeitigen Ort |
 | `verzeichnis liste` | zeigt einen Verzeichnisbestand |
 | `verzeichnis wechsel` | wechselt den derzeitigen Ort |
+| `verzeichnis mach` | legt Verzeichnisse an |
+| `verzeichnis weg` | entfernt leere Verzeichnisse |
 
 </details>
 
@@ -78,6 +80,18 @@ muschel verzeichnis liste .
 | --- | --- |
 | `datei lesen` | liest eine Datei |
 | `datei zeigen` | zeigt Dateiangaben |
+| `datei antipp` | legt Dateien an oder tippt Zeiten neu |
+| `datei blaettern` | blättert durch Dateien |
+| `datei blättern` | blättert durch Dateien |
+| `datei kopf` | zeigt den Dateikopf |
+| `datei schwanz` | zeigt den Dateischwanz |
+| `datei abschrift` | fertigt Abschriften an |
+| `datei umlagern` | verlegt Dateien amtlich |
+| `datei tilgen` | tilgt Dateien |
+| `datei verweis` | schnürt Dateiverweise |
+| `datei rechtezettel` | ändert Zugriffsrechte |
+| `datei habsmann` | ändert Eigentümer und Gruppe |
+| `datei wasndas` | bestimmt Dateiart |
 
 </details>
 
@@ -116,6 +130,88 @@ muschel verzeichnis liste .
 </details>
 
 <details>
+<summary><strong><code>platz</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `platz frass` | zeigt Platzfraß |
+| `platz fraß` | zeigt Platzfraß |
+
+</details>
+
+<details>
+<summary><strong><code>platte</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `platte stand` | zeigt Plattenfüllstand |
+
+</details>
+
+<details>
+<summary><strong><code>beipackzettel</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `beipackzettel` | zeigt Gebrauchsanweisung |
+
+</details>
+
+<details>
+<summary><strong><code>fundort</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `fundort befehl` | zeigt Befehlsfundort |
+
+</details>
+
+<details>
+<summary><strong><code>fundbuero</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `fundbuero` | sucht Programmfundstellen |
+
+</details>
+
+<details>
+<summary><strong><code>fundbüro</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `fundbüro` | sucht Programmfundstellen |
+
+</details>
+
+<details>
+<summary><strong><code>spitzname</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `spitzname liste` | zeigt Spitznamen |
+
+</details>
+
+<details>
+<summary><strong><code>vergangenheitsprotokoll</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `vergangenheitsprotokoll` | zeigt Befehlsvergangenheit |
+
+</details>
+
+<details>
+<summary><strong><code>bildschirm</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `bildschirm fegen` | fegt die Ansicht leer |
+
+</details>
+
+<details>
 <summary><strong><code>hapsmann</code></strong></summary>
 
 | Befehl | Zweck |
@@ -129,6 +225,559 @@ muschel verzeichnis liste .
 | `hapsmann bestand` | listet eingerichtete Pakete |
 | `hapsmann aufraeumen` | räumt den Paketzwischenspeicher auf |
 | `hapsmann aufräumen` | räumt den Paketzwischenspeicher auf |
+
+</details>
+
+### Textwesen
+
+<details>
+<summary><strong><code>text</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `text fahndung` | fahndet in Text |
+
+</details>
+
+<details>
+<summary><strong><code>datei</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `datei ortung` | ortet Dateien |
+
+</details>
+
+<details>
+<summary><strong><code>argumente</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `argumente kleben` | klebt Argumente zusammen |
+
+</details>
+
+<details>
+<summary><strong><code>wort</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `wort zaehlamt` | zählt Zeilen Wörter Zeichen |
+| `wort zählamt` | zählt Zeilen Wörter Zeichen |
+
+</details>
+
+<details>
+<summary><strong><code>zeilen</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `zeilen ordnen` | ordnet Zeilen |
+
+</details>
+
+<details>
+<summary><strong><code>doppel</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `doppel tilgen` | tilgt Nachbardoppel |
+| `doppel zapf` | zapft Ausgabe doppelt |
+
+</details>
+
+<details>
+<summary><strong><code>spalten</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `spalten schnipp` | schneidet Spalten |
+
+</details>
+
+<details>
+<summary><strong><code>zeichen</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `zeichen tausch` | tauscht Zeichen |
+
+</details>
+
+<details>
+<summary><strong><code>stromtext</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `stromtext aendern` | ändert Stromtext |
+| `stromtext ändern` | ändert Stromtext |
+
+</details>
+
+<details>
+<summary><strong><code>feld</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `feld akrobat` | verarbeitet Textfelder |
+
+</details>
+
+<details>
+<summary><strong><code>unterschied</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `unterschied zeigen` | zeigt Unterschiede |
+
+</details>
+
+<details>
+<summary><strong><code>flicken</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `flicken anwenden` | wendet Flicken an |
+
+</details>
+
+<details>
+<summary><strong><code>namen</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `namen rest` | zeigt Namensrest |
+
+</details>
+
+<details>
+<summary><strong><code>ordner</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `ordner davor` | zeigt Vorordner |
+
+</details>
+
+### Paketwerk
+
+<details>
+<summary><strong><code>bindball</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `bindball mach` | wickelt Dateien zum Bindball |
+
+</details>
+
+<details>
+<summary><strong><code>quetsch</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `quetsch mach` | quetscht Dateien |
+| `quetsch auf` | bläst Gequetschtes auf |
+
+</details>
+
+<details>
+<summary><strong><code>reisszu</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `reisszu mach` | macht Reißverschlussarchiv |
+| `reisszu auf` | öffnet Reißverschlussarchiv |
+
+</details>
+
+<details>
+<summary><strong><code>reißzu</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `reißzu mach` | macht Reißverschlussarchiv |
+| `reißzu auf` | öffnet Reißverschlussarchiv |
+
+</details>
+
+### Systemwesen
+
+<details>
+<summary><strong><code>vorgang</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `vorgang liste` | listet Vorgänge |
+| `vorgang aufsicht` | zeigt Vorgangsaufsicht |
+| `vorgang huebschaufsicht` | zeigt hübsche Vorgangsaufsicht |
+| `vorgang hübschaufsicht` | zeigt hübsche Vorgangsaufsicht |
+| `vorgang beenden` | beendet Vorgang |
+| `vorgang allebeenden` | beendet Vorgänge nach Namen |
+
+</details>
+
+<details>
+<summary><strong><code>reichsgeraet</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `reichsgeraet ausweis` | zeigt Geräteausweis |
+
+</details>
+
+<details>
+<summary><strong><code>reichsgerät</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `reichsgerät ausweis` | zeigt Geräteausweis |
+
+</details>
+
+<details>
+<summary><strong><code>betriebszeit</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `betriebszeit amtlich` | zeigt Betriebszeit |
+
+</details>
+
+<details>
+<summary><strong><code>uhrzeit</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `uhrzeit bescheid` | zeigt Uhrzeitbescheid |
+
+</details>
+
+<details>
+<summary><strong><code>werbinichdenn</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `werbinichdenn` | zeigt Benutzername |
+
+</details>
+
+<details>
+<summary><strong><code>personen</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `personen kennziffer` | zeigt Personenkennziffern |
+| `personen wechsel` | wechselt Person |
+
+</details>
+
+<details>
+<summary><strong><code>umwelt</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `umwelt bestand` | zeigt Umweltbestand |
+
+</details>
+
+<details>
+<summary><strong><code>oberbitte</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `oberbitte` | fragt nach Oberbefugnis |
+
+</details>
+
+<details>
+<summary><strong><code>augen</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `augen zu` | wartet amtlich |
+
+</details>
+
+<details>
+<summary><strong><code>dauer</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `dauer guck` | guckt dauernd |
+
+</details>
+
+<details>
+<summary><strong><code>geraet</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `geraet dranhaeng` | hängt Gerät ein |
+| `geraet abhaeng` | hängt Gerät aus |
+
+</details>
+
+<details>
+<summary><strong><code>gerät</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `gerät dranhäng` | hängt Gerät ein |
+| `gerät abhäng` | hängt Gerät aus |
+
+</details>
+
+<details>
+<summary><strong><code>klotz</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `klotz guck` | zeigt Speicherklötze |
+
+</details>
+
+<details>
+<summary><strong><code>dateien</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `dateien petz` | petzt offene Dateien |
+
+</details>
+
+<details>
+<summary><strong><code>ram</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `ram nochda` | zeigt freien Speicher |
+
+</details>
+
+<details>
+<summary><strong><code>tagebuch</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `tagebuch dienst` | zeigt Diensttagebuch |
+
+</details>
+
+<details>
+<summary><strong><code>zeitfolge</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `zeitfolge verzeichnis` | verwaltet Zeitfolgen |
+
+</details>
+
+<details>
+<summary><strong><code>kern</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `kern gemurmel` | zeigt Kerngemurmel |
+
+</details>
+
+### Netzwesen
+
+<details>
+<summary><strong><code>netz</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `netz wegewurst` | verfolgt die Wegewurst |
+| `netz sockenschau` | zeigt Netzsocken |
+| `netz lagebericht` | zeigt Netzlage |
+| `netz kringel` | kringelt Daten übers Netz |
+
+</details>
+
+<details>
+<summary><strong><code>fernzieh</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `fernzieh` | zieht Fernbestand |
+
+</details>
+
+<details>
+<summary><strong><code>sicherfernsprech</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `sicherfernsprech` | spricht sicher in die Ferne |
+
+</details>
+
+<details>
+<summary><strong><code>sicherfernkopier</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `sicherfernkopier` | kopiert sicher in die Ferne |
+
+</details>
+
+<details>
+<summary><strong><code>gleichschalt</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `gleichschalt uebertrag` | gleicht Übertragung ab |
+| `gleichschalt übertrag` | gleicht Übertragung ab |
+
+</details>
+
+<details>
+<summary><strong><code>dns</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `dns buddel` | buddelt DNS aus |
+
+</details>
+
+<details>
+<summary><strong><code>namensschild</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `namensschild guck` | guckt ins Namensschild |
+
+</details>
+
+<details>
+<summary><strong><code>gastgeber</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `gastgeber auskunft` | fragt Gastgeber aus |
+
+</details>
+
+<details>
+<summary><strong><code>port</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `port klingel` | klingelt an Ports |
+
+</details>
+
+<details>
+<summary><strong><code>paket</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `paket polizei` | verwaltet Paketpolizei |
+
+</details>
+
+### Entwicklung
+
+<details>
+<summary><strong><code>astmann</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `astmann lage` | zeigt Astlage |
+| `astmann eintueten` | tütet Änderungen ein |
+| `astmann eintüten` | tütet Änderungen ein |
+| `astmann festasteln` | stempelt Änderungen fest |
+| `astmann chronik` | zeigt Astchronik |
+| `astmann meckerstreifen` | zeigt Änderungsmecker |
+| `astmann fernkopie` | legt Fernkopie an |
+| `astmann holen` | holt Fernstand |
+| `astmann schieben` | schiebt Eigenmist fern |
+| `astmann fernneuigkeiten` | holt Fernneuigkeiten |
+| `astmann ferngegenstelle` | verwaltet Ferngegenstellen |
+| `astmann astliste` | zeigt und verwaltet Äste |
+| `astmann astwechsel` | wechselt Ast |
+| `astmann altkletter` | klettert altmodisch |
+| `astmann zusammenklatsch` | klatscht Äste zusammen |
+| `astmann umtopf` | topft Ast um |
+| `astmann handschuhfach` | legt Pfusch ins Handschuhfach |
+| `astmann zurueckkartoffeln` | kartoffelt zurück |
+| `astmann zurückkartoffeln` | kartoffelt zurück |
+| `astmann heilmach` | macht Dateien heil |
+| `astmann preisschild` | hängt Preisschild an |
+| `astmann werwars` | sucht den Schuldigen |
+
+</details>
+
+<details>
+<summary><strong><code>machmal</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `machmal` | macht nach Bauzettel |
+
+</details>
+
+<details>
+<summary><strong><code>vormachamt</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `vormachamt` | erzeugt Machanweisung |
+
+</details>
+
+<details>
+<summary><strong><code>quellwurst</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `quellwurst press` | presst Quellwurst |
+
+</details>
+
+<details>
+<summary><strong><code>schlangenamt</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `schlangenamt` | führt Schlangenwerk aus |
+
+</details>
+
+<details>
+<summary><strong><code>paketpfennig</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `paketpfennig` | verwaltet Python-Pakete |
+
+</details>
+
+<details>
+<summary><strong><code>jotkuh</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `jotkuh` | siebt JSON |
+
+</details>
+
+<details>
+<summary><strong><code>dateikampfstift</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `dateikampfstift` | bearbeitet Text gefährlich |
+
+</details>
+
+<details>
+<summary><strong><code>weichgriffschreiber</code></strong></summary>
+
+| Befehl | Zweck |
+| --- | --- |
+| `weichgriffschreiber` | bearbeitet Text sanft |
 
 </details>
 

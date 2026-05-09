@@ -1,0 +1,100 @@
+001 pwd
+002 ls
+003 cd
+004 mkdir
+005 rmdir
+006 touch
+007 cat
+008 less
+009 head
+010 tail
+011 cp
+012 mv
+013 rm
+014 ln
+015 chmod
+016 chown
+017 stat
+018 du
+019 df
+020 file
+021 grep
+022 find
+023 xargs
+024 wc
+025 sort
+026 uniq
+027 cut
+028 tr
+029 sed
+030 awk
+031 diff
+032 patch
+033 tee
+034 basename
+035 dirname
+036 tar
+037 gzip
+038 gunzip
+039 zip
+040 unzip
+041 ps
+042 top
+043 htop
+044 kill
+045 killall
+046 uname
+047 uptime
+048 date
+049 whoami
+050 id
+051 env
+052 sudo
+053 su
+054 clear
+055 sleep
+056 watch
+057 mount
+058 umount
+059 lsblk
+060 lsof
+061 free
+062 systemctl
+063 journalctl
+064 crontab
+065 dmesg
+066 ip
+067 ping
+068 traceroute
+069 ss
+070 netstat
+071 curl
+072 wget
+073 ssh
+074 scp
+075 rsync
+076 dig
+077 nslookup
+078 host
+079 nc
+080 iptables
+081 git status
+082 git add
+083 git commit
+084 git log
+085 git diff
+086 git clone
+087 git pull
+088 git push
+089 git fetch
+090 git remote
+091 git branch
+092 git switch
+093 git checkout
+094 git merge
+095 git rebase
+096 git stash
+097 git reset
+098 git restore
+099 git tag
+100 git blame
