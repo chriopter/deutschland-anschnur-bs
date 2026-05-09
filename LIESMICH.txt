@@ -51,7 +51,8 @@ Alle übrigen Eingaben werden amtlich beanstandet. Die Muschel teilt dabei mit, 
 | --- | --- |
 | DABS | Deutschland Anschnur Betriebssystem |
 | BOGEN | Betriebssystemgrundordnung eigennütziger Nutzer |
-| LEINUX | Leitender eigennutzbarer Informations- und Nutzerkern nach X-Art |
+| EINIX | Einheitlicher Informations- und Rechendienst nach X-Schreibweise |
+| LEINUX | Linus-Einix; von Linus abgeleiteter einheitlicher Informations- und Rechendienst |
 | WURZEL | Wirkungsursprüngliche Rechte- und Zuständigkeitsebene Leinux |
 | KERN | Kontroll- und Einsatzrechenkern des Nutzerlandes |
 
