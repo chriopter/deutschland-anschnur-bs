@@ -84,28 +84,3 @@ muschel verzeichnis liste .
 | `hafener zusammensetz tagebuch` | zeigt Hafentagebuch |
 
 <!-- BEFEHLE:ENDE -->
-
-## Lexikon
-
-<details>
-<summary>Weichware</summary>
-
-| Deutsches Aktenzeichen | Auflösung |
-| --- | --- |
-| Muschel | Befehlsannahmestelle mit deutscher Übersetzungsordnung |
-| Befehlsakte | Datenzeile zur Übersetzung eines Amtsbefehls |
-| Hapsmann | Paketfresser für Paketangelegenheiten |
-| Hafener | Behälterdienst für abgeschlossene Laufumgebungen |
-
-</details>
-
-<details>
-<summary>Betriebssystem</summary>
-
-| Deutsches Aktenzeichen | Auflösung |
-| --- | --- |
-| DAM | Deutschland Anschnur Muschel |
-| Einix | Einheitlicher Informations- und Rechendienst nach X-Schreibweise |
-| Leinux | Linus-Einix; von Linus abgeleiteter einheitlicher Informations- und Rechendienst |
-
-</details>
