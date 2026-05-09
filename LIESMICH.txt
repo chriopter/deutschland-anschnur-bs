@@ -1,0 +1,58 @@
+<p align="center">
+  <img src="medien/zeichen.png" alt="Deutschland Anschnur BS Dienstzeichen" width="300">
+</p>
+
+# Deutschland Anschnur BS
+
+Ein lokalisiertes Bogenleinux-Derivat mit `muschel`, einer erlaubnisbasierten Kleinmuschel.
+
+Jede Änderung auf dem Hauptzweig `haupt` veranlasst automatisch eine neue DIN-Abbildfertigung als Anlage des GitHub-Handlungslaufs.
+
+Einige angelsächsische Restbegriffe verbleiben aufgrund technischer Zuständigkeitsbindung bis zur späteren Verdeutschungsverfügung im Bestand.
+
+## Muschel
+
+| Befehl | Dienstliche Wirkung |
+| --- | --- |
+| `hilfe` | erteilt eine knappe Befehlsauskunft |
+| `verlassen` | beendet den Muschelvorgang ordnungsgemäß |
+
+Alle übrigen Eingaben werden amtlich beanstandet. Die Muschel teilt dabei mit, ob der angelsächsische Fremdbefehl im System vorhanden, aber noch nicht freigegeben ist.
+
+## Lexikon
+
+<details>
+<summary>HARTWARE</summary>
+
+| Deutsches Aktenzeichen | Auflösung |
+| --- | --- |
+| DIN | Datenträgerabbild in Normallage |
+
+</details>
+
+<details>
+<summary>WEICHWARE</summary>
+
+| Deutsches Aktenzeichen | Auflösung |
+| --- | --- |
+| MUSCHEL | Maschinen- und Systemkommandohilfe mit eingeschränkter Leitung |
+| HILFE | Handlungsinformation laufender Führungs- und Eingabeordnung |
+| PAKET | Programmakte kraft elektronischer Teilbereitstellung |
+| DIENSTGEIST | Dauerhaft im Einsatz stehender Hintergrundvorgang einer informationstechnischen Stelle |
+| ABLAGESTELLE | Amtliche Bereitstellungs- und Lagerstätte geordneter Quellakten |
+| ÄNDERUNGSEINTRAG | Änderungsniederschrift einzelner nachweisbarer Git-Vorgänge |
+
+</details>
+
+<details>
+<summary>BETRIEBSSYSTEM</summary>
+
+| Deutsches Aktenzeichen | Auflösung |
+| --- | --- |
+| DABS | Deutschland Anschnur Betriebssystem |
+| BOGEN | Betriebssystemgrundordnung eigennütziger Nutzer |
+| LEINUX | Leitender eigennutzbarer Informations- und Nutzerkern nach X-Art |
+| WURZEL | Wirkungsursprüngliche Rechte- und Zuständigkeitsebene Leinux |
+| KERN | Kontroll- und Einsatzrechenkern des Nutzerlandes |
+
+</details>

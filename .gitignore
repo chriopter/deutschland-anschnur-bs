@@ -1,0 +1,21 @@
+# Bauausgaben
+arbeit/
+ausgabe/
+bauprofil/
+out/
+work/
+dist/
+*.iso
+*.iso.sig
+*.img
+*.pkg.tar.*
+*.db*
+*.files*
+
+# Lokal/Editor
+.env
+.DS_Store
+.idea/
+.vscode/
+__pycache__/
+*.py[cod]

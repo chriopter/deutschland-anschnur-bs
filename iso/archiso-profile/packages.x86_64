@@ -1,0 +1,11 @@
+base
+linux
+linux-firmware
+systemd
+networkmanager
+sudo
+vim
+nano
+git
+openssh
+archinstall

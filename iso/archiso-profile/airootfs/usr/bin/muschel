@@ -1,0 +1,59 @@
+#!/bin/bash
+set -u
+
+zeige_hilfe() {
+  cat <<'EOF'
+Zugelassene Amtsbefehle:
+  hilfe      - zeigt diese dienstliche Auskunft
+  verlassen  - schließt die Muschel ordnungsgemäß
+EOF
+}
+
+melde_nicht_erlaubt() {
+  local befehl="$1"
+
+  echo "Bescheid der Muschelbehörde: Der Befehl \"${befehl}\" ist nicht erlaubt."
+
+  if command -v -- "${befehl}" >/dev/null 2>&1; then
+    local fundstelle
+    fundstelle="$(command -v -- "${befehl}" 2>/dev/null || true)"
+    echo "Sachstand: \"${befehl}\" ist im System vorhanden (${fundstelle}), aber dienstlich noch nicht freigegeben."
+  else
+    echo "Sachstand: \"${befehl}\" konnte im System nicht festgestellt werden."
+  fi
+
+  echo "Hinweis: Bitte reichen Sie einen Antrag auf Befehlsverdeutschung ein."
+}
+
+verarbeite_zeile() {
+  local zeile="$1"
+  local befehl
+
+  # Leere Eingaben ignorieren.
+  [[ -z "${zeile//[[:space:]]/}" ]] && return 0
+
+  # V1: bewusst simpel; erstes Wort ist der abzufangende Befehl.
+  read -r befehl _ <<< "${zeile}"
+
+  case "${befehl}" in
+    hilfe)
+      zeige_hilfe
+      ;;
+    verlassen)
+      echo "Muschel wird ordnungsgemäß geschlossen."
+      exit 0
+      ;;
+    *)
+      melde_nicht_erlaubt "${befehl}"
+      ;;
+  esac
+}
+
+if [[ -t 0 ]]; then
+  echo "Deutschland Anschnur BS Muschel v1"
+  echo "Geben Sie 'hilfe' ein."
+fi
+
+while IFS= read -r zeile; do
+  verarbeite_zeile "${zeile}"
+done

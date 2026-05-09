@@ -1,0 +1,10 @@
+NAME="Deutschland Anschnur BS"
+PRETTY_NAME="Deutschland Anschnur BS v1 (Arch-based)"
+ID=deutschland-anschnur-bs
+ID_LIKE=arch
+BUILD_ID=rolling
+ANSI_COLOR="0;33"
+HOME_URL="https://example.invalid/deutschland-anschnur-bs"
+DOCUMENTATION_URL="https://example.invalid/deutschland-anschnur-bs/docs"
+SUPPORT_URL="https://example.invalid/deutschland-anschnur-bs/issues"
+BUG_REPORT_URL="https://example.invalid/deutschland-anschnur-bs/issues"

@@ -1,0 +1,72 @@
+name: ISO bauen
+
+on:
+  push:
+    branches: [haupt]
+  pull_request:
+    branches: [haupt]
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: iso-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  iso-bauen:
+    name: ArchISO bauen
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux:latest
+      options: --privileged
+    steps:
+      - name: Abhaengigkeiten installieren
+        run: pacman -Syu --noconfirm --needed git python archiso grub syslinux squashfs-tools xorriso dosfstools mtools libisoburn
+
+      - name: Quelltext auschecken
+        uses: actions/checkout@v4
+
+      - name: Muschel pruefen
+        run: python -m unittest tests/test_muschel.py -v
+
+      - name: Bogen-Referenzprofil vorbereiten
+        run: |
+          rm -rf bauprofil
+          cp -a /usr/share/archiso/configs/releng bauprofil
+          cp -a iso/archiso-profile/airootfs/. bauprofil/airootfs/
+          python - <<'PY'
+          from pathlib import Path
+          profil = Path('bauprofil/profiledef.sh')
+          text = profil.read_text()
+          ersetzungen = {
+              'iso_name="archlinux"': 'iso_name="deutschland-anschnur-bs"',
+              'iso_label="ARCH_$(date +%Y%m)"': 'iso_label="DABS_$(date +%Y%m)"',
+              'iso_publisher="Arch Linux <https://archlinux.org>"': 'iso_publisher="Deutschland Anschnur BS <https://github.com/chriopter/deutschland-anschnur-bs>"',
+              'iso_application="Arch Linux Live/Rescue CD"': 'iso_application="Deutschland Anschnur BS Live-Abbild"',
+          }
+          for alt, neu in ersetzungen.items():
+              text = text.replace(alt, neu)
+          profil.write_text(text)
+          PY
+
+      - name: ISO bauen
+        run: mkarchiso -v -w arbeit -o ausgabe bauprofil
+
+      - name: Pruefsummen erzeugen
+        run: |
+          cd ausgabe
+          sha256sum *.iso > SHA256SUMMEN
+
+      - name: ISO als Aenderungsartefakt hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: deutschland-anschnur-bs-${{ github.sha }}
+          path: |
+            ausgabe/*.iso
+            ausgabe/SHA256SUMMEN
+          if-no-files-found: error
+          retention-days: 14
