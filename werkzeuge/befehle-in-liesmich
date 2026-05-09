@@ -58,13 +58,11 @@ def html_zelle(wert: str) -> str:
 def unredlicher_befehl(eintrag: dict) -> str:
     typ = eintrag.get("typ")
     if typ == "exec":
-        programm = Path(eintrag["programm"]).name
-        teile = [programm, *eintrag.get("argumente", [])]
-        return " ".join(str(teil) for teil in teile)
-    if typ == "alias":
-        return "→ " + " ".join(eintrag.get("ziel", []))
+        return Path(eintrag["programm"]).name
     if typ == "builtin":
-        return "muschel eingebaut"
+        return {"cd": "cd", "hilfe": "help", "verlassen": "exit", "neu_laden": "source"}.get(
+            str(eintrag.get("funktion", "")), "muschel"
+        )
     return ""
 
 
@@ -79,45 +77,26 @@ def unredliche_befehle(daten: list[dict]) -> str:
     return ", ".join(werte)
 
 
-def varianten_tabelle(daten: list[dict], mit_hinweis: bool) -> list[str]:
-    kopf = "<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th>"
-    if mit_hinweis:
-        kopf += "<th>Hinweis</th>"
-    kopf += "</tr>"
-    zeilen = ["<table>", "<thead>", kopf, "</thead>", "<tbody>"]
+def varianten_liste(daten: list[dict]) -> list[str]:
+    zeilen = ["<ul>"]
     for eintrag in daten:
-        zellen = [
-            f"<td>{html_code(befehlsname(eintrag))}</td>",
-            f"<td>{html_zelle(eintrag.get('beschreibung', 'dienstlich erfasst'))}</td>",
-            f"<td>{html_code(unredlicher_befehl(eintrag))}</td>",
-        ]
-        if mit_hinweis:
-            zellen.append(f"<td>{html_zelle(eintrag.get('hinweis', ''))}</td>")
-        zeilen.append("<tr>" + "".join(zellen) + "</tr>")
-    zeilen.extend(["</tbody>", "</table>"])
+        zeilen.append(
+            f"<li>{html_code(befehlsname(eintrag))} — {html_zelle(eintrag.get('beschreibung', 'dienstlich erfasst'))}</li>"
+        )
+    zeilen.append("</ul>")
     return zeilen
 
 
-def befehlszellen(name: str, daten: list[dict], mit_hinweis: bool) -> list[str]:
-    zellen = [
+def befehlszellen(name: str, daten: list[dict]) -> list[str]:
+    return [
         "<td>",
         "<details>",
         f"<summary>{html_code(name)}</summary>",
-        *varianten_tabelle(daten, mit_hinweis),
+        *varianten_liste(daten),
         "</details>",
         "</td>",
         f"<td>{html_code(unredliche_befehle(daten))}</td>",
     ]
-    if mit_hinweis:
-        hinweise = []
-        gesehen = set()
-        for eintrag in daten:
-            hinweis = eintrag.get("hinweis", "")
-            if hinweis and hinweis not in gesehen:
-                gesehen.add(hinweis)
-                hinweise.append(hinweis)
-        zellen.append(f"<td>{html_zelle(', '.join(hinweise))}</td>")
-    return zellen
 
 
 def gruppierte_eintraege() -> OrderedDict[str, OrderedDict[str, list[dict]]]:
@@ -134,7 +113,7 @@ def gruppierte_eintraege() -> OrderedDict[str, OrderedDict[str, list[dict]]]:
     return OrderedDict((name, daten) for name, daten in gruppen.items() if daten)
 
 
-def gruppenzeilen(gruppenname: str, hauptgruppen: OrderedDict[str, list[dict]], mit_hinweis: bool) -> list[str]:
+def gruppenzeilen(gruppenname: str, hauptgruppen: OrderedDict[str, list[dict]]) -> list[str]:
     zeilen: list[str] = []
     span = len(hauptgruppen)
     erste = True
@@ -144,32 +123,22 @@ def gruppenzeilen(gruppenname: str, hauptgruppen: OrderedDict[str, list[dict]], 
             titel = GRUPPEN_TITEL.get(gruppenname, gruppenname)
             zellen.append(f"<td rowspan=\"{span}\"><strong>{html_zelle(titel)}</strong></td>")
             erste = False
-        zellen.extend(befehlszellen(name, daten, mit_hinweis))
+        zellen.extend(befehlszellen(name, daten))
         zellen.append("</tr>")
         zeilen.extend(zellen)
     return zeilen
 
 
 def befehlstabelle(gruppen: OrderedDict[str, OrderedDict[str, list[dict]]]) -> list[str]:
-    mit_hinweis = any(
-        eintrag.get("hinweis")
-        for hauptgruppen in gruppen.values()
-        for daten in hauptgruppen.values()
-        for eintrag in daten
-    )
-    kopf = "<tr><th>Befehlskategorie</th><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th>"
-    if mit_hinweis:
-        kopf += "<th>Hinweis</th>"
-    kopf += "</tr>"
     zeilen = [
         "<table>",
         "<thead>",
-        kopf,
+        "<tr><th>Befehlskategorie</th><th>Befehl</th><th>Angelsächsischer unredlicher Befehl</th></tr>",
         "</thead>",
         "<tbody>",
     ]
     for gruppenname, hauptgruppen in gruppen.items():
-        zeilen.extend(gruppenzeilen(gruppenname, hauptgruppen, mit_hinweis))
+        zeilen.extend(gruppenzeilen(gruppenname, hauptgruppen))
     zeilen.extend(["</tbody>", "</table>", ""])
     return zeilen
 
