@@ -39,7 +39,14 @@ muschel verzeichnis liste .
 <td>
 <details>
 <summary><code>hilfe</code></summary>
-<p>zeigt diese dienstliche Auskunft</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>hilfe</code></td><td>zeigt diese dienstliche Auskunft</td><td><code>muschel eingebaut</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>muschel eingebaut</code></td>
@@ -49,7 +56,14 @@ muschel verzeichnis liste .
 <td>
 <details>
 <summary><code>verlassen</code></summary>
-<p>schließt die Muschel ordnungsgemäß</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>verlassen</code></td><td>schließt die Muschel ordnungsgemäß</td><td><code>muschel eingebaut</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>muschel eingebaut</code></td>
@@ -58,329 +72,160 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>muschel neu laden</code></summary>
-<p>lädt die Befehlsakten neu</p>
+<summary><code>muschel</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>muschel neu laden</code></td><td>lädt die Befehlsakten neu</td><td><code>muschel eingebaut</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>muschel eingebaut</code></td>
 <td></td>
 </tr>
 <tr>
-<td rowspan="64"><strong>Grundbestand</strong></td>
+<td rowspan="17"><strong>Grundbestand</strong></td>
 <td>
 <details>
-<summary><code>verzeichnis ort</code></summary>
-<p>zeigt den derzeitigen Ort</p>
+<summary><code>verzeichnis</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>verzeichnis ort</code></td><td>zeigt den derzeitigen Ort</td><td><code>pwd</code></td><td></td></tr>
+<tr><td><code>verzeichnis liste</code></td><td>zeigt einen Verzeichnisbestand</td><td><code>ls -la</code></td><td></td></tr>
+<tr><td><code>verzeichnis wechsel</code></td><td>wechselt den derzeitigen Ort</td><td><code>muschel eingebaut</code></td><td></td></tr>
+<tr><td><code>verzeichnis mach</code></td><td>legt Verzeichnisse an</td><td><code>mkdir</code></td><td></td></tr>
+<tr><td><code>verzeichnis weg</code></td><td>entfernt leere Verzeichnisse</td><td><code>rmdir</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>pwd</code></td>
+<td><code>pwd, ls -la, muschel eingebaut, mkdir, rmdir</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>verzeichnis liste</code></summary>
-<p>zeigt einen Verzeichnisbestand</p>
+<summary><code>datei</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>datei lesen</code></td><td>liest eine Datei</td><td><code>cat</code></td><td></td></tr>
+<tr><td><code>datei zeigen</code></td><td>zeigt Dateiangaben</td><td><code>stat</code></td><td></td></tr>
+<tr><td><code>datei antipp</code></td><td>legt Dateien an oder tippt Zeiten neu</td><td><code>touch</code></td><td></td></tr>
+<tr><td><code>datei blaettern</code></td><td>blättert durch Dateien</td><td><code>less</code></td><td></td></tr>
+<tr><td><code>datei blättern</code></td><td>blättert durch Dateien</td><td><code>→ datei blaettern</code></td><td></td></tr>
+<tr><td><code>datei kopf</code></td><td>zeigt den Dateikopf</td><td><code>head</code></td><td></td></tr>
+<tr><td><code>datei schwanz</code></td><td>zeigt den Dateischwanz</td><td><code>tail</code></td><td></td></tr>
+<tr><td><code>datei abschrift</code></td><td>fertigt Abschriften an</td><td><code>cp</code></td><td></td></tr>
+<tr><td><code>datei umlagern</code></td><td>verlegt Dateien amtlich</td><td><code>mv</code></td><td></td></tr>
+<tr><td><code>datei tilgen</code></td><td>tilgt Dateien</td><td><code>rm</code></td><td></td></tr>
+<tr><td><code>datei verweis</code></td><td>schnürt Dateiverweise</td><td><code>ln</code></td><td></td></tr>
+<tr><td><code>datei rechtezettel</code></td><td>ändert Zugriffsrechte</td><td><code>chmod</code></td><td></td></tr>
+<tr><td><code>datei habsmann</code></td><td>ändert Eigentümer und Gruppe</td><td><code>chown</code></td><td></td></tr>
+<tr><td><code>datei wasndas</code></td><td>bestimmt Dateiart</td><td><code>file</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>ls -la</code></td>
+<td><code>cat, stat, touch, less, → datei blaettern, head, tail, cp, mv, rm, ln, chmod, chown, file</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>verzeichnis wechsel</code></summary>
-<p>wechselt den derzeitigen Ort</p>
+<summary><code>netz</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>netz stand</code></td><td>zeigt Netzanschriften</td><td><code>ip addr show</code></td><td></td></tr>
+<tr><td><code>netz weg</code></td><td>zeigt Netzwege</td><td><code>ip route show</code></td><td></td></tr>
+<tr><td><code>netz pruefen</code></td><td>prüft die Erreichbarkeit</td><td><code>ping -c 4</code></td><td></td></tr>
+<tr><td><code>netz prüfen</code></td><td>prüft die Erreichbarkeit</td><td><code>→ netz pruefen</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>muschel eingebaut</code></td>
+<td><code>ip addr show, ip route show, ping -c 4, → netz pruefen</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>verzeichnis mach</code></summary>
-<p>legt Verzeichnisse an</p>
+<summary><code>dienst</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>dienst liste</code></td><td>zeigt laufende Dienste</td><td><code>systemctl --type=service --state=running --no-pager</code></td><td></td></tr>
+<tr><td><code>dienst stand</code></td><td>zeigt einen Dienststand</td><td><code>systemctl status --no-pager</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>mkdir</code></td>
+<td><code>systemctl --type=service --state=running --no-pager, systemctl status --no-pager</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>verzeichnis weg</code></summary>
-<p>entfernt leere Verzeichnisse</p>
+<summary><code>system</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>system stand</code></td><td>zeigt Systemstand</td><td><code>sh -c uname -a; uptime; free -h; df -h</code></td><td></td></tr>
+<tr><td><code>system kennung</code></td><td>zeigt Betriebssystemkennung</td><td><code>cat /etc/os-release</code></td><td></td></tr>
+<tr><td><code>system neustarten</code></td><td>startet neu</td><td><code>systemctl reboot</code></td><td></td></tr>
+<tr><td><code>system ausschalten</code></td><td>schaltet aus</td><td><code>systemctl poweroff</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>rmdir</code></td>
+<td><code>sh -c uname -a; uptime; free -h; df -h, cat /etc/os-release, systemctl reboot, systemctl poweroff</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>datei lesen</code></summary>
-<p>liest eine Datei</p>
+<summary><code>platz</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>platz frass</code></td><td>zeigt Platzfraß</td><td><code>du -h</code></td><td></td></tr>
+<tr><td><code>platz fraß</code></td><td>zeigt Platzfraß</td><td><code>→ platz frass</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>cat</code></td>
+<td><code>du -h, → platz frass</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>datei zeigen</code></summary>
-<p>zeigt Dateiangaben</p>
-</details>
-</td>
-<td><code>stat</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>datei antipp</code></summary>
-<p>legt Dateien an oder tippt Zeiten neu</p>
-</details>
-</td>
-<td><code>touch</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>datei blaettern</code></summary>
-<p>blättert durch Dateien</p>
-</details>
-</td>
-<td><code>less</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>datei blättern</code></summary>
-<p>blättert durch Dateien</p>
-</details>
-</td>
-<td><code>→ datei blaettern</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>datei kopf</code></summary>
-<p>zeigt den Dateikopf</p>
-</details>
-</td>
-<td><code>head</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>datei schwanz</code></summary>
-<p>zeigt den Dateischwanz</p>
-</details>
-</td>
-<td><code>tail</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>datei abschrift</code></summary>
-<p>fertigt Abschriften an</p>
-</details>
-</td>
-<td><code>cp</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>datei umlagern</code></summary>
-<p>verlegt Dateien amtlich</p>
-</details>
-</td>
-<td><code>mv</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>datei tilgen</code></summary>
-<p>tilgt Dateien</p>
-</details>
-</td>
-<td><code>rm</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>datei verweis</code></summary>
-<p>schnürt Dateiverweise</p>
-</details>
-</td>
-<td><code>ln</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>datei rechtezettel</code></summary>
-<p>ändert Zugriffsrechte</p>
-</details>
-</td>
-<td><code>chmod</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>datei habsmann</code></summary>
-<p>ändert Eigentümer und Gruppe</p>
-</details>
-</td>
-<td><code>chown</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>datei wasndas</code></summary>
-<p>bestimmt Dateiart</p>
-</details>
-</td>
-<td><code>file</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>netz stand</code></summary>
-<p>zeigt Netzanschriften</p>
-</details>
-</td>
-<td><code>ip addr show</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>netz weg</code></summary>
-<p>zeigt Netzwege</p>
-</details>
-</td>
-<td><code>ip route show</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>netz pruefen</code></summary>
-<p>prüft die Erreichbarkeit</p>
-</details>
-</td>
-<td><code>ping -c 4</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>netz prüfen</code></summary>
-<p>prüft die Erreichbarkeit</p>
-</details>
-</td>
-<td><code>→ netz pruefen</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>dienst liste</code></summary>
-<p>zeigt laufende Dienste</p>
-</details>
-</td>
-<td><code>systemctl --type=service --state=running --no-pager</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>dienst stand</code></summary>
-<p>zeigt einen Dienststand</p>
-</details>
-</td>
-<td><code>systemctl status --no-pager</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>system stand</code></summary>
-<p>zeigt Systemstand</p>
-</details>
-</td>
-<td><code>sh -c uname -a; uptime; free -h; df -h</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>system kennung</code></summary>
-<p>zeigt Betriebssystemkennung</p>
-</details>
-</td>
-<td><code>cat /etc/os-release</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>system neustarten</code></summary>
-<p>startet neu</p>
-</details>
-</td>
-<td><code>systemctl reboot</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>system ausschalten</code></summary>
-<p>schaltet aus</p>
-</details>
-</td>
-<td><code>systemctl poweroff</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>platz frass</code></summary>
-<p>zeigt Platzfraß</p>
-</details>
-</td>
-<td><code>du -h</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>platz fraß</code></summary>
-<p>zeigt Platzfraß</p>
-</details>
-</td>
-<td><code>→ platz frass</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>platte stand</code></summary>
-<p>zeigt Plattenfüllstand</p>
+<summary><code>platte</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>platte stand</code></td><td>zeigt Plattenfüllstand</td><td><code>df -h</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>df -h</code></td>
@@ -390,7 +235,14 @@ muschel verzeichnis liste .
 <td>
 <details>
 <summary><code>beipackzettel</code></summary>
-<p>zeigt Gebrauchsanweisung</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>beipackzettel</code></td><td>zeigt Gebrauchsanweisung</td><td><code>man</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>man</code></td>
@@ -399,8 +251,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>fundort befehl</code></summary>
-<p>zeigt Befehlsfundort</p>
+<summary><code>fundort</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>fundort befehl</code></td><td>zeigt Befehlsfundort</td><td><code>which</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>which</code></td>
@@ -410,7 +269,14 @@ muschel verzeichnis liste .
 <td>
 <details>
 <summary><code>fundbuero</code></summary>
-<p>sucht Programmfundstellen</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>fundbuero</code></td><td>sucht Programmfundstellen</td><td><code>whereis</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>whereis</code></td>
@@ -420,7 +286,14 @@ muschel verzeichnis liste .
 <td>
 <details>
 <summary><code>fundbüro</code></summary>
-<p>sucht Programmfundstellen</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>fundbüro</code></td><td>sucht Programmfundstellen</td><td><code>→ fundbuero</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>→ fundbuero</code></td>
@@ -429,8 +302,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>spitzname liste</code></summary>
-<p>zeigt Spitznamen</p>
+<summary><code>spitzname</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>spitzname liste</code></td><td>zeigt Spitznamen</td><td><code>bash -lc alias</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>bash -lc alias</code></td>
@@ -440,7 +320,14 @@ muschel verzeichnis liste .
 <td>
 <details>
 <summary><code>vergangenheitsprotokoll</code></summary>
-<p>zeigt Befehlsvergangenheit</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>vergangenheitsprotokoll</code></td><td>zeigt Befehlsvergangenheit</td><td><code>bash -lc history</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>bash -lc history</code></td>
@@ -449,8 +336,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>bildschirm fegen</code></summary>
-<p>fegt die Ansicht leer</p>
+<summary><code>bildschirm</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>bildschirm fegen</code></td><td>fegt die Ansicht leer</td><td><code>clear</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>clear</code></td>
@@ -459,259 +353,89 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>hapsmann erneuern</code></summary>
-<p>erneuert Paketbestand und System</p>
+<summary><code>hapsmann</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>hapsmann erneuern</code></td><td>erneuert Paketbestand und System</td><td><code>pacman -Syu</code></td><td>Arch/pacman</td></tr>
+<tr><td><code>hapsmann suchen</code></td><td>sucht verfügbare Pakete</td><td><code>pacman -Ss</code></td><td>Arch/pacman</td></tr>
+<tr><td><code>hapsmann zeigen</code></td><td>zeigt ein eingerichtetes Paket</td><td><code>pacman -Qi</code></td><td>Arch/pacman</td></tr>
+<tr><td><code>hapsmann fernzeigen</code></td><td>zeigt ein verfügbares Paket</td><td><code>pacman -Si</code></td><td>Arch/pacman</td></tr>
+<tr><td><code>hapsmann installieren</code></td><td>richtet Pakete ein</td><td><code>pacman -S</code></td><td>Arch/pacman</td></tr>
+<tr><td><code>hapsmann entfernen</code></td><td>entfernt Pakete samt Folgebestand</td><td><code>pacman -Rns</code></td><td>Arch/pacman</td></tr>
+<tr><td><code>hapsmann bestand</code></td><td>listet eingerichtete Pakete</td><td><code>pacman -Q</code></td><td>Arch/pacman</td></tr>
+<tr><td><code>hapsmann aufraeumen</code></td><td>räumt den Paketzwischenspeicher auf</td><td><code>pacman -Sc</code></td><td>Arch/pacman</td></tr>
+<tr><td><code>hapsmann aufräumen</code></td><td>räumt den Paketzwischenspeicher auf</td><td><code>→ hapsmann aufraeumen</code></td><td>Arch/pacman</td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>pacman -Syu</code></td>
+<td><code>pacman -Syu, pacman -Ss, pacman -Qi, pacman -Si, pacman -S, pacman -Rns, pacman -Q, pacman -Sc, → hapsmann aufraeumen</code></td>
 <td>Arch/pacman</td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>hapsmann suchen</code></summary>
-<p>sucht verfügbare Pakete</p>
+<summary><code>paeckle</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>paeckle erneuern</code></td><td>erneuert den Päckchenbestand</td><td><code>apt update</code></td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>paeckle hochziehen</code></td><td>zieht eingerichtete Päckchen hoch</td><td><code>apt upgrade</code></td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>paeckle suchen</code></td><td>sucht verfügbare Päckchen</td><td><code>apt search</code></td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>paeckle zeigen</code></td><td>zeigt ein verfügbares Päckchen</td><td><code>apt show</code></td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>paeckle installieren</code></td><td>richtet Päckchen ein</td><td><code>apt install</code></td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>paeckle entfernen</code></td><td>entfernt Päckchen</td><td><code>apt remove</code></td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>paeckle fortwerfen</code></td><td>wirft überflüssige Päckchen fort</td><td><code>apt autoremove</code></td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>paeckle bestand</code></td><td>listet eingerichtete Päckchen</td><td><code>apt list --installed</code></td><td>Debian/Ubuntu/apt</td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>pacman -Ss</code></td>
-<td>Arch/pacman</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>hapsmann zeigen</code></summary>
-<p>zeigt ein eingerichtetes Paket</p>
-</details>
-</td>
-<td><code>pacman -Qi</code></td>
-<td>Arch/pacman</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>hapsmann fernzeigen</code></summary>
-<p>zeigt ein verfügbares Paket</p>
-</details>
-</td>
-<td><code>pacman -Si</code></td>
-<td>Arch/pacman</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>hapsmann installieren</code></summary>
-<p>richtet Pakete ein</p>
-</details>
-</td>
-<td><code>pacman -S</code></td>
-<td>Arch/pacman</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>hapsmann entfernen</code></summary>
-<p>entfernt Pakete samt Folgebestand</p>
-</details>
-</td>
-<td><code>pacman -Rns</code></td>
-<td>Arch/pacman</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>hapsmann bestand</code></summary>
-<p>listet eingerichtete Pakete</p>
-</details>
-</td>
-<td><code>pacman -Q</code></td>
-<td>Arch/pacman</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>hapsmann aufraeumen</code></summary>
-<p>räumt den Paketzwischenspeicher auf</p>
-</details>
-</td>
-<td><code>pacman -Sc</code></td>
-<td>Arch/pacman</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>hapsmann aufräumen</code></summary>
-<p>räumt den Paketzwischenspeicher auf</p>
-</details>
-</td>
-<td><code>→ hapsmann aufraeumen</code></td>
-<td>Arch/pacman</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>paeckle erneuern</code></summary>
-<p>erneuert den Päckchenbestand</p>
-</details>
-</td>
-<td><code>apt update</code></td>
+<td><code>apt update, apt upgrade, apt search, apt show, apt install, apt remove, apt autoremove, apt list --installed</code></td>
 <td>Debian/Ubuntu/apt</td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>paeckle hochziehen</code></summary>
-<p>zieht eingerichtete Päckchen hoch</p>
+<summary><code>päckle</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>päckle erneuern</code></td><td>erneuert den Päckchenbestand</td><td><code>→ paeckle erneuern</code></td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>päckle hochziehen</code></td><td>zieht eingerichtete Päckchen hoch</td><td><code>→ paeckle hochziehen</code></td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>päckle suchen</code></td><td>sucht verfügbare Päckchen</td><td><code>→ paeckle suchen</code></td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>päckle zeigen</code></td><td>zeigt ein verfügbares Päckchen</td><td><code>→ paeckle zeigen</code></td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>päckle installieren</code></td><td>richtet Päckchen ein</td><td><code>→ paeckle installieren</code></td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>päckle entfernen</code></td><td>entfernt Päckchen</td><td><code>→ paeckle entfernen</code></td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>päckle fortwerfen</code></td><td>wirft überflüssige Päckchen fort</td><td><code>→ paeckle fortwerfen</code></td><td>Debian/Ubuntu/apt</td></tr>
+<tr><td><code>päckle bestand</code></td><td>listet eingerichtete Päckchen</td><td><code>→ paeckle bestand</code></td><td>Debian/Ubuntu/apt</td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>apt upgrade</code></td>
+<td><code>→ paeckle erneuern, → paeckle hochziehen, → paeckle suchen, → paeckle zeigen, → paeckle installieren, → paeckle entfernen, → paeckle fortwerfen, → paeckle bestand</code></td>
 <td>Debian/Ubuntu/apt</td>
 </tr>
 <tr>
+<td rowspan="14"><strong>Textwesen</strong></td>
 <td>
 <details>
-<summary><code>paeckle suchen</code></summary>
-<p>sucht verfügbare Päckchen</p>
-</details>
-</td>
-<td><code>apt search</code></td>
-<td>Debian/Ubuntu/apt</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>paeckle zeigen</code></summary>
-<p>zeigt ein verfügbares Päckchen</p>
-</details>
-</td>
-<td><code>apt show</code></td>
-<td>Debian/Ubuntu/apt</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>paeckle installieren</code></summary>
-<p>richtet Päckchen ein</p>
-</details>
-</td>
-<td><code>apt install</code></td>
-<td>Debian/Ubuntu/apt</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>paeckle entfernen</code></summary>
-<p>entfernt Päckchen</p>
-</details>
-</td>
-<td><code>apt remove</code></td>
-<td>Debian/Ubuntu/apt</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>paeckle fortwerfen</code></summary>
-<p>wirft überflüssige Päckchen fort</p>
-</details>
-</td>
-<td><code>apt autoremove</code></td>
-<td>Debian/Ubuntu/apt</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>paeckle bestand</code></summary>
-<p>listet eingerichtete Päckchen</p>
-</details>
-</td>
-<td><code>apt list --installed</code></td>
-<td>Debian/Ubuntu/apt</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>päckle erneuern</code></summary>
-<p>erneuert den Päckchenbestand</p>
-</details>
-</td>
-<td><code>→ paeckle erneuern</code></td>
-<td>Debian/Ubuntu/apt</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>päckle hochziehen</code></summary>
-<p>zieht eingerichtete Päckchen hoch</p>
-</details>
-</td>
-<td><code>→ paeckle hochziehen</code></td>
-<td>Debian/Ubuntu/apt</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>päckle suchen</code></summary>
-<p>sucht verfügbare Päckchen</p>
-</details>
-</td>
-<td><code>→ paeckle suchen</code></td>
-<td>Debian/Ubuntu/apt</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>päckle zeigen</code></summary>
-<p>zeigt ein verfügbares Päckchen</p>
-</details>
-</td>
-<td><code>→ paeckle zeigen</code></td>
-<td>Debian/Ubuntu/apt</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>päckle installieren</code></summary>
-<p>richtet Päckchen ein</p>
-</details>
-</td>
-<td><code>→ paeckle installieren</code></td>
-<td>Debian/Ubuntu/apt</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>päckle entfernen</code></summary>
-<p>entfernt Päckchen</p>
-</details>
-</td>
-<td><code>→ paeckle entfernen</code></td>
-<td>Debian/Ubuntu/apt</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>päckle fortwerfen</code></summary>
-<p>wirft überflüssige Päckchen fort</p>
-</details>
-</td>
-<td><code>→ paeckle fortwerfen</code></td>
-<td>Debian/Ubuntu/apt</td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>päckle bestand</code></summary>
-<p>listet eingerichtete Päckchen</p>
-</details>
-</td>
-<td><code>→ paeckle bestand</code></td>
-<td>Debian/Ubuntu/apt</td>
-</tr>
-<tr>
-<td rowspan="17"><strong>Textwesen</strong></td>
-<td>
-<details>
-<summary><code>text fahndung</code></summary>
-<p>fahndet in Text</p>
+<summary><code>text</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>text fahndung</code></td><td>fahndet in Text</td><td><code>grep</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>grep</code></td>
@@ -720,8 +444,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>datei ortung</code></summary>
-<p>ortet Dateien</p>
+<summary><code>datei</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>datei ortung</code></td><td>ortet Dateien</td><td><code>find</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>find</code></td>
@@ -730,8 +461,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>argumente kleben</code></summary>
-<p>klebt Argumente zusammen</p>
+<summary><code>argumente</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>argumente kleben</code></td><td>klebt Argumente zusammen</td><td><code>xargs</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>xargs</code></td>
@@ -740,28 +478,33 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>wort zaehlamt</code></summary>
-<p>zählt Zeilen Wörter Zeichen</p>
+<summary><code>wort</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>wort zaehlamt</code></td><td>zählt Zeilen Wörter Zeichen</td><td><code>wc</code></td><td></td></tr>
+<tr><td><code>wort zählamt</code></td><td>zählt Zeilen Wörter Zeichen</td><td><code>→ wort zaehlamt</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>wc</code></td>
+<td><code>wc, → wort zaehlamt</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>wort zählamt</code></summary>
-<p>zählt Zeilen Wörter Zeichen</p>
-</details>
-</td>
-<td><code>→ wort zaehlamt</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>zeilen ordnen</code></summary>
-<p>ordnet Zeilen</p>
+<summary><code>zeilen</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>zeilen ordnen</code></td><td>ordnet Zeilen</td><td><code>sort</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>sort</code></td>
@@ -770,28 +513,33 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>doppel tilgen</code></summary>
-<p>tilgt Nachbardoppel</p>
+<summary><code>doppel</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>doppel tilgen</code></td><td>tilgt Nachbardoppel</td><td><code>uniq</code></td><td></td></tr>
+<tr><td><code>doppel zapf</code></td><td>zapft Ausgabe doppelt</td><td><code>tee</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>uniq</code></td>
+<td><code>uniq, tee</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>doppel zapf</code></summary>
-<p>zapft Ausgabe doppelt</p>
-</details>
-</td>
-<td><code>tee</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>spalten schnipp</code></summary>
-<p>schneidet Spalten</p>
+<summary><code>spalten</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>spalten schnipp</code></td><td>schneidet Spalten</td><td><code>cut</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>cut</code></td>
@@ -800,8 +548,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>zeichen tausch</code></summary>
-<p>tauscht Zeichen</p>
+<summary><code>zeichen</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>zeichen tausch</code></td><td>tauscht Zeichen</td><td><code>tr</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>tr</code></td>
@@ -810,28 +565,33 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>stromtext aendern</code></summary>
-<p>ändert Stromtext</p>
+<summary><code>stromtext</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>stromtext aendern</code></td><td>ändert Stromtext</td><td><code>sed</code></td><td></td></tr>
+<tr><td><code>stromtext ändern</code></td><td>ändert Stromtext</td><td><code>→ stromtext aendern</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>sed</code></td>
+<td><code>sed, → stromtext aendern</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>stromtext ändern</code></summary>
-<p>ändert Stromtext</p>
-</details>
-</td>
-<td><code>→ stromtext aendern</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>feld akrobat</code></summary>
-<p>verarbeitet Textfelder</p>
+<summary><code>feld</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>feld akrobat</code></td><td>verarbeitet Textfelder</td><td><code>awk</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>awk</code></td>
@@ -840,8 +600,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>unterschied zeigen</code></summary>
-<p>zeigt Unterschiede</p>
+<summary><code>unterschied</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>unterschied zeigen</code></td><td>zeigt Unterschiede</td><td><code>diff</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>diff</code></td>
@@ -850,8 +617,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>flicken anwenden</code></summary>
-<p>wendet Flicken an</p>
+<summary><code>flicken</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>flicken anwenden</code></td><td>wendet Flicken an</td><td><code>patch</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>patch</code></td>
@@ -860,8 +634,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>namen rest</code></summary>
-<p>zeigt Namensrest</p>
+<summary><code>namen</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>namen rest</code></td><td>zeigt Namensrest</td><td><code>basename</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>basename</code></td>
@@ -870,19 +651,33 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>ordner davor</code></summary>
-<p>zeigt Vorordner</p>
+<summary><code>ordner</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>ordner davor</code></td><td>zeigt Vorordner</td><td><code>dirname</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>dirname</code></td>
 <td></td>
 </tr>
 <tr>
-<td rowspan="7"><strong>Paketwerk</strong></td>
+<td rowspan="4"><strong>Paketwerk</strong></td>
 <td>
 <details>
-<summary><code>bindball mach</code></summary>
-<p>wickelt Dateien zum Bindball</p>
+<summary><code>bindball</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>bindball mach</code></td><td>wickelt Dateien zum Bindball</td><td><code>tar</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>tar</code></td>
@@ -891,129 +686,92 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>quetsch mach</code></summary>
-<p>quetscht Dateien</p>
+<summary><code>quetsch</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>quetsch mach</code></td><td>quetscht Dateien</td><td><code>gzip</code></td><td></td></tr>
+<tr><td><code>quetsch auf</code></td><td>bläst Gequetschtes auf</td><td><code>gunzip</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>gzip</code></td>
+<td><code>gzip, gunzip</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>quetsch auf</code></summary>
-<p>bläst Gequetschtes auf</p>
+<summary><code>reisszu</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>reisszu mach</code></td><td>macht Reißverschlussarchiv</td><td><code>zip</code></td><td></td></tr>
+<tr><td><code>reisszu auf</code></td><td>öffnet Reißverschlussarchiv</td><td><code>unzip</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>gunzip</code></td>
+<td><code>zip, unzip</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>reisszu mach</code></summary>
-<p>macht Reißverschlussarchiv</p>
+<summary><code>reißzu</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>reißzu mach</code></td><td>macht Reißverschlussarchiv</td><td><code>→ reisszu mach</code></td><td></td></tr>
+<tr><td><code>reißzu auf</code></td><td>öffnet Reißverschlussarchiv</td><td><code>→ reisszu auf</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>zip</code></td>
+<td><code>→ reisszu mach, → reisszu auf</code></td>
+<td></td>
+</tr>
+<tr>
+<td rowspan="19"><strong>Systemwesen</strong></td>
+<td>
+<details>
+<summary><code>vorgang</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>vorgang liste</code></td><td>listet Vorgänge</td><td><code>ps aux</code></td><td></td></tr>
+<tr><td><code>vorgang aufsicht</code></td><td>zeigt Vorgangsaufsicht</td><td><code>top</code></td><td></td></tr>
+<tr><td><code>vorgang huebschaufsicht</code></td><td>zeigt hübsche Vorgangsaufsicht</td><td><code>htop</code></td><td></td></tr>
+<tr><td><code>vorgang hübschaufsicht</code></td><td>zeigt hübsche Vorgangsaufsicht</td><td><code>→ vorgang huebschaufsicht</code></td><td></td></tr>
+<tr><td><code>vorgang beenden</code></td><td>beendet Vorgang</td><td><code>kill</code></td><td></td></tr>
+<tr><td><code>vorgang allebeenden</code></td><td>beendet Vorgänge nach Namen</td><td><code>killall</code></td><td></td></tr>
+</tbody>
+</table>
+</details>
+</td>
+<td><code>ps aux, top, htop, → vorgang huebschaufsicht, kill, killall</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>reisszu auf</code></summary>
-<p>öffnet Reißverschlussarchiv</p>
-</details>
-</td>
-<td><code>unzip</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>reißzu mach</code></summary>
-<p>macht Reißverschlussarchiv</p>
-</details>
-</td>
-<td><code>→ reisszu mach</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>reißzu auf</code></summary>
-<p>öffnet Reißverschlussarchiv</p>
-</details>
-</td>
-<td><code>→ reisszu auf</code></td>
-<td></td>
-</tr>
-<tr>
-<td rowspan="27"><strong>Systemwesen</strong></td>
-<td>
-<details>
-<summary><code>vorgang liste</code></summary>
-<p>listet Vorgänge</p>
-</details>
-</td>
-<td><code>ps aux</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>vorgang aufsicht</code></summary>
-<p>zeigt Vorgangsaufsicht</p>
-</details>
-</td>
-<td><code>top</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>vorgang huebschaufsicht</code></summary>
-<p>zeigt hübsche Vorgangsaufsicht</p>
-</details>
-</td>
-<td><code>htop</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>vorgang hübschaufsicht</code></summary>
-<p>zeigt hübsche Vorgangsaufsicht</p>
-</details>
-</td>
-<td><code>→ vorgang huebschaufsicht</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>vorgang beenden</code></summary>
-<p>beendet Vorgang</p>
-</details>
-</td>
-<td><code>kill</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>vorgang allebeenden</code></summary>
-<p>beendet Vorgänge nach Namen</p>
-</details>
-</td>
-<td><code>killall</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>reichsgeraet ausweis</code></summary>
-<p>zeigt Geräteausweis</p>
+<summary><code>reichsgeraet</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>reichsgeraet ausweis</code></td><td>zeigt Geräteausweis</td><td><code>uname -a</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>uname -a</code></td>
@@ -1022,8 +780,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>reichsgerät ausweis</code></summary>
-<p>zeigt Geräteausweis</p>
+<summary><code>reichsgerät</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>reichsgerät ausweis</code></td><td>zeigt Geräteausweis</td><td><code>→ reichsgeraet ausweis</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>→ reichsgeraet ausweis</code></td>
@@ -1032,8 +797,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>betriebszeit amtlich</code></summary>
-<p>zeigt Betriebszeit</p>
+<summary><code>betriebszeit</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>betriebszeit amtlich</code></td><td>zeigt Betriebszeit</td><td><code>uptime</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>uptime</code></td>
@@ -1042,8 +814,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>uhrzeit bescheid</code></summary>
-<p>zeigt Uhrzeitbescheid</p>
+<summary><code>uhrzeit</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>uhrzeit bescheid</code></td><td>zeigt Uhrzeitbescheid</td><td><code>date</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>date</code></td>
@@ -1053,7 +832,14 @@ muschel verzeichnis liste .
 <td>
 <details>
 <summary><code>werbinichdenn</code></summary>
-<p>zeigt Benutzername</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>werbinichdenn</code></td><td>zeigt Benutzername</td><td><code>whoami</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>whoami</code></td>
@@ -1062,28 +848,33 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>personen kennziffer</code></summary>
-<p>zeigt Personenkennziffern</p>
+<summary><code>personen</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>personen kennziffer</code></td><td>zeigt Personenkennziffern</td><td><code>id</code></td><td></td></tr>
+<tr><td><code>personen wechsel</code></td><td>wechselt Person</td><td><code>su</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>id</code></td>
+<td><code>id, su</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>personen wechsel</code></summary>
-<p>wechselt Person</p>
-</details>
-</td>
-<td><code>su</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>umwelt bestand</code></summary>
-<p>zeigt Umweltbestand</p>
+<summary><code>umwelt</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>umwelt bestand</code></td><td>zeigt Umweltbestand</td><td><code>env</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>env</code></td>
@@ -1093,7 +884,14 @@ muschel verzeichnis liste .
 <td>
 <details>
 <summary><code>oberbitte</code></summary>
-<p>fragt nach Oberbefugnis</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>oberbitte</code></td><td>fragt nach Oberbefugnis</td><td><code>sudo</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>sudo</code></td>
@@ -1102,8 +900,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>augen zu</code></summary>
-<p>wartet amtlich</p>
+<summary><code>augen</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>augen zu</code></td><td>wartet amtlich</td><td><code>sleep</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>sleep</code></td>
@@ -1112,8 +917,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>dauer guck</code></summary>
-<p>guckt dauernd</p>
+<summary><code>dauer</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>dauer guck</code></td><td>guckt dauernd</td><td><code>watch</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>watch</code></td>
@@ -1122,48 +934,51 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>geraet dranhaeng</code></summary>
-<p>hängt Gerät ein</p>
+<summary><code>geraet</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>geraet dranhaeng</code></td><td>hängt Gerät ein</td><td><code>mount</code></td><td></td></tr>
+<tr><td><code>geraet abhaeng</code></td><td>hängt Gerät aus</td><td><code>umount</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>mount</code></td>
+<td><code>mount, umount</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>geraet abhaeng</code></summary>
-<p>hängt Gerät aus</p>
+<summary><code>gerät</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>gerät dranhäng</code></td><td>hängt Gerät ein</td><td><code>→ geraet dranhaeng</code></td><td></td></tr>
+<tr><td><code>gerät abhäng</code></td><td>hängt Gerät aus</td><td><code>→ geraet abhaeng</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>umount</code></td>
+<td><code>→ geraet dranhaeng, → geraet abhaeng</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>gerät dranhäng</code></summary>
-<p>hängt Gerät ein</p>
-</details>
-</td>
-<td><code>→ geraet dranhaeng</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>gerät abhäng</code></summary>
-<p>hängt Gerät aus</p>
-</details>
-</td>
-<td><code>→ geraet abhaeng</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>klotz guck</code></summary>
-<p>zeigt Speicherklötze</p>
+<summary><code>klotz</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>klotz guck</code></td><td>zeigt Speicherklötze</td><td><code>lsblk</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>lsblk</code></td>
@@ -1172,8 +987,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>dateien petz</code></summary>
-<p>petzt offene Dateien</p>
+<summary><code>dateien</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>dateien petz</code></td><td>petzt offene Dateien</td><td><code>lsof</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>lsof</code></td>
@@ -1182,8 +1004,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>ram nochda</code></summary>
-<p>zeigt freien Speicher</p>
+<summary><code>ram</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>ram nochda</code></td><td>zeigt freien Speicher</td><td><code>free -h</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>free -h</code></td>
@@ -1192,8 +1021,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>tagebuch dienst</code></summary>
-<p>zeigt Diensttagebuch</p>
+<summary><code>tagebuch</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>tagebuch dienst</code></td><td>zeigt Diensttagebuch</td><td><code>journalctl --no-pager</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>journalctl --no-pager</code></td>
@@ -1202,8 +1038,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>zeitfolge verzeichnis</code></summary>
-<p>verwaltet Zeitfolgen</p>
+<summary><code>zeitfolge</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>zeitfolge verzeichnis</code></td><td>verwaltet Zeitfolgen</td><td><code>crontab</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>crontab</code></td>
@@ -1212,59 +1055,53 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>kern gemurmel</code></summary>
-<p>zeigt Kerngemurmel</p>
+<summary><code>kern</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>kern gemurmel</code></td><td>zeigt Kerngemurmel</td><td><code>dmesg</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>dmesg</code></td>
 <td></td>
 </tr>
 <tr>
-<td rowspan="14"><strong>Netzwesen</strong></td>
+<td rowspan="10"><strong>Netzwesen</strong></td>
 <td>
 <details>
-<summary><code>netz wegewurst</code></summary>
-<p>verfolgt die Wegewurst</p>
+<summary><code>netz</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>netz wegewurst</code></td><td>verfolgt die Wegewurst</td><td><code>traceroute</code></td><td></td></tr>
+<tr><td><code>netz sockenschau</code></td><td>zeigt Netzsocken</td><td><code>ss</code></td><td></td></tr>
+<tr><td><code>netz lagebericht</code></td><td>zeigt Netzlage</td><td><code>netstat</code></td><td></td></tr>
+<tr><td><code>netz kringel</code></td><td>kringelt Daten übers Netz</td><td><code>curl</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>traceroute</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>netz sockenschau</code></summary>
-<p>zeigt Netzsocken</p>
-</details>
-</td>
-<td><code>ss</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>netz lagebericht</code></summary>
-<p>zeigt Netzlage</p>
-</details>
-</td>
-<td><code>netstat</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>netz kringel</code></summary>
-<p>kringelt Daten übers Netz</p>
-</details>
-</td>
-<td><code>curl</code></td>
+<td><code>traceroute, ss, netstat, curl</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
 <summary><code>fernzieh</code></summary>
-<p>zieht Fernbestand</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>fernzieh</code></td><td>zieht Fernbestand</td><td><code>wget</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>wget</code></td>
@@ -1274,7 +1111,14 @@ muschel verzeichnis liste .
 <td>
 <details>
 <summary><code>sicherfernsprech</code></summary>
-<p>spricht sicher in die Ferne</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>sicherfernsprech</code></td><td>spricht sicher in die Ferne</td><td><code>ssh</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>ssh</code></td>
@@ -1284,7 +1128,14 @@ muschel verzeichnis liste .
 <td>
 <details>
 <summary><code>sicherfernkopier</code></summary>
-<p>kopiert sicher in die Ferne</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>sicherfernkopier</code></td><td>kopiert sicher in die Ferne</td><td><code>scp</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>scp</code></td>
@@ -1293,28 +1144,33 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>gleichschalt uebertrag</code></summary>
-<p>gleicht Übertragung ab</p>
+<summary><code>gleichschalt</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>gleichschalt uebertrag</code></td><td>gleicht Übertragung ab</td><td><code>rsync</code></td><td></td></tr>
+<tr><td><code>gleichschalt übertrag</code></td><td>gleicht Übertragung ab</td><td><code>→ gleichschalt uebertrag</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>rsync</code></td>
+<td><code>rsync, → gleichschalt uebertrag</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
-<summary><code>gleichschalt übertrag</code></summary>
-<p>gleicht Übertragung ab</p>
-</details>
-</td>
-<td><code>→ gleichschalt uebertrag</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>dns buddel</code></summary>
-<p>buddelt DNS aus</p>
+<summary><code>dns</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>dns buddel</code></td><td>buddelt DNS aus</td><td><code>dig</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>dig</code></td>
@@ -1323,8 +1179,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>namensschild guck</code></summary>
-<p>guckt ins Namensschild</p>
+<summary><code>namensschild</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>namensschild guck</code></td><td>guckt ins Namensschild</td><td><code>nslookup</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>nslookup</code></td>
@@ -1333,8 +1196,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>gastgeber auskunft</code></summary>
-<p>fragt Gastgeber aus</p>
+<summary><code>gastgeber</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>gastgeber auskunft</code></td><td>fragt Gastgeber aus</td><td><code>host</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>host</code></td>
@@ -1343,8 +1213,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>port klingel</code></summary>
-<p>klingelt an Ports</p>
+<summary><code>port</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>port klingel</code></td><td>klingelt an Ports</td><td><code>nc</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>nc</code></td>
@@ -1353,239 +1230,71 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>paket polizei</code></summary>
-<p>verwaltet Paketpolizei</p>
+<summary><code>paket</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>paket polizei</code></td><td>verwaltet Paketpolizei</td><td><code>iptables</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>iptables</code></td>
 <td></td>
 </tr>
 <tr>
-<td rowspan="30"><strong>Entwicklung</strong></td>
+<td rowspan="9"><strong>Entwicklung</strong></td>
 <td>
 <details>
-<summary><code>astmann lage</code></summary>
-<p>zeigt Astlage</p>
+<summary><code>astmann</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>astmann lage</code></td><td>zeigt Astlage</td><td><code>git status</code></td><td></td></tr>
+<tr><td><code>astmann eintueten</code></td><td>tütet Änderungen ein</td><td><code>git add</code></td><td></td></tr>
+<tr><td><code>astmann eintüten</code></td><td>tütet Änderungen ein</td><td><code>→ astmann eintueten</code></td><td></td></tr>
+<tr><td><code>astmann festasteln</code></td><td>stempelt Änderungen fest</td><td><code>git commit</code></td><td></td></tr>
+<tr><td><code>astmann chronik</code></td><td>zeigt Astchronik</td><td><code>git log --oneline --decorate --graph</code></td><td></td></tr>
+<tr><td><code>astmann meckerstreifen</code></td><td>zeigt Änderungsmecker</td><td><code>git diff</code></td><td></td></tr>
+<tr><td><code>astmann fernkopie</code></td><td>legt Fernkopie an</td><td><code>git clone</code></td><td></td></tr>
+<tr><td><code>astmann holen</code></td><td>holt Fernstand</td><td><code>git pull --ff-only</code></td><td></td></tr>
+<tr><td><code>astmann schieben</code></td><td>schiebt Eigenmist fern</td><td><code>git push</code></td><td></td></tr>
+<tr><td><code>astmann fernneuigkeiten</code></td><td>holt Fernneuigkeiten</td><td><code>git fetch</code></td><td></td></tr>
+<tr><td><code>astmann ferngegenstelle</code></td><td>verwaltet Ferngegenstellen</td><td><code>git remote</code></td><td></td></tr>
+<tr><td><code>astmann astliste</code></td><td>zeigt und verwaltet Äste</td><td><code>git branch</code></td><td></td></tr>
+<tr><td><code>astmann astwechsel</code></td><td>wechselt Ast</td><td><code>git switch</code></td><td></td></tr>
+<tr><td><code>astmann altkletter</code></td><td>klettert altmodisch</td><td><code>git checkout</code></td><td></td></tr>
+<tr><td><code>astmann zusammenklatsch</code></td><td>klatscht Äste zusammen</td><td><code>git merge</code></td><td></td></tr>
+<tr><td><code>astmann umtopf</code></td><td>topft Ast um</td><td><code>git rebase</code></td><td></td></tr>
+<tr><td><code>astmann handschuhfach</code></td><td>legt Pfusch ins Handschuhfach</td><td><code>git stash</code></td><td></td></tr>
+<tr><td><code>astmann zurueckkartoffeln</code></td><td>kartoffelt zurück</td><td><code>git reset</code></td><td></td></tr>
+<tr><td><code>astmann zurückkartoffeln</code></td><td>kartoffelt zurück</td><td><code>→ astmann zurueckkartoffeln</code></td><td></td></tr>
+<tr><td><code>astmann heilmach</code></td><td>macht Dateien heil</td><td><code>git restore</code></td><td></td></tr>
+<tr><td><code>astmann preisschild</code></td><td>hängt Preisschild an</td><td><code>git tag</code></td><td></td></tr>
+<tr><td><code>astmann werwars</code></td><td>sucht den Schuldigen</td><td><code>git blame</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>git status</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann eintueten</code></summary>
-<p>tütet Änderungen ein</p>
-</details>
-</td>
-<td><code>git add</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann eintüten</code></summary>
-<p>tütet Änderungen ein</p>
-</details>
-</td>
-<td><code>→ astmann eintueten</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann festasteln</code></summary>
-<p>stempelt Änderungen fest</p>
-</details>
-</td>
-<td><code>git commit</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann chronik</code></summary>
-<p>zeigt Astchronik</p>
-</details>
-</td>
-<td><code>git log --oneline --decorate --graph</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann meckerstreifen</code></summary>
-<p>zeigt Änderungsmecker</p>
-</details>
-</td>
-<td><code>git diff</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann fernkopie</code></summary>
-<p>legt Fernkopie an</p>
-</details>
-</td>
-<td><code>git clone</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann holen</code></summary>
-<p>holt Fernstand</p>
-</details>
-</td>
-<td><code>git pull --ff-only</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann schieben</code></summary>
-<p>schiebt Eigenmist fern</p>
-</details>
-</td>
-<td><code>git push</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann fernneuigkeiten</code></summary>
-<p>holt Fernneuigkeiten</p>
-</details>
-</td>
-<td><code>git fetch</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann ferngegenstelle</code></summary>
-<p>verwaltet Ferngegenstellen</p>
-</details>
-</td>
-<td><code>git remote</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann astliste</code></summary>
-<p>zeigt und verwaltet Äste</p>
-</details>
-</td>
-<td><code>git branch</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann astwechsel</code></summary>
-<p>wechselt Ast</p>
-</details>
-</td>
-<td><code>git switch</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann altkletter</code></summary>
-<p>klettert altmodisch</p>
-</details>
-</td>
-<td><code>git checkout</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann zusammenklatsch</code></summary>
-<p>klatscht Äste zusammen</p>
-</details>
-</td>
-<td><code>git merge</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann umtopf</code></summary>
-<p>topft Ast um</p>
-</details>
-</td>
-<td><code>git rebase</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann handschuhfach</code></summary>
-<p>legt Pfusch ins Handschuhfach</p>
-</details>
-</td>
-<td><code>git stash</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann zurueckkartoffeln</code></summary>
-<p>kartoffelt zurück</p>
-</details>
-</td>
-<td><code>git reset</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann zurückkartoffeln</code></summary>
-<p>kartoffelt zurück</p>
-</details>
-</td>
-<td><code>→ astmann zurueckkartoffeln</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann heilmach</code></summary>
-<p>macht Dateien heil</p>
-</details>
-</td>
-<td><code>git restore</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann preisschild</code></summary>
-<p>hängt Preisschild an</p>
-</details>
-</td>
-<td><code>git tag</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>astmann werwars</code></summary>
-<p>sucht den Schuldigen</p>
-</details>
-</td>
-<td><code>git blame</code></td>
+<td><code>git status, git add, → astmann eintueten, git commit, git log --oneline --decorate --graph, git diff, git clone, git pull --ff-only, git push, git fetch, git remote, git branch, git switch, git checkout, git merge, git rebase, git stash, git reset, → astmann zurueckkartoffeln, git restore, git tag, git blame</code></td>
 <td></td>
 </tr>
 <tr>
 <td>
 <details>
 <summary><code>machmal</code></summary>
-<p>macht nach Bauzettel</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>machmal</code></td><td>macht nach Bauzettel</td><td><code>make</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>make</code></td>
@@ -1595,7 +1304,14 @@ muschel verzeichnis liste .
 <td>
 <details>
 <summary><code>vormachamt</code></summary>
-<p>erzeugt Machanweisung</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>vormachamt</code></td><td>erzeugt Machanweisung</td><td><code>cmake</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>cmake</code></td>
@@ -1604,8 +1320,15 @@ muschel verzeichnis liste .
 <tr>
 <td>
 <details>
-<summary><code>quellwurst press</code></summary>
-<p>presst Quellwurst</p>
+<summary><code>quellwurst</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>quellwurst press</code></td><td>presst Quellwurst</td><td><code>gcc</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>gcc</code></td>
@@ -1615,7 +1338,14 @@ muschel verzeichnis liste .
 <td>
 <details>
 <summary><code>schlangenamt</code></summary>
-<p>führt Schlangenwerk aus</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>schlangenamt</code></td><td>führt Schlangenwerk aus</td><td><code>python3</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>python3</code></td>
@@ -1625,7 +1355,14 @@ muschel verzeichnis liste .
 <td>
 <details>
 <summary><code>paketpfennig</code></summary>
-<p>verwaltet Python-Pakete</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>paketpfennig</code></td><td>verwaltet Python-Pakete</td><td><code>pip</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>pip</code></td>
@@ -1635,7 +1372,14 @@ muschel verzeichnis liste .
 <td>
 <details>
 <summary><code>jotkuh</code></summary>
-<p>siebt JSON</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>jotkuh</code></td><td>siebt JSON</td><td><code>jq</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>jq</code></td>
@@ -1645,7 +1389,14 @@ muschel verzeichnis liste .
 <td>
 <details>
 <summary><code>dateikampfstift</code></summary>
-<p>bearbeitet Text gefährlich</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>dateikampfstift</code></td><td>bearbeitet Text gefährlich</td><td><code>vim</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>vim</code></td>
@@ -1655,81 +1406,41 @@ muschel verzeichnis liste .
 <td>
 <details>
 <summary><code>weichgriffschreiber</code></summary>
-<p>bearbeitet Text sanft</p>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>weichgriffschreiber</code></td><td>bearbeitet Text sanft</td><td><code>nano</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
 <td><code>nano</code></td>
 <td></td>
 </tr>
 <tr>
-<td rowspan="7"><strong>Applikationen</strong></td>
+<td rowspan="1"><strong>Applikationen</strong></td>
 <td>
 <details>
-<summary><code>hafener bilder</code></summary>
-<p>zeigt Hafenerbilder</p>
+<summary><code>hafener</code></summary>
+<table>
+<thead>
+<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th><th>Hinweis</th></tr>
+</thead>
+<tbody>
+<tr><td><code>hafener bilder</code></td><td>zeigt Hafenerbilder</td><td><code>docker images</code></td><td></td></tr>
+<tr><td><code>hafener bestand</code></td><td>zeigt Hafenvorgänge</td><td><code>docker ps</code></td><td></td></tr>
+<tr><td><code>hafener lauf</code></td><td>startet einen Hafenvorgang</td><td><code>docker run</code></td><td></td></tr>
+<tr><td><code>hafener zusammensetz zieh</code></td><td>zieht zusammengesetzte Hafenerbilder</td><td><code>docker compose pull</code></td><td></td></tr>
+<tr><td><code>hafener zusammensetz hoch</code></td><td>startet zusammengesetzte Hafendienste</td><td><code>docker compose up</code></td><td></td></tr>
+<tr><td><code>hafener zusammensetz runter</code></td><td>beendet zusammengesetzte Hafendienste</td><td><code>docker compose down</code></td><td></td></tr>
+<tr><td><code>hafener zusammensetz tagebuch</code></td><td>zeigt Hafentagebuch</td><td><code>docker compose logs</code></td><td></td></tr>
+</tbody>
+</table>
 </details>
 </td>
-<td><code>docker images</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>hafener bestand</code></summary>
-<p>zeigt Hafenvorgänge</p>
-</details>
-</td>
-<td><code>docker ps</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>hafener lauf</code></summary>
-<p>startet einen Hafenvorgang</p>
-</details>
-</td>
-<td><code>docker run</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>hafener zusammensetz zieh</code></summary>
-<p>zieht zusammengesetzte Hafenerbilder</p>
-</details>
-</td>
-<td><code>docker compose pull</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>hafener zusammensetz hoch</code></summary>
-<p>startet zusammengesetzte Hafendienste</p>
-</details>
-</td>
-<td><code>docker compose up</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>hafener zusammensetz runter</code></summary>
-<p>beendet zusammengesetzte Hafendienste</p>
-</details>
-</td>
-<td><code>docker compose down</code></td>
-<td></td>
-</tr>
-<tr>
-<td>
-<details>
-<summary><code>hafener zusammensetz tagebuch</code></summary>
-<p>zeigt Hafentagebuch</p>
-</details>
-</td>
-<td><code>docker compose logs</code></td>
+<td><code>docker images, docker ps, docker run, docker compose pull, docker compose up, docker compose down, docker compose logs</code></td>
 <td></td>
 </tr>
 </tbody>

@@ -68,18 +68,55 @@ def unredlicher_befehl(eintrag: dict) -> str:
     return ""
 
 
-def befehlszellen(eintrag: dict, mit_hinweis: bool) -> list[str]:
+def unredliche_befehle(daten: list[dict]) -> str:
+    werte = []
+    gesehen = set()
+    for eintrag in daten:
+        wert = unredlicher_befehl(eintrag)
+        if wert and wert not in gesehen:
+            gesehen.add(wert)
+            werte.append(wert)
+    return ", ".join(werte)
+
+
+def varianten_tabelle(daten: list[dict], mit_hinweis: bool) -> list[str]:
+    kopf = "<tr><th>Befehl</th><th>Zweck</th><th>Angelsächsischer unredlicher Befehl</th>"
+    if mit_hinweis:
+        kopf += "<th>Hinweis</th>"
+    kopf += "</tr>"
+    zeilen = ["<table>", "<thead>", kopf, "</thead>", "<tbody>"]
+    for eintrag in daten:
+        zellen = [
+            f"<td>{html_code(befehlsname(eintrag))}</td>",
+            f"<td>{html_zelle(eintrag.get('beschreibung', 'dienstlich erfasst'))}</td>",
+            f"<td>{html_code(unredlicher_befehl(eintrag))}</td>",
+        ]
+        if mit_hinweis:
+            zellen.append(f"<td>{html_zelle(eintrag.get('hinweis', ''))}</td>")
+        zeilen.append("<tr>" + "".join(zellen) + "</tr>")
+    zeilen.extend(["</tbody>", "</table>"])
+    return zeilen
+
+
+def befehlszellen(name: str, daten: list[dict], mit_hinweis: bool) -> list[str]:
     zellen = [
         "<td>",
         "<details>",
-        f"<summary>{html_code(befehlsname(eintrag))}</summary>",
-        f"<p>{html_zelle(eintrag.get('beschreibung', 'dienstlich erfasst'))}</p>",
+        f"<summary>{html_code(name)}</summary>",
+        *varianten_tabelle(daten, mit_hinweis),
         "</details>",
         "</td>",
-        f"<td>{html_code(unredlicher_befehl(eintrag))}</td>",
+        f"<td>{html_code(unredliche_befehle(daten))}</td>",
     ]
     if mit_hinweis:
-        zellen.append(f"<td>{html_zelle(eintrag.get('hinweis', ''))}</td>")
+        hinweise = []
+        gesehen = set()
+        for eintrag in daten:
+            hinweis = eintrag.get("hinweis", "")
+            if hinweis and hinweis not in gesehen:
+                gesehen.add(hinweis)
+                hinweise.append(hinweis)
+        zellen.append(f"<td>{html_zelle(', '.join(hinweise))}</td>")
     return zellen
 
 
@@ -99,19 +136,17 @@ def gruppierte_eintraege() -> OrderedDict[str, OrderedDict[str, list[dict]]]:
 
 def gruppenzeilen(gruppenname: str, hauptgruppen: OrderedDict[str, list[dict]], mit_hinweis: bool) -> list[str]:
     zeilen: list[str] = []
-    alle = [eintrag for daten in hauptgruppen.values() for eintrag in daten]
-    span = len(alle)
+    span = len(hauptgruppen)
     erste = True
-    for daten in hauptgruppen.values():
-        for eintrag in daten:
-            zellen = ["<tr>"]
-            if erste:
-                titel = GRUPPEN_TITEL.get(gruppenname, gruppenname)
-                zellen.append(f"<td rowspan=\"{span}\"><strong>{html_zelle(titel)}</strong></td>")
-                erste = False
-            zellen.extend(befehlszellen(eintrag, mit_hinweis))
-            zellen.append("</tr>")
-            zeilen.extend(zellen)
+    for name, daten in hauptgruppen.items():
+        zellen = ["<tr>"]
+        if erste:
+            titel = GRUPPEN_TITEL.get(gruppenname, gruppenname)
+            zellen.append(f"<td rowspan=\"{span}\"><strong>{html_zelle(titel)}</strong></td>")
+            erste = False
+        zellen.extend(befehlszellen(name, daten, mit_hinweis))
+        zellen.append("</tr>")
+        zeilen.extend(zellen)
     return zeilen
 
 
