@@ -11,6 +11,8 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: din-${{ github.ref }}
@@ -23,9 +25,14 @@ jobs:
     container:
       image: archlinux:latest
       options: --privileged
+    environment:
+      name: github-pages
     steps:
       - name: Abhängigkeiten installieren
-        run: pacman -Syu --noconfirm --needed git python archiso grub syslinux squashfs-tools xorriso dosfstools mtools libisoburn
+        run: |
+          pacman -Syu --noconfirm --needed base-devel git python archiso grub syslinux squashfs-tools xorriso dosfstools mtools libisoburn
+          useradd -m bauer
+          printf 'bauer ALL=(ALL) NOPASSWD: ALL\n' > /etc/sudoers.d/bauer
 
       - name: Quelltext auschecken
         uses: actions/checkout@v4
@@ -33,13 +40,24 @@ jobs:
       - name: Muschel prüfen
         run: python -m unittest tests/test_muschel.py -v
 
+      - name: Muschelpaket fertigen
+        run: |
+          sed -i "s/^pkgver=.*/pkgver=0.1.${GITHUB_RUN_NUMBER}/" pakete/anschnur-muschel/PKGBUILD
+          chown -R bauer:bauer "$GITHUB_WORKSPACE"
+          su bauer -c 'cd "$GITHUB_WORKSPACE/pakete/anschnur-muschel" && makepkg -s --noconfirm'
+          mkdir -p paketablage/x86_64
+          cp pakete/anschnur-muschel/*.pkg.tar.* paketablage/x86_64/
+          repo-add paketablage/x86_64/deutschland-anschnur.db.tar.gz paketablage/x86_64/*.pkg.tar.*
+
       - name: Bogen-Referenzprofil vorbereiten
         run: |
           rm -rf bauprofil
           cp -a /usr/share/archiso/configs/releng bauprofil
           cp -a din/bogenprofil/airootfs/. bauprofil/airootfs/
+          printf 'anschnur-muschel\n' >> bauprofil/packages.x86_64
           python - <<'PY'
           from pathlib import Path
+          arbeitsort = Path.cwd()
           profil = Path('bauprofil/profiledef.sh')
           text = profil.read_text()
           vorgaben = {
@@ -55,6 +73,12 @@ jobs:
                   zeile = f'{schluessel}="{vorgaben[schluessel]}"'
               zeilen.append(zeile)
           profil.write_text('\n'.join(zeilen) + '\n')
+
+          pacman = Path('bauprofil/pacman.conf')
+          pacman_text = pacman.read_text()
+          eintrag = f'''[deutschland-anschnur]\nSigLevel = Optional TrustAll\nServer = file://{arbeitsort}/paketablage/$arch\n\n'''
+          if '[deutschland-anschnur]' not in pacman_text:
+              pacman.write_text(pacman_text.replace('[core]\n', eintrag + '[core]\n', 1))
           PY
 
       - name: DIN bauen
@@ -64,6 +88,21 @@ jobs:
         run: |
           cd ausgabe
           sha256sum *.iso > SHA256SUMMEN
+
+      - name: Paketablage als Netzbestand vorbereiten
+        if: github.event_name == 'push' && github.ref == 'refs/heads/haupt'
+        run: |
+          cp ausgabe/SHA256SUMMEN paketablage/SHA256SUMMEN-DIN
+
+      - name: Paketablage hochreichen
+        if: github.event_name == 'push' && github.ref == 'refs/heads/haupt'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: paketablage
+
+      - name: Paketablage veröffentlichen
+        if: github.event_name == 'push' && github.ref == 'refs/heads/haupt'
+        uses: actions/deploy-pages@v4
 
       - name: DIN als Änderungsanlage bereitstellen
         uses: actions/upload-artifact@v4

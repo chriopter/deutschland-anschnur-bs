@@ -1,0 +1,16 @@
+# Maintainer: Deutschland Anschnur BS
+pkgname=anschnur-muschel
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='Erlaubnisbasierte Befehlsannahmestelle fuer Deutschland Anschnur BS'
+arch=('any')
+url='https://github.com/chriopter/deutschland-anschnur-bs'
+license=('MIT')
+depends=('bash')
+install=anschnur-muschel.install
+source=('muschel')
+sha256sums=('SKIP')
+
+package() {
+  install -Dm755 muschel "${pkgdir}/usr/bin/muschel"
+}

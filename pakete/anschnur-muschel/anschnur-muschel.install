@@ -1,0 +1,15 @@
+post_install() {
+  if ! grep -qx '/usr/bin/muschel' /etc/shells 2>/dev/null; then
+    echo '/usr/bin/muschel' >> /etc/shells
+  fi
+}
+
+post_upgrade() {
+  post_install
+}
+
+post_remove() {
+  if [ -f /etc/shells ]; then
+    sed -i '\#^/usr/bin/muschel$#d' /etc/shells
+  fi
+}

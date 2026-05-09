@@ -5,6 +5,9 @@ bauprofil/
 out/
 work/
 dist/
+paketablage/
+pakete/*/pkg/
+pakete/*/src/
 *.iso
 *.iso.sig
 *.img

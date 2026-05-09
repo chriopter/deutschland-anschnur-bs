@@ -6,7 +6,7 @@
 
 Ein lokalisiertes Bogenleinux-Derivat mit `muschel`, einer erlaubnisbasierten Kleinmuschel.
 
-Jede Änderung auf dem Hauptzweig `haupt` veranlasst automatisch eine neue DIN-Abbildfertigung als Anlage des GitHub-Handlungslaufs.
+Jede Änderung auf dem Hauptzweig `haupt` veranlasst automatisch eine neue DIN-Abbildfertigung, ein neues Muschelpaket und eine erneuerte Paketablage.
 
 Einige angelsächsische Restbegriffe verbleiben aufgrund technischer Zuständigkeitsbindung bis zur späteren Verdeutschungsverfügung im Bestand.
 
@@ -18,6 +18,8 @@ Einige angelsächsische Restbegriffe verbleiben aufgrund technischer Zuständigk
 | `verlassen` | beendet den Muschelvorgang ordnungsgemäß |
 
 Alle übrigen Eingaben werden amtlich beanstandet. Die Muschel teilt dabei mit, ob der angelsächsische Fremdbefehl im System vorhanden, aber noch nicht freigegeben ist.
+
+Die Muschel wird als Paket `anschnur-muschel` bereitgestellt. Gewöhnliche Bogenleinux-Erneuerung bezieht dadurch zugleich die neueste Muschel aus der Deutschland-Anschnur-Paketablage.
 
 ## Lexikon
 
