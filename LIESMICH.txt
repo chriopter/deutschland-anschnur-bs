@@ -4,55 +4,31 @@
 
 # Deutschland Anschnur
 
-Deutschland Anschnur ist eine tabellengetriebene Muschel zur Verdeutschung von Befehlen auf bestehenden Einix-/Leinux-Systemen.
+Eine tabellengeführte Muschel zur Verdeutschung von Befehlen auf bestehenden Einix-/Leinux-Systemen.
 
 Einige angelsächsische Restbegriffe verbleiben aufgrund technischer Zuständigkeitsbindung bis zur späteren Verdeutschungsverfügung im Bestand.
 
-## Aufbau
+## Befehle
 
-```text
-muschel                  ausführbare Befehlsannahmestelle
-befehle.d/*.jsonl        Befehlsakten, eine Zeile je Amtsbefehl
-anschnur-pruefen         prüft die Befehlsakten
-```
-
-Die Muschel enthält die Ausführungsordnung. Die Befehlsakten enthalten die Übersetzungen.
-
-## Benutzung
+### Start
 
 ```bash
 ./muschel
-```
-
-Oder als Einzelvorgang:
-
-```bash
 ./muschel verzeichnis liste .
 ```
 
-## Befehlsakten
+### Muschel
 
-Beispiel:
-
-```json
-{"befehl":["verzeichnis","liste"],"typ":"exec","programm":"/usr/bin/ls","argumente":["-la"],"rest":"anhaengen","beschreibung":"zeigt einen Verzeichnisbestand"}
-```
-
-Zulässige Vorgangsarten:
-
-| Art | Wirkung |
+| Befehl | Wirkung |
 | --- | --- |
-| `exec` | führt ein festes Programm mit festen und zugelassenen weiteren Angaben aus |
-| `builtin` | nutzt eine eingebaute Muschelfunktion, etwa `hilfe`, `verlassen` oder Ortswechsel |
-| `alias` | verweist auf einen anderen deutschen Amtsbefehl |
-
-## Grundbestand
-
-| Befehl | Dienstliche Wirkung |
-| --- | --- |
-| `hilfe` | zeigt diese dienstliche Auskunft |
-| `verlassen` | schließt die Muschel ordnungsgemäß |
+| `hilfe` | zeigt die Befehlsauskunft |
+| `verlassen` | schließt die Muschel |
 | `muschel neu laden` | lädt Befehlsakten neu |
+
+### Grundbestand
+
+| Befehl | Wirkung |
+| --- | --- |
 | `verzeichnis ort` | zeigt den derzeitigen Ort |
 | `verzeichnis liste [Pfad]` | zeigt einen Verzeichnisbestand |
 | `verzeichnis wechsel <Pfad>` | wechselt den derzeitigen Ort |
@@ -65,15 +41,13 @@ Zulässige Vorgangsarten:
 | `dienst stand <Name>` | zeigt einen Dienststand |
 | `system stand` | zeigt Systemstand |
 | `system kennung` | zeigt Betriebssystemkennung |
+
+### Weitere Befehlsakten
+
+| Befehl | Wirkung |
+| --- | --- |
 | `hapsmann erneuern` | erneuert Paketbestand und System, sofern Hapsmann-Bestand vorhanden ist |
 | `hafener zusammensetz hoch --dämonisiere` | übersetzt einen Hafener-Zusammensetzvorgang |
-
-## Prüfung
-
-```bash
-./anschnur-pruefen
-python3 -m unittest tests/test_muschel.py -v
-```
 
 ## Lexikon
 
