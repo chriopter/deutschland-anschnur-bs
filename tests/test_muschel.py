@@ -112,6 +112,20 @@ class MuschelTests(unittest.TestCase):
         self.assertIn("--detach", result.stdout)
         self.assertIn("dienst", result.stdout)
 
+    def test_command_family_without_subcommand_lists_subcommands(self):
+        result = run_muschel("hapsmann\ndateien\ndauer\nspitzname\n")
+
+        self.assertEqual(result.returncode, 0)
+        self.assertIn("Teilbefehle für hapsmann", result.stdout)
+        self.assertIn("hapsmann erneuern", result.stdout)
+        self.assertIn("Teilbefehle für dateien", result.stdout)
+        self.assertIn("dateien petz", result.stdout)
+        self.assertIn("Teilbefehle für dauer", result.stdout)
+        self.assertIn("dauer guck", result.stdout)
+        self.assertIn("Teilbefehle für spitzname", result.stdout)
+        self.assertIn("spitzname liste", result.stdout)
+        self.assertNotIn("Der Befehl \"hapsmann\" ist nicht erlaubt", result.stdout)
+
     def test_catalog_checker_accepts_repo_catalog(self):
         env = os.environ.copy()
         env["ANSCHNUR_BEFEHLE"] = str(BEFEHLE)

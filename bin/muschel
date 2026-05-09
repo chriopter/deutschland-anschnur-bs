@@ -163,6 +163,20 @@ class Muschel:
             print(f"Sachstand: \"{befehl}\" konnte im System nicht festgestellt werden.")
         print("Hinweis: Bitte reichen Sie einen Antrag auf Befehlsverdeutschung ein.")
 
+    def melde_teilbefehle(self, teile: list[str]) -> bool:
+        treffer = [
+            (schluessel, eintrag)
+            for schluessel, eintrag in sorted(self.befehle.items())
+            if len(schluessel) > len(teile) and list(schluessel[: len(teile)]) == teile
+        ]
+        if not treffer:
+            return False
+        print(f"Teilbefehle für {' '.join(teile)}:")
+        for schluessel, eintrag in treffer:
+            beschreibung = eintrag.get("beschreibung", "dienstlich erfasst")
+            print(f"  {' '.join(schluessel):32} - {beschreibung}")
+        return True
+
     @staticmethod
     def finde_programm(name: str) -> str | None:
         for ordner in os.environ.get("PATH", "").split(os.pathsep):
@@ -259,7 +273,8 @@ class Muschel:
             return
         eintrag, rest = self.finde(teile)
         if eintrag is None:
-            self.melde_nicht_erlaubt(teile[0])
+            if not self.melde_teilbefehle(teile):
+                self.melde_nicht_erlaubt(teile[0])
             return
         self.fuehre_aus(eintrag, rest)
 
