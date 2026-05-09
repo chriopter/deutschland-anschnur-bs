@@ -27,6 +27,7 @@ Alle übrigen Eingaben werden amtlich beanstandet. Die Muschel teilt dabei mit, 
 | Deutsches Aktenzeichen | Auflösung |
 | --- | --- |
 | DIN | Datenträgerabbild in Normallage |
+| HARTWARE | Hardware; körperlicher Gerätebestand |
 
 </details>
 
@@ -35,12 +36,13 @@ Alle übrigen Eingaben werden amtlich beanstandet. Die Muschel teilt dabei mit, 
 
 | Deutsches Aktenzeichen | Auflösung |
 | --- | --- |
-| MUSCHEL | Maschinen- und Systemkommandohilfe mit eingeschränkter Leitung |
-| HILFE | Handlungsinformation laufender Führungs- und Eingabeordnung |
-| PAKET | Programmakte kraft elektronischer Teilbereitstellung |
-| DIENSTGEIST | Dauerhaft im Einsatz stehender Hintergrundvorgang einer informationstechnischen Stelle |
-| ABLAGESTELLE | Amtliche Bereitstellungs- und Lagerstätte geordneter Quellakten |
-| ÄNDERUNGSEINTRAG | Änderungsniederschrift einzelner nachweisbarer Git-Vorgänge |
+| WEICHWARE | Software; ausführbarer und verwaltbarer Programmbestand |
+| MUSCHEL | Shell; erlaubnisbasierte Befehlsannahmestelle |
+| HILFE | Auskunft über zugelassene Muschel-Befehle |
+| PAKET | Softwarepaket |
+| DIENSTGEIST | Hintergrunddienst |
+| ABLAGESTELLE | Repository; geordnete Quelltextablage |
+| ÄNDERUNGSEINTRAG | Commit; nachweisbare Änderung im Quelltextbestand |
 
 </details>
 
@@ -50,10 +52,10 @@ Alle übrigen Eingaben werden amtlich beanstandet. Die Muschel teilt dabei mit, 
 | Deutsches Aktenzeichen | Auflösung |
 | --- | --- |
 | DABS | Deutschland Anschnur Betriebssystem |
-| BOGEN | Betriebssystemgrundordnung eigennütziger Nutzer |
+| BOGEN | Arch; Bogenleinux-Grundlage |
 | EINIX | Einheitlicher Informations- und Rechendienst nach X-Schreibweise |
 | LEINUX | Linus-Einix; von Linus abgeleiteter einheitlicher Informations- und Rechendienst |
-| WURZEL | Wirkungsursprüngliche Rechte- und Zuständigkeitsebene Leinux |
-| KERN | Kontroll- und Einsatzrechenkern des Nutzerlandes |
+| WURZEL | Root; oberste Rechte- und Dateibaumebene |
+| KERN | Kern des Betriebssystems |
 
 </details>
