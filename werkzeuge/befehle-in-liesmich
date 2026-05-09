@@ -16,6 +16,11 @@ ENDE = "<!-- BEFEHLE:ENDE -->"
 
 DATEI_REIHENFOLGE = ["basis", "hapsmann", "hafener"]
 GRUPPEN_REIHENFOLGE = ["Muschel", "Grundbestand", "Hapsmann", "Hafener"]
+GRUPPEN_TITEL = {
+    "Muschel": "Muschel (eingebaut)",
+    "Hapsmann": "Hapsmann (pacman)",
+    "Hafener": "Hafener (docker)",
+}
 MUSCHEL_FUNKTIONEN = {"hilfe", "verlassen", "neu_laden"}
 
 RESTTEXT = {
@@ -105,12 +110,9 @@ def gruppierte_eintraege() -> OrderedDict[str, OrderedDict[str, list[dict]]]:
 
 
 def hauptdetails(name: str, daten: list[dict]) -> list[str]:
-    beschreibung = daten[0].get("beschreibung", "dienstlich erfasst")
-    if len(daten) > 1:
-        beschreibung = f"{len(daten)} Befehle"
     zeilen = [
         "<details>",
-        f"<summary>{html_code(name)} — {html.escape(beschreibung)}</summary>",
+        f"<summary><strong>{html_code(name)}</strong></summary>",
         "",
     ]
     for eintrag in daten:
@@ -122,7 +124,7 @@ def hauptdetails(name: str, daten: list[dict]) -> list[str]:
 def befehlsblock() -> str:
     teile = [ANFANG, ""]
     for gruppenname, hauptgruppen in gruppierte_eintraege().items():
-        teile.extend([f"### {gruppenname}", ""])
+        teile.extend([f"### {GRUPPEN_TITEL.get(gruppenname, gruppenname)}", ""])
         for name, daten in hauptgruppen.items():
             teile.extend(hauptdetails(name, daten))
     teile.append(ENDE)

@@ -29,10 +29,10 @@ muschel verzeichnis liste .
 
 <!-- BEFEHLE:ANFANG -->
 
-### Muschel
+### Muschel (eingebaut)
 
 <details>
-<summary><code>hilfe</code> — zeigt diese dienstliche Auskunft</summary>
+<summary><strong><code>hilfe</code></strong></summary>
 
 #### `hilfe`
 
@@ -44,7 +44,7 @@ zeigt diese dienstliche Auskunft
 </details>
 
 <details>
-<summary><code>verlassen</code> — schließt die Muschel ordnungsgemäß</summary>
+<summary><strong><code>verlassen</code></strong></summary>
 
 #### `verlassen`
 
@@ -56,7 +56,7 @@ schließt die Muschel ordnungsgemäß
 </details>
 
 <details>
-<summary><code>muschel</code> — lädt die Befehlsakten neu</summary>
+<summary><strong><code>muschel</code></strong></summary>
 
 #### `muschel neu laden`
 
@@ -70,7 +70,7 @@ lädt die Befehlsakten neu
 ### Grundbestand
 
 <details>
-<summary><code>verzeichnis</code> — 3 Befehle</summary>
+<summary><strong><code>verzeichnis</code></strong></summary>
 
 #### `verzeichnis ort`
 
@@ -96,7 +96,7 @@ wechselt den derzeitigen Ort
 </details>
 
 <details>
-<summary><code>datei</code> — 2 Befehle</summary>
+<summary><strong><code>datei</code></strong></summary>
 
 #### `datei lesen`
 
@@ -115,7 +115,7 @@ zeigt Dateiangaben
 </details>
 
 <details>
-<summary><code>netz</code> — 4 Befehle</summary>
+<summary><strong><code>netz</code></strong></summary>
 
 #### `netz stand`
 
@@ -148,7 +148,7 @@ prüft die Erreichbarkeit
 </details>
 
 <details>
-<summary><code>dienst</code> — 2 Befehle</summary>
+<summary><strong><code>dienst</code></strong></summary>
 
 #### `dienst liste`
 
@@ -167,7 +167,7 @@ zeigt einen Dienststand
 </details>
 
 <details>
-<summary><code>system</code> — 4 Befehle</summary>
+<summary><strong><code>system</code></strong></summary>
 
 #### `system stand`
 
@@ -199,10 +199,10 @@ schaltet aus
 
 </details>
 
-### Hapsmann
+### Hapsmann (pacman)
 
 <details>
-<summary><code>hapsmann</code> — 9 Befehle</summary>
+<summary><strong><code>hapsmann</code></strong></summary>
 
 #### `hapsmann erneuern`
 
@@ -269,10 +269,10 @@ räumt den Paketzwischenspeicher auf
 
 </details>
 
-### Hafener
+### Hafener (docker)
 
 <details>
-<summary><code>hafener</code> — 7 Befehle</summary>
+<summary><strong><code>hafener</code></strong></summary>
 
 #### `hafener bilder`
 
