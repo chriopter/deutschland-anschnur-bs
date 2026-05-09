@@ -20,12 +20,7 @@ echo 'alias muschel="$HOME/.deutschland-anschnur-muschel/muschel"' >> ~/.bashrc
 
 ### Erneuerung
 
-```bash
-cd ~/.deutschland-anschnur-muschel
-git pull --ff-only
-```
-
-Beim Start meldet die Muschel verfügbare Erneuerungen von selbst.
+Die Muschel meldet verfügbare Erneuerungen beim Start.
 
 ### Start
 
