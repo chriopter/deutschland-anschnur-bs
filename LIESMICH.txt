@@ -199,8 +199,6 @@ schaltet aus
 
 </details>
 
-### Hapsmann (pacman)
-
 <details>
 <summary><strong><code>hapsmann</code></strong></summary>
 
@@ -269,7 +267,7 @@ räumt den Paketzwischenspeicher auf
 
 </details>
 
-### Hafener (docker)
+### Applikationen
 
 <details>
 <summary><strong><code>hafener</code></strong></summary>

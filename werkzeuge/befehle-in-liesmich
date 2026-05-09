@@ -15,11 +15,9 @@ ANFANG = "<!-- BEFEHLE:ANFANG -->"
 ENDE = "<!-- BEFEHLE:ENDE -->"
 
 DATEI_REIHENFOLGE = ["basis", "hapsmann", "hafener"]
-GRUPPEN_REIHENFOLGE = ["Muschel", "Grundbestand", "Hapsmann", "Hafener"]
+GRUPPEN_REIHENFOLGE = ["Muschel", "Grundbestand", "Applikationen"]
 GRUPPEN_TITEL = {
     "Muschel": "Muschel (eingebaut)",
-    "Hapsmann": "Hapsmann (pacman)",
-    "Hafener": "Hafener (docker)",
 }
 MUSCHEL_FUNKTIONEN = {"hilfe", "verlassen", "neu_laden"}
 
